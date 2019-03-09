@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 
 }
 
@@ -48,5 +49,11 @@
     .timer-slot {
         margin-left: .3rem;
         margin-right: .3rem;
+        font-size: 2rem;
+        width: 4rem;
+        height: 4rem;
+    }
+    .timer-slot-text{
+        font-size: 1rem;
     }
 }
