@@ -44,3 +44,9 @@
 
 }
 
+@media only screen and (max-width: 480px) {
+    .timer-slot {
+        margin-left: .3rem;
+        margin-right: .3rem;
+    }
+}
