@@ -17,14 +17,11 @@
 
 }
 
-.timer-slot-container {
 
-}
 .timer-slot {
     display: flex;
-    outline-color: black;
-    outline-style: auto;
-    outline-width: 2px;
+    border: 2px solid black;
+
     width: 6rem;
     height: 6rem;
     margin: 1.2rem;
