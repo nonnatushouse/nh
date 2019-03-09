@@ -1,0 +1,46 @@
+
+.timer-container {
+    display: flex;
+    outline-color: black;
+    outline-style: dashed;
+    outline-width: 1px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer-slots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.timer-slot-container {
+
+}
+.timer-slot {
+    display: flex;
+    outline-color: black;
+    outline-style: auto;
+    outline-width: 2px;
+    width: 6rem;
+    height: 6rem;
+    margin: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    background-color: antiquewhite;
+}
+
+.timer-slot-text{
+    font-size: 1.5rem;
+    text-align: center;
+
+}
+
+.timer-title {
+    text-align: center;
+
+}
+
