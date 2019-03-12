@@ -14,11 +14,12 @@ export default function Quiz({
     <div className="quiz-container">
       {isQuizOver ? (
         <div className="quiz-over-container">
-          <div className="quiz-over-title">Quiz Over - Final Score:</div>
+          <div className="quiz-over-title">Quiz Over - Well done!</div>
+          <div className="quiz-final-score-title">Final score:</div>
           <div className="quiz-final-score">{score}</div>
           <div className='quiz-pb-title'>Personal best this session:</div>
           <div className='quiz-pb-score'>{personalBest}</div>
-          <button className='quiz-reset-button' type='button' onClick={() => resetQuiz()}>Reset Quiz</button>
+          <button className='quiz-reset-button' type='button' onClick={() => resetQuiz()}>Play Again</button>
         </div>
       ) : (
         <div>
