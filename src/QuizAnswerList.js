@@ -1,5 +1,6 @@
 import React from "react";
 import QuizAnswerItem from './QuizAnswerItem';
+import './Quiz.css';
 
 export default function QuizAnswerList({answers, onAnswerClick }) {
   return (
@@ -14,3 +15,4 @@ export default function QuizAnswerList({answers, onAnswerClick }) {
     </ul>
   );
 }
+
