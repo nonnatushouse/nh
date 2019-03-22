@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink, Route } from "react-router-dom";
 import "./App.css";
 import uuidv4 from "uuid/v4";
 import Timer from "./Timer";
@@ -14,27 +15,19 @@ class App extends Component {
     personalBest: 0
   };
 
-  tick() {
-    this.setState(prevState => ({
-      seconds: prevState.seconds + 1
-    }));
-  }
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
   onAnswerClick(answer) {
-    var score = answer.isCorrect ? this.state.score += 100 : this.state.score;
-    
-    if (this.state.currentQuestion === this.state.questions.length -1) {
-      this.setState({ isQuizOver: true, score: score, personalBest: Math.max(score, this.state.personalBest)});
+    var score = answer.isCorrect ? (this.state.score += 100) : this.state.score;
+
+    if (this.state.currentQuestion === this.state.questions.length - 1) {
+      this.setState({
+        isQuizOver: true,
+        score: score,
+        personalBest: Math.max(score, this.state.personalBest)
+      });
     } else {
       var nextQuestion = this.state.currentQuestion + 1;
       shuffleArray(this.state.questions[nextQuestion].answers);
-      this.setState({currentQuestion: nextQuestion});
+      this.setState({ currentQuestion: nextQuestion });
     }
   }
 
@@ -46,17 +39,34 @@ class App extends Component {
   render() {
     return (
       <>
-        <div className="page-container">
-          {/* <Timer date={this.state.date} /> */}
+        <div className="page-header">
+        <div className="nav-container">
+          <NavLink to="/" className='nav-link' activeClassName="selected" exact>Home</NavLink>
+          <NavLink to="/timer" className='nav-link' activeClassName="selected" >The Final Countdown</NavLink>
+          <NavLink to="/quiz" className='nav-link' activeClassName="selected" >Quiz</NavLink>
         </div>
-        <Quiz
-          currentQuestion={this.state.questions[this.state.currentQuestion]}
-          onAnswerClick={answer => this.onAnswerClick(answer)}
-          score={this.state.score}
-          isQuizOver={this.state.isQuizOver}
-          resetQuiz={() => this.resetQuiz()}
-          personalBest={this.state.personalBest}
-        />
+        </div>
+        <div className="page-container">
+          <Route
+            path="/timer"
+            render={() => <Timer />}
+          />
+          <Route
+            path="/quiz"
+            render={() => (
+              <Quiz
+                currentQuestion={
+                  this.state.questions[this.state.currentQuestion]
+                }
+                onAnswerClick={answer => this.onAnswerClick(answer)}
+                score={this.state.score}
+                isQuizOver={this.state.isQuizOver}
+                resetQuiz={() => this.resetQuiz()}
+                personalBest={this.state.personalBest}
+              />
+            )}
+          />
+        </div>
       </>
     );
   }
@@ -66,10 +76,10 @@ export default App;
 
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
 }
 
@@ -99,8 +109,7 @@ function Questions() {
     },
     {
       id: uuidv4(),
-      question:
-        "What is the phone number for Nonnatus House?",
+      question: "What is the phone number for Nonnatus House?",
       answers: [
         { id: uuidv4(), answer: "Poplar 594", isCorrect: false },
         { id: uuidv4(), answer: "Poplar 945", isCorrect: false },
@@ -132,8 +141,7 @@ function Questions() {
     },
     {
       id: uuidv4(),
-      question:
-        "What color is Dr Turner's car (series 1-7)?",
+      question: "What color is Dr Turner's car (series 1-7)?",
       answers: [
         { id: uuidv4(), answer: "Red", isCorrect: false },
         { id: uuidv4(), answer: "Yellow", isCorrect: false },
@@ -143,8 +151,7 @@ function Questions() {
     },
     {
       id: uuidv4(),
-      question:
-        "Who was the first midwife shown delivering a breech baby?",
+      question: "Who was the first midwife shown delivering a breech baby?",
       answers: [
         { id: uuidv4(), answer: "Cynthia", isCorrect: false },
         { id: uuidv4(), answer: "Jenny", isCorrect: false },
@@ -154,8 +161,7 @@ function Questions() {
     },
     {
       id: uuidv4(),
-      question:
-        "'Toxemia' is another word for...?",
+      question: "'Toxemia' is another word for...?",
       answers: [
         { id: uuidv4(), answer: "Tokophobia", isCorrect: false },
         { id: uuidv4(), answer: "Cancer", isCorrect: false },
@@ -165,8 +171,7 @@ function Questions() {
     },
     {
       id: uuidv4(),
-      question:
-        "During which year does the first series take place?",
+      question: "During which year does the first series take place?",
       answers: [
         { id: uuidv4(), answer: "1959", isCorrect: false },
         { id: uuidv4(), answer: "1958", isCorrect: false },
@@ -184,6 +189,6 @@ function Questions() {
         { id: uuidv4(), answer: "Antonia", isCorrect: false },
         { id: uuidv4(), answer: "Mary", isCorrect: false }
       ]
-    },
+    }
   ];
 }
