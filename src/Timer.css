@@ -1,9 +1,7 @@
 
 .timer-container {
     display: flex;
-    outline-color: black;
-    outline-style: dashed;
-    outline-width: 1px;
+    flex-direction: column;
     width: 100vw;
     justify-content: center;
     align-items: center;
@@ -27,7 +25,7 @@
     justify-content: center;
     align-items: center;
     font-size: calc(16px + 4vmin);
-    background-color: antiquewhite;
+    background-color: #F7C66A;
     box-shadow: 0.5rem 0.5rem 1.2rem rgba(22, 22, 22, 0.5);
 }
 
@@ -44,14 +42,9 @@
 
 @media only screen and (max-width: 480px) {
     .timer-slot {
-        /* margin-left: .3rem;
-        margin-right: .3rem; */
-        /* font-size: 2rem;
-        width: 4rem;
-        height: 4rem;
-        box-shadow: 0.3rem 0.3rem 0.5rem rgba(22, 22, 22, 0.5); */
+
     }
     .timer-slot-text{
-        /* font-size: 1rem; */
+
     }
 }

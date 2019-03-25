@@ -14,10 +14,13 @@ export default function Timer(props) {
   const timeLeft = targetDate - date;
   return (
     <>
+    <div className="timer-container">
       <h1 className="timer-title">
         Time until Call the Midwife Series 9 airs:
       </h1>
       <TimerDisplay timeLeft={timeLeft} />
+      </div>
     </>
+    
   );
 }

@@ -17,6 +17,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -25,13 +26,20 @@
 
 .page-header {
   display: flex;
-  background-color: rgb(255, 215, 140);
+  background-color: #F7C66A;
   left: 0;
   right: 0;
   top: 0;
   height: 3rem;
   box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
   align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.page-container {
+  display: flex;
+  width: 100%;
   justify-content: center;
 }
 
@@ -53,6 +61,9 @@
   text-decoration: underline;
 
 }
+
+
+
 
 @keyframes App-logo-spin {
   from {
