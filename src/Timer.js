@@ -17,9 +17,9 @@ export default function Timer(props) {
   return (
     <>
     <div className="timer-container">
-      <h1 className="timer-title">
+      <div className="timer-title">
         Time until Call the Midwife Series 9 airs:
-      </h1>
+      </div>
       <TimerDisplay timeLeft={timeLeft} />
       <div className="timer-note">{note}</div>
       </div>

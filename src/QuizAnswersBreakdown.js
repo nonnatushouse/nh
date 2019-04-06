@@ -15,7 +15,7 @@ export default function QuizAnswersBreakdown({
         "correct-answer": answer.isCorrect,
         "given-answer": givenAnswer.answerId === answer.id
       });
-      const isCorrect = answer.isCorrect ? " - Correct answer" : "";
+      const isCorrect = answer.isCorrect ? " - ✓" : "";
       return (
         <div className={cls} key={answer.id}>
           {answer.answer} {isCorrect}
@@ -37,6 +37,6 @@ export default function QuizAnswersBreakdown({
     );
   });
 
-  return (<><div className="quiz-breakdown-text">For each question the correct answer is marked with "Correct answer", and your given answer is marked with a <span style={{backgroundColor:"#F7C66A"}}>yellow background</span>. </div>
+  return (<><div className="quiz-breakdown-text">For each question the correct answer is marked with "✓", and your given answer is marked with a <span style={{backgroundColor:"#F7C66A"}}>yellow background</span>. </div>
   <div className="quiz-breakdown">{rows}</div></>);
 }
