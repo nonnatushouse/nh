@@ -190,17 +190,12 @@
 
 
 @media only screen and (max-width: 600px) {
-    /* .quiz-answer-list {
-        width: 95vw;
-    }
-    .quiz-question {
-        width: 95vw;
-    }
-    .quiz-reset-button{
-        width: 95vw;
-    } */
+
     .quiz-answer:hover {
         background-color: #F7C66A;
+    }
+    .quiz-question {
+        min-height: 0;
     }
 
 }
