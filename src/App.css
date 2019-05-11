@@ -41,6 +41,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  padding-top: 1rem;
 }
 
 .nav-container {
@@ -56,36 +57,44 @@
   color: black;
   font-size: 1.2rem;
   text-decoration: none;
-  margin: 0.5rem;
 }
 
 .nav-link:hover {
   color: whitesmoke;
 }
 
+
 .nav-link.selected, .sidebar-link.selected {
   text-decoration: underline;
 }
 
+.page-sidebar {
+  display: none;
 
-@media screen and (max-width: 600px) {
-  .nav-container {
-    text-align: center;
-    float: none;
-    flex-direction: column;
-    box-shadow: 0.0rem 0.5rem 1.2rem rgba(22, 22, 22, 0.5);
-  }
-
-  .nav-link:hover {
-    color: inherit;
-  }
+}
+.sidebar-hamburger-button{
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.page-container {
+  padding-top: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar-hamburger-button{
+    /* box-shadow: 0.0rem 0.1rem 1.2rem rgba(22, 22, 22, 0.5); */
+    display: block;
+    background-color: inherit;
+    /* background-color: inherit; */
+    border: none;
+    font-size: 1.5rem;
+    align-self: stretch;
+    z-index: 1;
+    transform: scale(1); /*Only for the benefit of making sure the button is stacked above the menu*/
+    position: absolute;
+    right: 0;
+    opacity: 70%;
+    
   }
-  to {
-    transform: rotate(360deg);
-  }
+
 }

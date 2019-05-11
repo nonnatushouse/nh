@@ -76,9 +76,9 @@ export default function getQuestions() {
         { id: "d", answer: "Chummy", isCorrect: true }
       ]
     },
-    "default-toxemia-question": {
-      id: "default-toxemia-question",
-      question: "'Toxemia' is another word for...?",
+    "default-toxaemia-question": {
+      id: "default-toxaemia-question",
+      question: "'Toxaemia' is another word for...?",
       answers: [
         { id: "a", answer: "Pre-Eclampsia", isCorrect: true },
         { id: "b", answer: "Tokophobia", isCorrect: false },
