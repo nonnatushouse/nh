@@ -8,6 +8,7 @@ import "./RcMenu.css";
 
 export default function RcMenu({ toggleMenu, menuIsExpanded }) {
   const isDesktop = useMedia(["(min-width: 600px)"], [true], false);
+  const expandIcon = isDesktop ? "▿" : "";
 
   return (
     <div className="menu-container">
@@ -58,7 +59,7 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
           </NavLink>
         </MenuItem>
 
-        <SubMenu key="misc" title="Misc" className="mysubmenu mainmenu">
+        <SubMenu key="misc" title={"Misc" + expandIcon} className="mysubmenu mainmenu">
           {/* Drinking Game */}
           <MenuItem key="drinking-game" className="mymenuitem mainmenu">
           <NavLink
