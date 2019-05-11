@@ -48,12 +48,10 @@
 .mysubmenu.mainmenu {
     background-color: rgba(247, 198, 106);
     color: black;
-    border: none;
+    border-bottom: 2px solid transparent;
     padding: 0;
-    padding-bottom: 2px;
+
 }
-
-
 
 .mymenuitem.mainmenu {
     background-color: rgba(247, 198, 106, 0.815);
@@ -61,17 +59,19 @@
     cursor: pointer;
     text-overflow: ellipsis;
     padding: 0;
+    border-bottom: 2px solid transparent;
+    
 }
 
 .mysubmenu.mainmenu:hover {
     background-color: rgba(247, 198, 106);
-    border: none;
+    border-bottom: 2px solid inherit;
     cursor: pointer;
 }
 
 .mymenuitem.mainmenu:hover {
     background-color: #eaf8fe;
-    border: none;
+    border-bottom: 2px solid transparent;
     cursor: pointer;
 }
 
