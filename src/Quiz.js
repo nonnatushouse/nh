@@ -18,7 +18,11 @@ export default function Quiz() {
   const [state, dispatch] = useReducer(reducer, initialState);
   if (state.gameState === "splash") {
     return (
-      <QuizSplashScreen onQuizRequest= {(quizType) => dispatch({ type: "START_GAME", quizType: quizType })} ></QuizSplashScreen>
+      <QuizSplashScreen
+        onQuizRequest={quizType =>
+          dispatch({ type: "START_GAME", quizType: quizType })
+        }
+      />
     );
   } else if (state.gameState === "quiz") {
     const questionIndex = state.questionOrder.indexOf(state.currentQuestion);

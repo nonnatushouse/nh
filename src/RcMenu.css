@@ -1,7 +1,7 @@
 .menu-container {
     display: flex;
-    width: 100vw;
-    height: 58px;
+    /* width: 98vw; */
+    min-height: 61px;
     background-color: rgba(247, 198, 106);
     box-shadow: 0rem 0.5rem 1.2rem rgba(22, 22, 22, 0.5);
     align-items: center;
@@ -48,7 +48,7 @@
 .mysubmenu.mainmenu {
     background-color: rgba(247, 198, 106);
     color: black;
-    border-bottom: 2px solid transparent;
+    border-bottom: none;
     padding: 0;
 
 }
@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 600px) {
     .menu-container {
-        height: 32px;
+        min-height: 32px;
     }
 
     .menu-link {
@@ -98,4 +98,4 @@
       }
 
 
-}
+} 

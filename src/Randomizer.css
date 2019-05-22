@@ -1,0 +1,141 @@
+
+.randomizer-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 95vw;
+    align-items: center;
+    
+}
+
+.randomizer-season {
+    list-style-type: none;
+    /* display: flex;
+    flex-direction: column; */
+    padding: 0rem;
+    margin: 0;
+
+    -moz-column-count: 2;
+    -moz-column-gap: .8rem;
+    -webkit-column-count: 2;
+    -webkit-column-gap: .8rem;
+    column-count: 2;
+    column-gap: .8rem;
+
+}
+
+.randomizer-season-container {
+    margin: 1rem 0;
+    max-width: 95vw;
+    width: 17rem;
+    position: relative; 
+}
+
+.randomizer-episode{
+    display: flex;
+    margin-bottom: .4rem;
+    background-color: #F7C66A;
+    min-width: 1rem;
+    max-width: 10rem;
+    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    cursor: pointer;
+}
+
+.randomizer-button {
+    margin: .1rem 0;
+    background-color: #F7C66A;
+    min-width: 1rem;
+    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+    height: 1.5rem;
+    width: 100%;
+    margin-bottom: .5rem;
+    max-width: 95vw;
+    width: 17rem;
+    
+    
+}
+
+.episode-checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    background: none;
+    color: inherit;
+    border: none;
+    /* outline: 1px;
+    outline-color: rgba(0, 0, 0, 0.205);
+    outline-style: solid; */
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.randomizer-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 3.8rem;
+    /* outline: 2px;
+    outline-color: #F7C66A;
+    outline-style: solid; */
+    margin: 1rem 0;
+    padding: .4rem;
+    box-shadow: .0rem .0rem .6rem rgba(22, 22, 22, .5);
+    border-radius: 0.5rem;
+    background-color: #F7C66A;
+    max-width: 95vw;
+    width: 17rem;
+    
+
+}
+
+.randomizer-result-text {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.christmas-special {
+    max-width: 98vw;
+    -webkit-column-span: all;
+    column-span: all;
+    font-size: 1rem;
+}
+
+.christmas-special-title {
+    font-size: 1.48rem;
+    
+}
+
+.randomize-button{
+    height: 2.5rem;
+    font-size: 1.3rem;
+    
+}
+
+.randomizer-title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    
+}
+
+.randomizer-info{
+    max-width: 90vw;
+    width: 40rem;
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+
+@supports not (column-span: all) {
+    .christmas-special {
+     position: absolute;
+     top:1.4rem;right:0;left:0;
+    } 
+    .randomizer-season.contains-christmas-special
+    {
+        margin-top: 2rem;
+    }
+  }
