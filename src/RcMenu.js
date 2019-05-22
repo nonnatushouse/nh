@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import Menu, { SubMenu, MenuItem } from "rc-menu";
 import "rc-menu/assets/index.css";
 import classNames from "classnames";

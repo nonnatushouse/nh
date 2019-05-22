@@ -15,7 +15,7 @@ function Season({ season, seasonToggle, episodeToggle }) {
 
   return (
     <div className={"randomizer-season-container"}>
-    <div>{season.title}</div>
+    <div className="randomizer-season-title">{season.title}</div>
 
       <ul className={cls}>{episodes}</ul>
       <button

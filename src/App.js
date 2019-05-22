@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.css";
-import uuidv4 from "uuid/v4";
 import Timer from "./Timer";
 import Quiz from "./Quiz";
 import Home from "./Home";
 import Contact from "./Contact";
 import DrinkingGame from "./DrinkingGame";
-import classNames from "classnames";
 import Randomizer from "./Randomizer";
 import RcMenu from "./RcMenu";
 

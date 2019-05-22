@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 600px) {
     .menu-container {
-        min-height: 32px;
+        min-height: 38px;
     }
 
     .menu-link {
