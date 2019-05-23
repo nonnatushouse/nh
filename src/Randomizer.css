@@ -7,10 +7,15 @@
     
 }
 
+.randomizer-all-seasons {
+    display: flex;
+    max-width: 95vw;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
 .randomizer-season {
     list-style-type: none;
-    /* display: flex;
-    flex-direction: column; */
     padding: 0rem;
     margin: 0;
 
@@ -24,14 +29,15 @@
 }
 
 .randomizer-season-container {
-    margin: 1rem 0;
+    margin: 1rem 1rem;
     max-width: 95vw;
     width: 17rem;
     position: relative; 
+
 }
 
 .randomizer-season-title {
-    margin-bottom: .5rem;
+    margin-bottom: 0.1rem;
     font-size: 1.3rem;
 }
 
@@ -77,21 +83,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 3.8rem;
+    min-height: 5.5rem;
     margin: 1rem 0;
     padding: .4rem;
     box-shadow: .0rem .0rem .6rem rgba(22, 22, 22, .5);
     border-radius: 0.5rem;
     background-color: #F7C66A;
     max-width: 95vw;
-    width: 17rem;
-    
-
+    width: 30rem;
+    padding-bottom: .7rem;
 }
 
 .randomizer-result-text {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3.3rem;
 }
 
 .christmas-special {
@@ -102,7 +107,7 @@
 }
 
 .christmas-special-title {
-    font-size: 1.48rem;
+    font-size: 2.5rem;
     
 }
 
@@ -127,6 +132,10 @@
 
 }
 
+.unchecked{
+    background-color: rgb(255, 222, 161);
+}
+
 @supports not (column-span: all) {
     .christmas-special {
      position: absolute;
@@ -140,10 +149,34 @@
 
   
 @media screen and (max-width: 600px) {
-    .randomizer-season-container, .randomizer-result, .randomizer-button {
+    .randomizer-button {
         width: 90vw;
     }
+
+    .randomizer-season-title {
+        margin-bottom: 0.1rem;
+        font-size: 1.3rem;
+    }
+    .randomizer-result {
+        width: 90vw;
+        min-height: 5.5rem;
+    }
+
+    .christmas-special-title {
+        font-size: 1.48rem;
+        margin-bottom: 0;
+        
+    }
+    .randomizer-season-container {
+        width: 90vw;
+        margin: 1rem 0;
+    }
     .randomizer-episode{
+        max-width: 90vw;
+    }
+
+    .randomizer-all-seasons {
+        flex-direction: column;
         max-width: 90vw;
     }
 } 

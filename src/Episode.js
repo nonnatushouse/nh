@@ -7,7 +7,9 @@ function Episode({ episode, episodeToggle }) {
     const buttonText = episode.isChecked ? '✓' : '';
 
     const listItemClassName = classNames("randomizer-episode", {
-      "christmas-special": episode.title.includes("Christmas Special")});
+      "christmas-special": episode.title.includes("Christmas Special"),
+      "unchecked": !episode.isChecked
+    });
 
 
   return (
@@ -18,9 +20,7 @@ function Episode({ episode, episodeToggle }) {
     >
       <button
         type="button"
-        className={
-          "episode-checkbox " + (episode.isChecked ? "checked" : "unchecked")
-        }
+        className={"episode-checkbox "}
       >{buttonText}</button>
       <div className="randomizer-episode-title">{episode.title}</div>
     </li>
