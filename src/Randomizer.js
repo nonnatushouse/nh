@@ -3,6 +3,7 @@ import "./Randomizer.css";
 import { getSeasons, getEpisodes } from "./Seasons";
 import Season from "./Season";
 import classNames from "classnames";
+import "./Info.css";
 
 const initialState = {
   seasons: getSeasons(),
@@ -53,7 +54,7 @@ export default function Randomizer() {
   return (
     <>
       <div className="randomizer-container">
-        <div className="randomizer-title">Randomizer</div>
+        <div className="info-big-title">Episode Randomizer</div>
         <div className="randomizer-info">
           Can't decide what episode to watch? Let the randomizer decide for you!
           Just check the episodes you have available or would like to choose

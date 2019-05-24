@@ -1,10 +1,11 @@
 import React from "react";
 import "./DrinkingGame.css"
+import "./Info.css";
 
 export default function DrinkingGame() {
   return (
     <div className="drinking-game-container">
-      <div className="info-main-title">Call the Midwife Drinking Game</div>
+      <div className="info-big-title">Unofficial Drinking Game</div>
       <div className="info-title">Rules</div>
       <div className="info-text">
         The rules are simple. When watching an episode, keep the list below

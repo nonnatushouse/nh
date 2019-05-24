@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Timer.css";
 import TimerDisplay from "./TimerDisplay";
 import useInterval from "./useInterval";
+import "./Info.css";
 
 export default function Timer(props) {
   const [date, setDate] = useState(new Date());
@@ -17,7 +18,7 @@ export default function Timer(props) {
   return (
     <>
     <div className="timer-container">
-      <div className="timer-title">
+      <div className="info-big-title">
         Time until Call the Midwife Series 9 airs:
       </div>
       <TimerDisplay timeLeft={timeLeft} />

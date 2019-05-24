@@ -8,7 +8,7 @@
     text-align: center;
 }
 
-.info-main-title {
+.info-big-title {
     font-size: 2rem;
     margin-bottom: .5rem;
     text-align: center;
@@ -18,7 +18,7 @@
 .info-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    font-style: italic;
+    /* font-style: italic; */
     text-align: center;
 
 }
@@ -32,8 +32,18 @@
 
 .nav-link-in-text {
     font-size: inherit;
-    text-decoration: none;
+    /* text-decoration: none; */
+    /* background-color: #F7C66A; */
+    
 }
+
+.nav-link-in-text:link {
+    color: rgb(0, 26, 255);
+  }
+
+  .nav-link-in-text:visited {
+    color: rgb(0, 26, 255);
+  }
 
 .drinking-game-item {
     text-align: center;

@@ -139,8 +139,18 @@ export default function getQuestions() {
         { id: "c", answer: "Scrabble", isCorrect: false }, //S8E4
         { id: "d", answer: "Chess", isCorrect: true }
       ]
-    }
-
+    },
+    "bts-author": {
+      id: "bts-author",
+      question:
+        "Whose memoirs was the show originally based on?",
+      answers: [
+        { id: "a", answer: "Terri Coates", isCorrect: false},
+        { id: "b", answer: "Pippa Harris", isCorrect: false },
+        { id: "c", answer: "Jennifer Worth", isCorrect: true },
+        { id: "d", answer: "Heidi Thomas", isCorrect: false }
+      ]
+    },
 
   };
 }

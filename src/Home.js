@@ -6,9 +6,9 @@ import { NavLink} from "react-router-dom";
 export default function Home() {
   return (
     <div className="info-container">
-    <div className="info-main-title">Welcome to Nonnatus House</div>
+    <div className="info-big-title">Welcome to Nonnatus House</div>
       <div className="info-title">an unofficial 'Call the Midwife' website</div>
-      <div className="info-text">This is a website created by fans of Call the Midwife, for fans of Call the Midwife. Here you will find a <NavLink
+      <div className="info-text">This is a website created by fans of Call the Midwife, for fans of Call the Midwife. Here you will find a <NavLink 
               to="/timer"
               className="nav-link-in-text"
               activeClassName="selected"
@@ -23,6 +23,14 @@ export default function Home() {
             >
               Quiz
             </NavLink> you can take to test your Call the Midwife knowledge. </div>
+
+            <div className="info-text">Want to watch an episode, but can't decide which one? Try out the <NavLink
+              to="/episode-randomizer"
+              className="nav-link-in-text"
+              activeClassName="selected"
+            >
+              Episode Randomizer
+            </NavLink> which will help you select a random episode to watch!</div>
     </div>
   );
 }

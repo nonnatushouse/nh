@@ -17,7 +17,7 @@ export default function QuizScore({ questions, givenAnswers }) {
 
   return (
 <>
-<div className="quiz-score-title">Well done! You scored:</div>
+<div className="info-big-title">Well done! You scored:</div>
 <svg className="circle" viewBox="0 0 350 350">
       <path
         className="score-path-br"

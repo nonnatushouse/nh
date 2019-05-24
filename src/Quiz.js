@@ -5,6 +5,7 @@ import QuizScore from "./QuizScore";
 import getQuestions from "./Questions";
 import "./Quiz.css";
 import QuizSplashScreen from "./QuizSplashScreen";
+import "./Info.css";
 
 const initialState = {
   gameState: "splash",
@@ -60,7 +61,7 @@ export default function Quiz() {
           givenAnswers={state.givenAnswers}
           questionOrder={state.questionOrder}
         />
-        <div className="quiz-score-info">
+        <div className="info-title">
           Scroll down to see a breakdown of your answers.
         </div>
         <button
