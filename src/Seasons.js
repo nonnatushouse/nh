@@ -1,3 +1,4 @@
+import {helperVar} from "./helper"
 export function getSeasons() {
   return [
     {
@@ -185,4 +186,17 @@ export function getEpisodes() {
     { id: "S8E7", title: "S8E7", isChecked: true },
     { id: "S8E8", title: "S8E8", isChecked: true }
 ];
+}
+
+export function getSelection(selector) {
+  switch (selector) {
+    case helperVar.CHRISTMAS_SPECIALS:
+      return ["S2E0", "S3E0", "S4E0", "S5E0", "S6E0", "S7E0", "S8E0"]
+    case helperVar.SERIES_FINALE:
+      return ["S1E6", "S2E8", "S3E8", "S4E8", "S5E8", "S6E8", "S7E8", "S8E8"]
+
+    default:
+      return [];
+  }
+
 }

@@ -1,0 +1,8 @@
+
+const helperVar = {
+    SELECTOR: "SELECTOR",
+    CHRISTMAS_SPECIALS: "CHRISTMAS_SPECIALS",
+    SERIES_FINALE: "SERIES_FINALE"
+}
+
+export {helperVar};

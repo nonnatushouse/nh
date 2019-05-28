@@ -31,7 +31,7 @@
 .randomizer-season-container {
     margin: 1rem 1rem;
     max-width: 95vw;
-    width: 17rem;
+    width: 15rem;
     position: relative; 
 
 }
@@ -63,9 +63,16 @@
     width: 100%;
     margin-bottom: .5rem;
     max-width: 95vw;
-    width: 17rem;
-    
-    
+    width: 15rem;
+}
+
+.randomizer-selector {
+    font-size: 1rem;
+}
+
+.randomizer-button-title{
+    font-size: inherit;
+    margin-left: 1.5rem;
 }
 
 .episode-checkbox {

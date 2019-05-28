@@ -1,9 +1,11 @@
 import React, { useReducer } from "react";
 import "./Randomizer.css";
-import { getSeasons, getEpisodes } from "./Seasons";
+import { getSeasons, getEpisodes, getSelection } from "./Seasons";
 import Season from "./Season";
 import classNames from "classnames";
 import "./Info.css";
+import RandomizerSelector from "./RandomizerSelector";
+
 
 const initialState = {
   seasons: getSeasons(),
@@ -15,6 +17,10 @@ const SEASON_TOGGLE = "SEASON-TOGGLE";
 const EPISODE_TOGGLE = "EPISODE-TOGGLE";
 const ALL_TOGGLE = "ALL-TOGGLE";
 const RANDOMIZE = "RANDOMIZE";
+
+const SELECTOR = "SELECTOR";
+const CHRISTMAS_SPECIALS = "CHRISTMAS_SPECIALS";
+const SERIES_FINALE = "SERIES_FINALE";
 
 export default function Randomizer() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -47,6 +53,11 @@ export default function Randomizer() {
     dispatch({ type: RANDOMIZE });
   }
 
+  function selector(s) {
+    console.log(s);
+    dispatch({ type: SELECTOR, selector: s });
+  }
+
   const titleClassName = classNames("randomizer-result-text", {
     "christmas-special-title": state.randomEpisode.includes("Christmas Special")
   });
@@ -75,6 +86,7 @@ export default function Randomizer() {
           Toggle All
         </button>
         <div className="randomizer-all-seasons">{allSeasons}</div>
+        <RandomizerSelector selector={selector}></RandomizerSelector>
       </div>
     </>
   );
@@ -138,6 +150,17 @@ function reducer(state, action) {
                 Math.floor(Math.random() * selectedEpisodes.length)
               ].title
             : "No episode selected"
+      };
+
+    case SELECTOR:
+      const selected = getSelection(action.selector);
+      return {
+        ...state,
+        episodes: state.episodes.map(ep =>
+          selected.includes(ep.id)
+            ? { ...ep, isChecked: true }
+            : { ...ep, isChecked: false }
+        )
       };
 
     default:
