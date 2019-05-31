@@ -38,11 +38,11 @@
 }
 
 .nav-link-in-text:link {
-    color: rgb(0, 26, 255);
+    color: black;
   }
 
   .nav-link-in-text:visited {
-    color: rgb(0, 26, 255);
+    color: black;
   }
 
 .drinking-game-item {

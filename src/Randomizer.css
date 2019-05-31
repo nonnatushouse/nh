@@ -35,16 +35,35 @@
     position: relative; 
 
 }
+.randomizer-season-header {
+    display: flex;
+    margin-bottom: .4rem;
+}
 
 .randomizer-season-title {
     margin-bottom: 0.1rem;
     font-size: 1.3rem;
+    flex-grow: 1;
 }
+
+.randomizer-toggle-button {
+    margin: .1rem 0;
+    background-color: #F7C66A; 
+    /* #ffdb98; */
+    min-width: 1rem;
+    box-shadow: 0 0  .2rem rgba(22, 22, 22, .5);
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+    height: 1.5rem;
+
+}
+
 
 .randomizer-episode{
     display: flex;
     margin-bottom: .4rem;
-    background-color: #F7C66A;
+    background-color: #ffd68a;
     min-width: 1rem;
     max-width: 10rem;
     box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
@@ -53,7 +72,8 @@
 
 .randomizer-button {
     margin: .1rem 0;
-    background-color: #F7C66A;
+    background-color: #F7C66A ;
+    /* rgb(241, 208, 145); */
     min-width: 1rem;
     box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
     border: none;
@@ -91,11 +111,11 @@
     align-items: center;
     justify-content: center;
     min-height: 5.5rem;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     padding: .4rem;
-    box-shadow: .0rem .0rem .6rem rgba(22, 22, 22, .5);
+    /* box-shadow: .0rem .0rem .6rem rgba(22, 22, 22, .5); */
     border-radius: 0.5rem;
-    background-color: #F7C66A;
+    background-color: wheat;
     max-width: 95vw;
     width: 30rem;
     padding-bottom: .7rem;
@@ -113,15 +133,14 @@
     font-size: 1rem;
 }
 
-.christmas-special-title {
+.christmas-special-title,.no-episode-selected {
     font-size: 2.5rem;
     
 }
 
 .randomize-button{
     height: 2.5rem;
-    font-size: 1.3rem;
-    
+    font-size: 1.3rem;  
 }
 
 .randomizer-title {
@@ -140,21 +159,31 @@
 }
 
 .unchecked{
-    background-color: rgb(255, 222, 161);
+    background-color: wheat;
 }
 
 @supports not (column-span: all) {
     .christmas-special {
      position: absolute;
-     top:1.8rem;right:0;left:0;
+     top:2.2rem;right:0;left:0;
     } 
     .randomizer-season.contains-christmas-special
     {
-        margin-top: 2rem;
+        margin-top: 2.3rem;
     }
   }
 
-  
+@media screen and (min-width: 1200px) {
+.randomizer-selector-container {
+    position: absolute;
+    top: 6rem;
+    left: 2rem;
+
+}
+
+}
+
+
 @media screen and (max-width: 600px) {
     .randomizer-button {
         width: 90vw;
@@ -169,7 +198,7 @@
         min-height: 5.5rem;
     }
 
-    .christmas-special-title {
+    .christmas-special-title,.no-episode-selected {
         font-size: 1.48rem;
         margin-bottom: 0;
         

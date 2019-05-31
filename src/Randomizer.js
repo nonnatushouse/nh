@@ -1,10 +1,12 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect, useCallback } from "react";
 import "./Randomizer.css";
-import { getSeasons, getEpisodes, getSelection } from "./Seasons";
+import { getSeasons, getEpisodes} from "./Seasons";
 import Season from "./Season";
 import classNames from "classnames";
 import "./Info.css";
 import RandomizerSelector from "./RandomizerSelector";
+import {helperVar} from "./helper"
+import {useEventListener} from "./useEventListener";
 
 
 const initialState = {
@@ -18,12 +20,29 @@ const EPISODE_TOGGLE = "EPISODE-TOGGLE";
 const ALL_TOGGLE = "ALL-TOGGLE";
 const RANDOMIZE = "RANDOMIZE";
 
-const SELECTOR = "SELECTOR";
-const CHRISTMAS_SPECIALS = "CHRISTMAS_SPECIALS";
-const SERIES_FINALE = "SERIES_FINALE";
+const NO_EPISODE_SELECTED = "No episode selected";
+
+const SELECTED_EPISODES_KEY = "SELECTED_EPISODES"
 
 export default function Randomizer() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(sneakyReducer, initialState);
+  
+  const handler = useCallback(() => {
+    try {
+    const selectedEpsString = window.localStorage.getItem(SELECTED_EPISODES_KEY);
+    if (!selectedEpsString) {return}
+    const selectedEpisodes = JSON.parse(selectedEpsString);
+    dispatch({type: helperVar.SELECTOR, selector: selectedEpisodes});
+  }
+    catch(error) {
+    }
+  } , [dispatch] )
+  useEventListener("storage", handler)
+  useEffect(() => { handler() } , [handler] )
+
+
+
+
 
   const allSeasons = state.seasons.map(season => {
     const seasonWithEpisodes = {
@@ -34,6 +53,7 @@ export default function Randomizer() {
     };
     return (
       <Season
+        key={season.id}
         season={seasonWithEpisodes}
         seasonToggle={() =>
           dispatch({ type: SEASON_TOGGLE, seasonToggled: season })
@@ -45,21 +65,14 @@ export default function Randomizer() {
     );
   });
 
-  function toggleAll() {
-    dispatch({ type: ALL_TOGGLE });
-  }
+  const toggleAll = useCallback(() => dispatch({ type: ALL_TOGGLE }), [dispatch]);
+  const randomize = useCallback(() => dispatch({ type: RANDOMIZE }), [dispatch]);
+  const selector = useCallback((s) => dispatch({ type: helperVar.SELECTOR, selector: s }), [dispatch]);
 
-  function randomize() {
-    dispatch({ type: RANDOMIZE });
-  }
-
-  function selector(s) {
-    console.log(s);
-    dispatch({ type: SELECTOR, selector: s });
-  }
 
   const titleClassName = classNames("randomizer-result-text", {
-    "christmas-special-title": state.randomEpisode.includes("Christmas Special")
+    "christmas-special-title": state.randomEpisode.includes("Christmas Special"),
+    "no-episode-selected": state.randomEpisode.includes(NO_EPISODE_SELECTED)
   });
 
   return (
@@ -70,7 +83,7 @@ export default function Randomizer() {
           Can't decide what episode to watch? Let the randomizer decide for you!
           Just check the episodes you have available or would like to choose
           from below, and then click the "Randomize" button. A random episode
-          will be suggested in the box below!
+          will be suggested below!
         </div>
         <div className="randomizer-result">
           <div className={titleClassName}>{state.randomEpisode}</div>
@@ -97,8 +110,6 @@ function reducer(state, action) {
   switch (action.type) {
     case SEASON_TOGGLE:
       action.seasonToggled.episodes.forEach(id => {
-        console.log("ID");
-        console.log(id);
         const ep = state.episodes.find(ep => ep.id === id);
         if (!ep.isChecked) {
           allSelected = false;
@@ -149,15 +160,15 @@ function reducer(state, action) {
             ? selectedEpisodes[
                 Math.floor(Math.random() * selectedEpisodes.length)
               ].title
-            : "No episode selected"
+            : NO_EPISODE_SELECTED
       };
 
-    case SELECTOR:
-      const selected = getSelection(action.selector);
+    case helperVar.SELECTOR:
+
       return {
         ...state,
         episodes: state.episodes.map(ep =>
-          selected.includes(ep.id)
+          action.selector.includes(ep.id)
             ? { ...ep, isChecked: true }
             : { ...ep, isChecked: false }
         )
@@ -166,4 +177,16 @@ function reducer(state, action) {
     default:
       throw new Error("Unknown action" + action.type);
   }
+
+}
+
+function sneakyReducer(state, action) {
+  const newState = reducer(state, action);
+  //Sneaky stuff
+  const checkedEpisodes = newState.episodes.filter(ep => ep.isChecked).map(ep => ep.id);
+
+  window.localStorage.setItem(SELECTED_EPISODES_KEY, JSON.stringify(checkedEpisodes));
+
+  return newState;
+
 }
