@@ -59,35 +59,51 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
           </NavLink>
         </MenuItem>
 
-        <SubMenu key="misc" title={"Misc" + expandIcon} className="mysubmenu mainmenu">
+        <SubMenu
+          key="misc"
+          title={"Misc" + expandIcon}
+          className="mysubmenu mainmenu"
+        >
           {/* Drinking Game */}
           <MenuItem key="drinking-game" className="mymenuitem mainmenu">
-          <NavLink
-            to="/drinking-game"
-            className="menu-link"
-            activeClassName="selected"
-            onClick={toggleMenu}
-          >
-            Drinking Game
-          </NavLink>
+            <NavLink
+              to="/drinking-game"
+              className="menu-link"
+              activeClassName="selected"
+              onClick={toggleMenu}
+            >
+              Drinking Game
+            </NavLink>
           </MenuItem>
 
           {/* Episode Randomizer */}
           <MenuItem key="episode-randomizer" className="mymenuitem mainmenu">
-          <NavLink
-            to="/episode-randomizer"
-            className="menu-link"
-            activeClassName="selected"
-            onClick={toggleMenu}
-          >
-            Episode Randomizer
-          </NavLink>
+            <NavLink
+              to="/episode-randomizer"
+              className="menu-link"
+              activeClassName="selected"
+              onClick={toggleMenu}
+            >
+              Episode Randomizer
+            </NavLink>
+          </MenuItem>
+
+          {/* Bingo */}
+          <MenuItem key="bingo" className="mymenuitem mainmenu">
+            <NavLink
+              to="/bingo"
+              className="menu-link"
+              activeClassName="selected"
+              onClick={toggleMenu}
+            >
+              Bingo
+            </NavLink>
           </MenuItem>
         </SubMenu>
 
         {/* Contact */}
         <MenuItem key="contact" className="mymenuitem mainmenu">
-        <NavLink
+          <NavLink
             to="/contact"
             className="menu-link"
             activeClassName="selected"

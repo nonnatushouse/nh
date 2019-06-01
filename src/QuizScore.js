@@ -15,9 +15,12 @@ export default function QuizScore({ questions, givenAnswers }) {
   const perCentage = Math.round((correctAnswers * 100) / noQ);
   const circleFillIn = 820 - 820 * (correctAnswers / noQ);
 
+
+  const scoreText = (perCentage >= 50 ? "Well done! " : "")  + "You scored:"
+
   return (
 <>
-<div className="info-big-title">Well done! You scored:</div>
+<div className="info-big-title">{scoreText} </div>
 <svg className="circle" viewBox="0 0 350 350">
       <path
         className="score-path-br"

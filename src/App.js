@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import DrinkingGame from "./DrinkingGame";
 import Randomizer from "./Randomizer";
 import RcMenu from "./RcMenu";
+import Bingo from "./Bingo";
 
 class App extends Component {
   state = { menuIsExpanded: false };
@@ -38,6 +39,7 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route path="/drinking-game" component={DrinkingGame} />
           <Route path="/episode-randomizer" component={Randomizer} />
+          <Route path="/bingo" component={Bingo} />
         </div>
       </>
     );

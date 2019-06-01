@@ -66,7 +66,7 @@
     background-color: #ffd68a;
     min-width: 1rem;
     max-width: 10rem;
-    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    box-shadow: .1rem .1rem .2rem rgba(99, 83, 83, 0.5);
     cursor: pointer;
 }
 

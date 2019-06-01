@@ -1,0 +1,213 @@
+
+
+.board {
+    display: grid;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    max-width: 95vw;
+    max-height: calc(98vh - 5rem);
+    width: 40rem;
+    height: 40rem;
+}
+
+
+.board-tile{
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: #f8d697;
+
+}
+
+.item{
+    position: absolute;
+
+    background-color: #F7C66A;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    position: relative;
+}
+
+.on-board{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 .2rem;
+
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    resize: none;
+}
+
+.checked::before{
+    position: static;
+    content: "✖";
+}
+
+.checked{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7rem;
+    color: #ec9c0975;
+}
+
+.bingo-play-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.bingo-edit-container {
+    display: flex;
+    width: 90vw;
+
+    
+}
+
+.bingo-play-edit-toggle-button {
+    margin: .1rem 0;
+    background-color: #F7C66A ;
+    min-width: 1rem;
+    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+    height: 1.5rem;
+    width: 100%;
+    margin-bottom: .5rem;
+    max-width: 95vw;
+    width: 5rem;
+    align-self: center
+}
+.bingo-pool-container{
+    max-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.bingo-pool{
+    flex-grow: 1;
+    float: left;
+    background-color: #f8d697;
+    padding: 10px;
+    overflow-y: auto;
+    margin-right: 2rem;
+
+    min-width: 10rem;
+    height: 100%;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+}
+.bingo-edit-board-container{
+    margin-left: 1rem;
+}
+
+.bingo-board-size{
+    display: flex;
+}
+
+.board-size-buttons{
+    display: flex;
+}
+
+.board-size-button{
+    margin-left: 1rem;
+    padding: .4rem;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    background-color: #F7C66A;
+    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.clear-board-button {
+    margin-top: 1rem;
+    padding: .4rem;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    background-color: #F7C66A;
+    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.in-pool{
+    margin-top: .5rem;
+    padding: 0 .4rem;
+    display: flex;
+}
+
+.bingo-remove-button{
+    font-size: 1.7rem;
+    font-weight: bold;
+    line-height: .9;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    vertical-align: middle;
+    opacity: 0;
+    transition: opacity 50ms ease-in-out;
+    cursor: pointer;
+    color: rgb(163, 37, 37);
+    width: 2rem;
+}
+
+.in-pool:hover .bingo-remove-button{
+    opacity: .5;
+}
+
+.in-pool .bingo-remove-button:hover{
+    opacity: 1;
+}
+
+.bingo-item-title{
+    flex-grow: 1;
+}
+.new-bingo-item-form{
+    margin-bottom: .5rem;
+    display: flex;
+    margin-right: 2rem;
+}
+.new-bingo-item-text-input{
+    height: 1.6rem;
+    flex-grow: 1;
+}
+
+.bingo-edit-container .checked {
+    display: none;
+}
+.new-bingo-item-add-button{
+    width: 4rem;
+    margin-left: 1rem;
+    background-color: #F7C66A ;
+    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    border: none;
+    cursor: pointer;
+
+
+}
+
+.board-generator-error-message{
+    background-color: red;
+    color: white;
+    font-size: 5rem;
+}

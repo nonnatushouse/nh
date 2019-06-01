@@ -20,3 +20,8 @@ code {
 * {
   box-sizing: border-box;
 }
+
+*::selection {
+  color: rgb(41, 59, 52);
+  background-color: rgb(250, 225, 0);
+}
