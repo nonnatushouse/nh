@@ -210,6 +210,11 @@
     font-size: 5rem;
 }
 
+.dragOver {
+    background-color: #ffa600be;
+    transition: background-color .3s ease-out;
+}
+
 @media screen and (max-width: 1000px) {
     .bingo-edit-container{
         flex-direction: column;

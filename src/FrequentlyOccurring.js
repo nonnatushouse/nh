@@ -78,7 +78,7 @@ export function getFrequentlyOccurringEvents() {
         {id:"11", isChecked:false,placement:"pool", title:"Board game is played at Nonnatus House", tags:ALL},
         {id:"12", isChecked:false,placement:"pool", title:"Jenny is disgusted by something", tags:_JENNY},
         {id:"13", isChecked:false,placement:"pool", title:"Father attends birth", tags:ALL},
-        {id:"14", isChecked:false,placement:"pool", title:"Nuns sing", tags:ALL},
+        {id:"14", isChecked:false,placement:"pool", title:"The nuns sing", tags:ALL},
         {id:"15", isChecked:false,placement:"pool", title:"Song is played on the radio", tags:ALL},
         {id:"16", isChecked:false,placement:"pool", title:"There's a montage", tags:ALL},
         {id:"17", isChecked:false,placement:"pool", title:"\"Nonnatus House, midwife speaking!\"", tags:ALL},
@@ -91,6 +91,7 @@ export function getFrequentlyOccurringEvents() {
         {id:"24", isChecked:false,placement:"pool", title:"Patsy and Delia are almost caught", tags:_DELIA},
         {id:"25", isChecked:false,placement:"pool", title:"\"I can't do it!\"", tags:ALL},
         {id:"26", isChecked:false,placement:"pool", title:"Episode made me cry", tags:ALL},
+        {id:"27", isChecked:false,placement:"pool", title:"Undiagnosed twins", tags:ALL},
         // {id:"", isChecked:false,placement:"pool", title:"", tags:[]},
 
 

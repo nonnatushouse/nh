@@ -14,7 +14,8 @@ export default function BingoEdit({
   createNewBingoItem,
   changeBoardSize,
   clearBoard,
-  randomizeBoard
+  randomizeBoard,
+  placement
 }) {
   return (
     <div className="bingo-edit-container">
@@ -28,6 +29,7 @@ export default function BingoEdit({
           onDragStart(e, id);
         }}
         onItemClick={onItemClick}
+        placement={placement}
       />
       <BingoPool
         className="bingo-pool"

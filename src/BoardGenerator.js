@@ -1,6 +1,7 @@
 import React from "react";
 import "./Bingo.css";
 import BingoItem from "./BingoItem";
+import classNames from "classnames";
 
 export default function BoardGenerator({
   boardWidth,
@@ -9,7 +10,8 @@ export default function BoardGenerator({
   onDragOver,
   onDrop,
   FOElist,
-  onItemClick
+  onItemClick,
+  placement
 }) {
   if (boardWidth === 0 || boardHeight === 0) {
     return (
@@ -27,25 +29,27 @@ export default function BoardGenerator({
   for (h = 0; h < boardHeight; h++) {
     for (w = 0; w < boardWidth; w++) {
       const id = "" + w.toString() + "," + h.toString();
+      const cl1 = classNames("on-board", {"dragOver":placement === id})
       const item = FOElist.find(item => item.placement === id) ? (
         <BingoItem
           onItemClick={onItemClick}
           key={id}
           item={FOElist.filter(item => item.placement === id)[0]}
           onDragStart={onDragStart}
-          where="on-board"
+          where={cl1}
           onDrop={e => onDrop(e, id)}
-          onDragOver={onDragOver}
+          onDragOver={(ev) => onDragOver(ev, id)}
         />
       ) : null;
 
+      const cl2 = classNames("board-tile", {"dragOver":placement === id})
       const boardTile =
         item === null ? (
           <div
             key={id}
-            className="board-tile"
+            className= {cl2}
             onDrop={e => onDrop(e, id)}
-            onDragOver={onDragOver}
+            onDragOver={(ev) => onDragOver(ev, id)}
             draggable={false}
           >
             {/* {item} */}

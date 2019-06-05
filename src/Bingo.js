@@ -25,10 +25,13 @@ const NEW_BINGO_ITEM = "NEW_BINGO_ITEM";
 const REMOVE_BINGO_ITEM = "REMOVE_BINGO_ITEM";
 const RANDOMIZE_BOARD = "RANDOMIZE_BOARD";
 
+const UPDATE_PLACEMENT = "UPDATE_PLACEMENT";
+
 const initialState = {
   FOElist: getFrequentlyOccurringEvents(),
   boardSize: BOARD_SIZE,
-  gameState: GAME_STATE_PLAY
+  gameState: GAME_STATE_PLAY,
+  dragOverPlacement: null
 };
 
 export default function Bingo() {
@@ -55,9 +58,12 @@ export default function Bingo() {
     dispatch({ type: ON_DROP, ev, placement });
   }
 
-  function onDragOver(ev) {
+  function onDragOver(ev, placement) {
     ev.preventDefault();
     ev.stopPropagation();
+    if (state.dragOverPlacement !== placement) {
+    dispatch({type:UPDATE_PLACEMENT, placement})
+  }
   }
 
   function onDragStart(ev, id) {
@@ -134,6 +140,7 @@ export default function Bingo() {
             changeBoardSize={changeBoardSize}
             clearBoard={clearBoard}
             randomizeBoard={randomizeBoard}
+            placement={state.dragOverPlacement}
           />
         )}
       </div>
@@ -166,7 +173,7 @@ function reducer(state, action) {
             : { ...item, placement: newPlace };
         });
 
-        return { ...state, FOElist: newFOE };
+        return { ...state, FOElist: newFOE, dragOverPlacement:null };
       } catch (error) {}
 
       return { ...state };
@@ -213,7 +220,6 @@ function reducer(state, action) {
 
     case PLAY_CLICK:
       const newFOE = state.FOElist.map(item => {
-        console.log(PLAY_CLICK, item.isChecked);
         return item.id === action.id
           ? { ...item, isChecked: !item.isChecked }
           : { ...item };
@@ -266,8 +272,6 @@ function reducer(state, action) {
           if (tmpFOElist.length === 0) {
             break;
           }
-          console.log("placement", placement);
-          console.log(randomizedBoard);
           let randomItem =
             tmpFOElist[Math.floor(Math.random() * tmpFOElist.length)];
           randomItem.placement = placement;
@@ -282,6 +286,9 @@ function reducer(state, action) {
           : { ...item, placement: "pool", isChecked: false };
       });
       return { ...state, FOElist: newFOElist3 };
+
+    case UPDATE_PLACEMENT:
+      return {...state, dragOverPlacement:action.placement}
     default:
       return { ...state };
   }
