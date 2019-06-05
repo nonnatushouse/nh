@@ -222,15 +222,19 @@
 
 @media screen and (max-width: 600px) {
     .board {
-        max-width: 95vw;
+        min-width: 95vw;
         min-height: 95vw;
         height: auto;
+        width: auto;
+
     }
 
     .checked {
         color: #ec9c0975;
+        opacity: 1;
     }
     .bingo-remove-button{
         color: rgb(163, 37, 37);
+        opacity: 1;
     }
 }
