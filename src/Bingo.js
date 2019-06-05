@@ -23,6 +23,7 @@ const CLEAR_BOARD = "CLEAR_BOARD";
 
 const NEW_BINGO_ITEM = "NEW_BINGO_ITEM";
 const REMOVE_BINGO_ITEM = "REMOVE_BINGO_ITEM";
+const RANDOMIZE_BOARD = "RANDOMIZE_BOARD";
 
 const initialState = {
   FOElist: getFrequentlyOccurringEvents(),
@@ -89,6 +90,10 @@ export default function Bingo() {
   function removeBingoItem(id) {
     dispatch({ type: REMOVE_BINGO_ITEM, id });
   }
+
+  function randomizeBoard() {
+    dispatch({ type: RANDOMIZE_BOARD });
+  }
   function dummy(e, id) {}
 
   const buttonText = state.gameState === GAME_STATE_EDIT ? "Play" : "Edit";
@@ -103,6 +108,13 @@ export default function Bingo() {
           onClick={toggleGameState}
         >
           {buttonText}
+        </button>
+        <button
+          type="button"
+          className="bingo-play-edit-toggle-button"
+          onClick={randomizeBoard}
+        >
+          Randomize
         </button>
 
         {state.gameState === GAME_STATE_PLAY ? (
@@ -167,7 +179,6 @@ export default function Bingo() {
               <div className="clear-board-button" onClick={clearBoard}>
                 Clear Board
               </div>
-              
             </div>
           </div>
         )}
@@ -202,8 +213,7 @@ function reducer(state, action) {
         });
 
         return { ...state, FOElist: newFOE };
-      } catch (error) {
-      }
+      } catch (error) {}
 
       return { ...state };
 
@@ -280,15 +290,42 @@ function reducer(state, action) {
         tags: []
       };
       let newStateFOE = state.FOElist.map(item => item);
-      console.log(NEW_BINGO_ITEM, newStateFOE);
       newStateFOE.unshift(newItem);
-      console.log(NEW_BINGO_ITEM, newStateFOE);
       return { ...state, FOElist: newStateFOE };
 
     case REMOVE_BINGO_ITEM:
-      const newFOElist3 = state.FOElist.filter(item => item.id !== action.id);
-      console.log(newFOElist3);
+      return {
+        ...state,
+        FOElist: state.FOElist.filter(item => item.id !== action.id)
+      };
 
+    case RANDOMIZE_BOARD:
+      let tmpFOElist = state.FOElist.map(item => {
+        return { ...item, placement: "pool", isChecked: false };
+      });
+      let he;
+      let wi;
+      let randomizedBoard = [];
+      for (he = 0; he < state.boardSize; he++) {
+        for (wi = 0; wi < state.boardSize; wi++) {
+          const placement = "" + wi.toString() + "," + he.toString();
+          if (tmpFOElist.length === 0) {
+            break;
+          }
+          console.log("placement", placement)
+          console.log(randomizedBoard);
+          let randomItem =
+            tmpFOElist[Math.floor(Math.random() * tmpFOElist.length)];
+          randomItem.placement = placement;
+          randomizedBoard.push(randomItem);
+          const FOEfilter = tmpFOElist.filter(item => item !== randomItem);
+          tmpFOElist = FOEfilter;
+        }
+      }
+      const newFOElist3 = state.FOElist.map(item => {
+        return randomizedBoard.find(i => i.id === item.id) ? randomizedBoard.find(i => i.id == item.id) : {...item, placement:"pool", isChecked: false};
+      })
+      console.log(newFOElist3)
       return { ...state, FOElist: newFOElist3 };
     default:
       return { ...state };
