@@ -31,7 +31,7 @@ export default function BingoPool({
         onDrop(e, "pool");
       }}
     >
-      <BingoNewItem createNewBingoItem={createNewBingoItem} />
+      <BingoNewItem  createNewBingoItem={createNewBingoItem} />
       <div className="bingo-pool">{itemList}</div>
     </div>
   );

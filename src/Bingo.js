@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useCallback } from "react";
-import BingoBoard from "./BingoBoard";
 import "./Bingo.css";
-import BingoPool from "./BingoPool";
+import BingoPlay from "./BingoPlay";
+import BingoEdit from "./BingoEdit";
 import { getFrequentlyOccurringEvents } from "./FrequentlyOccurring";
 
 const BOARD_SIZE = 3;
@@ -109,17 +109,9 @@ export default function Bingo() {
         >
           {buttonText}
         </button>
-        <button
-          type="button"
-          className="bingo-play-edit-toggle-button"
-          onClick={randomizeBoard}
-        >
-          Randomize
-        </button>
 
         {state.gameState === GAME_STATE_PLAY ? (
-          <div className="bingo-play-container">
-            <BingoBoard
+            <BingoPlay className="bingo-play-container"
               boardSize={state.boardSize}
               onDragOver={onDragOver}
               onDrop={onDrop}
@@ -127,60 +119,22 @@ export default function Bingo() {
               FOElist={state.FOElist.filter(item => item.placement !== "pool")}
               onItemClick={onPlayClick}
             />
-          </div>
         ) : (
-          <div className="bingo-edit-container">
-            <BingoPool
-              className="bingo-pool"
-              FOElist={state.FOElist.filter(item => item.placement === "pool")}
-              onDragStart={(e, id) => {
-                onDragStart(e, id);
-              }}
-              onDragOver={onDragOver}
-              onDrop={onDrop}
-              onItemClick={onEditClick}
-              removeBingoItem={removeBingoItem}
-              createNewBingoItem={createNewBingoItem}
-            />
-            <BingoBoard
-              boardSize={state.boardSize}
-              onDragOver={onDragOver}
-              onDrop={onDrop}
-              FOElist={state.FOElist.filter(item => item.placement !== "pool")}
-              onDragStart={(e, id) => {
-                onDragStart(e, id);
-              }}
-              onItemClick={onEditClick}
-            />
-            <div className="bingo-edit-board-container">
-              <div className="bingo-board-size">
-                <div className="info-title">Board Size</div>
-                <div className="board-size-buttons">
-                  <div
-                    className="board-size-button"
-                    onClick={() => changeBoardSize(3)}
-                  >
-                    3x3
-                  </div>
-                  <div
-                    className="board-size-button"
-                    onClick={() => changeBoardSize(4)}
-                  >
-                    4x4
-                  </div>
-                  <div
-                    className="board-size-button"
-                    onClick={() => changeBoardSize(5)}
-                  >
-                    5x5
-                  </div>
-                </div>
-              </div>
-              <div className="clear-board-button" onClick={clearBoard}>
-                Clear Board
-              </div>
-            </div>
-          </div>
+          <BingoEdit
+            FOElist={state.FOElist.map(item => item)}
+            boardSize={state.boardSize}
+            onDragOver={onDragOver}
+            onDrop={onDrop}
+            onItemClick={onEditClick}
+            removeBingoItem={removeBingoItem}
+            createNewBingoItem={createNewBingoItem}
+            onDragStart={(e, id) => {
+              onDragStart(e, id);
+            }}
+            changeBoardSize={changeBoardSize}
+            clearBoard={clearBoard}
+            randomizeBoard={randomizeBoard}
+          />
         )}
       </div>
     </>
@@ -312,7 +266,7 @@ function reducer(state, action) {
           if (tmpFOElist.length === 0) {
             break;
           }
-          console.log("placement", placement)
+          console.log("placement", placement);
           console.log(randomizedBoard);
           let randomItem =
             tmpFOElist[Math.floor(Math.random() * tmpFOElist.length)];
@@ -323,9 +277,10 @@ function reducer(state, action) {
         }
       }
       const newFOElist3 = state.FOElist.map(item => {
-        return randomizedBoard.find(i => i.id === item.id) ? randomizedBoard.find(i => i.id == item.id) : {...item, placement:"pool", isChecked: false};
-      })
-      console.log(newFOElist3)
+        return randomizedBoard.find(i => i.id === item.id)
+          ? randomizedBoard.find(i => i.id === item.id)
+          : { ...item, placement: "pool", isChecked: false };
+      });
       return { ...state, FOElist: newFOElist3 };
     default:
       return { ...state };

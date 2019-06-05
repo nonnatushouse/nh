@@ -12,8 +12,12 @@ export default function BoardGenerator({
   onItemClick
 }) {
   if (boardWidth === 0 || boardHeight === 0) {
-    return <div className="board-generator-error-message">BoardGenerator needs width > 0 and height > 0</div>;
-  } 
+    return (
+      <div className="board-generator-error-message">
+        BoardGenerator needs width > 0 and height > 0
+      </div>
+    );
+  }
 
   let h;
   let w;
@@ -35,23 +39,34 @@ export default function BoardGenerator({
         />
       ) : null;
 
-      const boardTile = ( item === null ?
-        <div
-          key={id}
-          className="board-tile"
-          onDrop={e => onDrop(e, id)}
-          onDragOver={onDragOver}
-          draggable={false}
-        >
-          {/* {item} */}
-        </div> : item
-      );
+      const boardTile =
+        item === null ? (
+          <div
+            key={id}
+            className="board-tile"
+            onDrop={e => onDrop(e, id)}
+            onDragOver={onDragOver}
+            draggable={false}
+          >
+            {/* {item} */}
+          </div>
+        ) : (
+          item
+        );
 
       board.push(boardTile);
     }
-
   }
 
-
-  return <div className="board" style={{ gridTemplateColumns: `repeat(${boardWidth}, 1fr)`, gridTemplateRows: `repeat(${boardHeight}, 1fr)` }} >{board}</div>;
+  return (
+    <div
+      className="board"
+      style={{
+        gridTemplateColumns: `repeat(${boardWidth}, 1fr)`,
+        gridTemplateRows: `repeat(${boardHeight}, 1fr)`
+      }}
+    >
+      {board}
+    </div>
+  );
 }

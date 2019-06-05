@@ -5,12 +5,12 @@
     border: 1px;
     border-color: black;
     border-style: solid;
-    max-width: 95vw;
-    max-height: calc(98vh - 5rem);
+
     width: 40rem;
     height: 40rem;
+    min-width: 10rem;
+    min-height: 10rem;
 }
-
 
 .board-tile{
     border: 1px;
@@ -22,7 +22,6 @@
 
 .item{
     position: absolute;
-
     background-color: #F7C66A;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -38,7 +37,6 @@
     align-items: center;
     text-align: center;
     padding: 0 .2rem;
-
     border: 1px;
     border-color: black;
     border-style: solid;
@@ -70,9 +68,9 @@
 
 .bingo-edit-container {
     display: flex;
-    width: 90vw;
+    width: 95vw;
+    justify-content: center;
 
-    
 }
 
 .bingo-play-edit-toggle-button {
@@ -92,9 +90,13 @@
 }
 .bingo-pool-container{
     max-height: 40rem;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    min-width: 10rem;
+    margin-left: 1rem;
+
 }
 .bingo-pool{
     flex-grow: 1;
@@ -102,16 +104,28 @@
     background-color: #f8d697;
     padding: 10px;
     overflow-y: auto;
-    margin-right: 2rem;
-
-    min-width: 10rem;
     height: 100%;
     border: 2px;
     border-color: black;
     border-style: solid;
 }
 .bingo-edit-board-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.bingo-edit-button{
     margin-left: 1rem;
+    padding: .4rem;
+    font-size: 1rem;
+    background-color: #F7C66A;
+    border: none;
+    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .bingo-board-size{
@@ -122,25 +136,10 @@
     display: flex;
 }
 
-.board-size-button{
-    margin-left: 1rem;
+.bingo-edit-button {
+    margin-bottom: 1rem;
     padding: .4rem;
-    font-size: 1.2rem;
-    height: 2.5rem;
-    background-color: #F7C66A;
-    box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
-    cursor: pointer;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-
-.clear-board-button {
-    margin-top: 1rem;
-    padding: .4rem;
-    font-size: 1.2rem;
-    height: 2.5rem;
+    font-size: 1rem;
     background-color: #F7C66A;
     box-shadow: .1rem .1rem .2rem rgba(22, 22, 22, .5);
     cursor: pointer;
@@ -185,7 +184,6 @@
 .new-bingo-item-form{
     margin-bottom: .5rem;
     display: flex;
-    margin-right: 2rem;
 }
 .new-bingo-item-text-input{
     height: 1.6rem;
@@ -210,4 +208,29 @@
     background-color: red;
     color: white;
     font-size: 5rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .bingo-edit-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .bingo-pool-container{
+        margin: 2rem 0 1rem 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .board {
+        max-width: 95vw;
+        min-height: 95vw;
+        height: auto;
+    }
+
+    .checked {
+        color: #ec9c0975;
+    }
+    .bingo-remove-button{
+        color: rgb(163, 37, 37);
+    }
 }
