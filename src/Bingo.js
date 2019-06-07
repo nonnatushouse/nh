@@ -122,7 +122,7 @@ export default function Bingo() {
           {buttonText}
         </button>
 
-        {state.gameState !== GAME_STATE_PLAY ? (
+        {state.gameState === GAME_STATE_PLAY ? (
             <BingoPlay className="bingo-play-container"
               boardSize={state.boardSize}
               onDragOver={onDragOver}

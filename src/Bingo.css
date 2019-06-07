@@ -85,14 +85,14 @@
   align-self: center;
 }
 .bingo-pool-container {
-    max-height: 40rem;
-    max-width: 40rem;
-    display: flex;
-    flex-direction: column;
-    /* flex-grow: 1; */
-    width: 25rem;
-    margin-left: 1rem;
-  }
+  max-height: 40rem;
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
+  width: 25rem;
+  margin-left: 1rem;
+}
 .bingo-pool {
   flex-grow: 1;
   float: left;
@@ -108,11 +108,13 @@
   display: flex;
   flex-direction: column;
   width: 20rem;
-}
-
-.bingo-edit-button {
-  max-width: 9rem;
   margin-left: 1rem;
+  justify-content: left;
+}
+.bingo-title{
+  text-align: left;
+}
+.bingo-edit-button {
   margin-bottom: 1rem;
   padding: 0.4rem;
   font-size: 1rem;
@@ -127,10 +129,13 @@
 
 .bingo-board-size {
   display: flex;
+  flex-direction: column;
+  max-width: 8rem;
 }
 
 .board-size-buttons {
   display: flex;
+  justify-content: space-between;
 }
 
 .in-pool {
@@ -198,8 +203,8 @@
 }
 
 .bingo-filter-button {
-  margin-left: .5rem;
-  margin-bottom: .5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 0.1rem 0.2rem;
   font-size: 1rem;
   background-color: #f7c66a;
@@ -213,8 +218,8 @@
 }
 
 .filter-unchecked {
-    background-color: wheat;
-  }
+  background-color: wheat;
+}
 
 .filter-options {
   display: flex;
@@ -223,6 +228,9 @@
   flex-flow: wrap;
 }
 @media screen and (max-width: 1000px) {
+  .bingo-title{
+    text-align: center;
+  }
   .bingo-edit-container {
     flex-direction: column;
     align-items: center;
@@ -230,12 +238,28 @@
   .bingo-pool-container {
     margin: 2rem 0 1rem 0;
   }
+
+  .bingo-edit-board-container, 
+  .filter-options {
+    width: 98vw;
+    max-width: 98vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bingo-pool-container{
+    max-height: 20rem;
+  }
+  .board-size-buttons {
+    min-width: 8rem;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
-    .bingo-pool-container{
-        width: 95%
-    }
+  .bingo-pool-container {
+    width: 95%;
+  }
   .board {
     min-width: 95vw;
     min-height: 95vw;
@@ -250,9 +274,5 @@
   .bingo-remove-button {
     color: rgb(163, 37, 37);
     opacity: 1;
-  }
-  .bingo-edit-board-container, .filter-options {
-    width: 98vw;
-    max-width: 98vw;
   }
 }

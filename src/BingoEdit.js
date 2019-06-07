@@ -3,7 +3,6 @@ import BingoPool from "./BingoPool";
 import BoardGenerator from "./BoardGenerator";
 import BingoFilter from "./BingoFilter";
 
-
 export default function BingoEdit({
   boardSize,
   onDragOver,
@@ -45,49 +44,64 @@ export default function BingoEdit({
         createNewBingoItem={createNewBingoItem}
       />
       <div className="bingo-edit-board-container">
-        <div className="info-title">Edit Board</div>
+        <div className="info-title bingo-title">Edit Board</div>
         <div className="bingo-board-size">
           <div className="board-size-buttons">
-
-            <div className="bingo-edit-button"
-              onClick={() => changeBoardSize(3)}>3x3</div>
-            <div className="bingo-edit-button"
-              onClick={() => changeBoardSize(4)}> 4x4 </div>
-            <div className="bingo-edit-button"
-              onClick={() => changeBoardSize(5)}> 5x5 </div>
+            <div
+              className="bingo-edit-button"
+              onClick={() => changeBoardSize(3)}
+            >
+              3x3
+            </div>
+            <div
+              className="bingo-edit-button"
+              onClick={() => changeBoardSize(4)}
+            >
+              {" "}
+              4x4{" "}
+            </div>
+            <div
+              className="bingo-edit-button"
+              onClick={() => changeBoardSize(5)}
+            >
+              {" "}
+              5x5{" "}
+            </div>
           </div>
+          <div className="bingo-edit-button" onClick={clearBoard}>
+            Clear Board
+          </div>
+          <div className="bingo-edit-button" onClick={randomizeBoard}>
+            Randomize
+          </div>
+        </div>
 
-        </div>
-        <div className="bingo-edit-button" onClick={clearBoard}>
-          Clear Board
-        </div>
-        <div className="bingo-edit-button" onClick={randomizeBoard}>
-          Randomize
-        </div>
-
-        <div className="info-title">Filter Items</div>
+        <div className="info-title bingo-title">Filter Items</div>
         <div className="board-size-buttons">
-        <BingoFilter updateFilter={updateFilter} filter={filter} />
-
+          <BingoFilter updateFilter={updateFilter} filter={filter} />
         </div>
       </div>
     </div>
   );
 }
 
-
 function filterItems(FOElist, filter) {
-  const filteredFOE =  FOElist.filter(item => {
+  const filteredFOE = FOElist.filter(item => {
     // console.log("item",item)
-    if (item.placement !== "pool") { return false}
-    if (filter.length === 0) { return true}
+    if (item.placement !== "pool") {
+      return false;
+    }
+    if (filter.length === 0) {
+      return true;
+    }
     for (let tag in item.tags) {
       // console.log("tag",item.tags[tag])
-      if (filter.includes(item.tags[tag])) {return true}
+      if (filter.includes(item.tags[tag])) {
+        return true;
+      }
     }
     return false;
   });
-
 
   return filteredFOE;
 }
