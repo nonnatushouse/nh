@@ -1,7 +1,7 @@
 .youtube-page-container{
     display: flex;
     flex-direction: column;
-    max-width: 98vw;
+    max-width: 40vw;
 }
 
 .video-frame{
@@ -18,3 +18,12 @@
     margin-bottom: .5rem;
     margin-top: .0rem;
 }
+
+
+
+@media screen and (max-width: 600px) {
+    .youtube-page-container{
+        max-width: 95vw;
+    }
+}
+  

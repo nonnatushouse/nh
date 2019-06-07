@@ -15,7 +15,7 @@ export default function VideoPage() {
         src="https://www.youtube.com/embed/playlist?list=PLUe7aTsP6T8JOZLwzAH3mA4vLxPcsjHqK"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen='allowFullScreen'
       />
       <div className="info-title youtube-text">Interviews</div>
       <div className="info-text youtube-text">
@@ -27,7 +27,7 @@ export default function VideoPage() {
         src="https://www.youtube.com/embed/videoseries?list=PLUe7aTsP6T8JGFZrXq-TkkwlwT52JuuHr"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen='allowFullScreen'
       />
     </div>
   );
