@@ -26,12 +26,14 @@ const REMOVE_BINGO_ITEM = "REMOVE_BINGO_ITEM";
 const RANDOMIZE_BOARD = "RANDOMIZE_BOARD";
 
 const UPDATE_PLACEMENT = "UPDATE_PLACEMENT";
+const UPDATE_FILTER = "UPDATE_FILTER";
 
 const initialState = {
   FOElist: getFrequentlyOccurringEvents(),
   boardSize: BOARD_SIZE,
   gameState: GAME_STATE_PLAY,
-  dragOverPlacement: null
+  dragOverPlacement: null,
+  filter: []
 };
 
 export default function Bingo() {
@@ -100,6 +102,10 @@ export default function Bingo() {
   function randomizeBoard() {
     dispatch({ type: RANDOMIZE_BOARD });
   }
+
+  function updateFilter(filterItem) {
+    dispatch({ type: UPDATE_FILTER, filterItem})
+  }
   function dummy(e, id) {}
 
   const buttonText = state.gameState === GAME_STATE_EDIT ? "Play" : "Edit";
@@ -116,7 +122,7 @@ export default function Bingo() {
           {buttonText}
         </button>
 
-        {state.gameState === GAME_STATE_PLAY ? (
+        {state.gameState !== GAME_STATE_PLAY ? (
             <BingoPlay className="bingo-play-container"
               boardSize={state.boardSize}
               onDragOver={onDragOver}
@@ -141,6 +147,8 @@ export default function Bingo() {
             clearBoard={clearBoard}
             randomizeBoard={randomizeBoard}
             placement={state.dragOverPlacement}
+            filter={state.filter}
+            updateFilter={updateFilter}
           />
         )}
       </div>
@@ -239,7 +247,7 @@ function reducer(state, action) {
       const newFOElist2 = state.FOElist.map(item => {
         return { ...item, placement: "pool", isChecked: false };
       });
-      return { ...state, FOElist: newFOElist2 };
+      return { ...state, FOElist: newFOElist2, filter:[] };
 
     case NEW_BINGO_ITEM:
       const newItem = {
@@ -289,6 +297,15 @@ function reducer(state, action) {
 
     case UPDATE_PLACEMENT:
       return {...state, dragOverPlacement:action.placement}
+
+    case UPDATE_FILTER:
+      let filter = state.filter.map(item => item);
+      if (filter.includes(action.filterItem)) {
+        filter = state.filter.filter(item => item !== action.filterItem)
+      } else {
+        filter.push(action.filterItem);
+      }
+      return {...state, filter}
     default:
       return { ...state };
   }
