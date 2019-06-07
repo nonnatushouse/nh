@@ -1,0 +1,20 @@
+.youtube-page-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 98vw;
+}
+
+.video-frame{
+    max-width: 98vw;
+    max-height: 55vw;
+    width:560px;
+    height:315px;
+    margin-bottom: 3rem;
+
+}
+
+.youtube-text{
+    text-align: left;
+    margin-bottom: .5rem;
+    margin-top: .0rem;
+}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import uuidv4 from 'uuid/v4';
 import "./Bingo.css";
-
 const MAX_LENGTH = 100;
 
 export default function BingoNewItem({createNewBingoItem}) {
@@ -11,7 +10,7 @@ export default function BingoNewItem({createNewBingoItem}) {
     
         if (!title.trim()) return;
         const id = uuidv4();
-    
+
         createNewBingoItem(id, title);
         setTitle('');
       };

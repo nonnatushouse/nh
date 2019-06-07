@@ -64,17 +64,6 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
           title={"Misc" + expandIcon}
           className="mysubmenu mainmenu"
         >
-          {/* Drinking Game */}
-          <MenuItem key="drinking-game" className="mymenuitem mainmenu">
-            <NavLink
-              to="/drinking-game"
-              className="menu-link"
-              activeClassName="selected"
-              onClick={toggleMenu}
-            >
-              Drinking Game
-            </NavLink>
-          </MenuItem>
 
           {/* Episode Randomizer */}
           <MenuItem key="episode-randomizer" className="mymenuitem mainmenu">
@@ -97,6 +86,37 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
               onClick={toggleMenu}
             >
               Bingo
+            </NavLink>
+          </MenuItem>
+        </SubMenu>
+
+        <SubMenu
+          key="fun"
+          title={"Fun & Fan Content" + expandIcon}
+          className="mysubmenu mainmenu"
+        >
+
+          {/* Videos */}
+          <MenuItem key="episode-randomizer" className="mymenuitem mainmenu">
+            <NavLink
+              to="/videos"
+              className="menu-link"
+              activeClassName="selected"
+              onClick={toggleMenu}
+            >
+              Videos
+            </NavLink>
+          </MenuItem>
+
+          {/* Podcasts */}
+          <MenuItem key="bingo" className="mymenuitem mainmenu">
+            <NavLink
+              to="/podcasts"
+              className="menu-link"
+              activeClassName="selected"
+              onClick={toggleMenu}
+            >
+              Podcasts
             </NavLink>
           </MenuItem>
         </SubMenu>

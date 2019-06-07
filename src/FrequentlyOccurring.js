@@ -9,6 +9,8 @@ const S8 = "Series 8";
 const S9 = "Series 9";
 const ALL = [S1, S2, S3, S4, S5, S6, S7, S8, S9];
 
+
+
 const FRED = "Fred";
 const _FRED = [FRED, S1, S2, S3, S4, S5, S6, S7, S8, S9];
 const SR_J = "Sister Julienne"
@@ -60,9 +62,12 @@ const SR_F = "Sister Frances"
 const MO_M = "Mother Mildred"
 // const _MO_M = [MO_M, S8, S9]
 
+const allFilterCategories = [S1,S2,S3,S4,S5,S6,S7,S8,S9,FRED,SR_J,SR_E,SR_MJ,JENNY,CYNTHIA,TRIXIE,PETER,CHUMMY,DR_T,
+  TIM,PATSY,SHELAGH,SR_W,TOM,PHYLLIS,BARBARA,VI,DELIA,VAL,REGGIE,LUCILLE,SR_H,SR_F,MO_M]
+
 export {
-  S1,  S2,  S3,  S4,  S5,  S6,  S7,  S8,  S9,  FRED,  SR_J,  SR_E,  SR_MJ,  JENNY,  CYNTHIA,  TRIXIE,  PETER,  CHUMMY,  DR_T,  TIM,
-  PATSY,  SHELAGH,  SR_W,  TOM,  PHYLLIS,  BARBARA,  VI,  DELIA,  VAL,  REGGIE,  LUCILLE,  SR_H,  SR_F,  MO_M
+  S1,S2,S3,S4,S5,S6,S7,S8,S9,FRED,SR_J,SR_E,SR_MJ,JENNY,CYNTHIA,TRIXIE,PETER,CHUMMY,DR_T,TIM,
+  PATSY,SHELAGH,SR_W,TOM,PHYLLIS,BARBARA,VI,DELIA,VAL,REGGIE,LUCILLE,SR_H,SR_F,MO_M, allFilterCategories
 };
 
 
