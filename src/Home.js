@@ -22,7 +22,13 @@ export default function Home() {
               activeClassName="selected"
             >
               Quiz
-            </NavLink> you can take to test your Call the Midwife knowledge. </div>
+            </NavLink> you can take to test your Call the Midwife knowledge. Or if you want to play with a friend, why not create a <NavLink
+              to="/bingo"
+              className="nav-link-in-text"
+              activeClassName="selected"
+            >
+              Bingo
+            </NavLink> board each, and challenge each other while watching an episode?</div>
 
             <div className="info-text">Want to watch an episode, but can't decide which one? Try out the <NavLink
               to="/episode-randomizer"

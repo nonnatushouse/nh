@@ -11,7 +11,7 @@ const initialState = {
   gameState: "splash",
   givenAnswers: [],
   currentQuestion: null,
-  questions: getQuestions(),
+  questions: {},
   questionOrder: []
 };
 
@@ -91,11 +91,13 @@ export default function Quiz() {
 function reducer(state, action) {
   switch (action.type) {
     case "START_GAME":
-      const questionOrder = Object.keys(state.questions);
+      const questions = getQuestions(action.quizType);
+      const questionOrder = Object.keys(questions);
 
       return {
         ...state,
         gameState: "quiz",
+        questions,
         questionOrder,
         currentQuestion: questionOrder[0],
         givenAnswers: []

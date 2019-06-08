@@ -11,6 +11,8 @@ export default function BingoPlay({
   onItemClick,
 }) {
   return (
+    <>
+    <div className="info-text bingo-play-text">Click "Edit" to create a Bingo board. When playing, click on a square to mark it as complete. Click again to uncheck it. You can edit your board at any time.</div>
     <BoardGenerator 
     boardHeight={boardSize}
     boardWidth={boardSize}
@@ -20,5 +22,6 @@ export default function BingoPlay({
     onItemClick={onItemClick}
     onDragStart={onDragStart}
     />
+    </>
   );
 }

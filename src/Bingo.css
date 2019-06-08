@@ -255,6 +255,17 @@
   }
 
 }
+.bingo-play-text, .bingo-filter-info {
+  max-width: 40rem;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.bingo-edit-text {
+  max-width: 50rem;
+  margin: 0 0 1rem 0;
+  align-self: center;
+}
 
 @media screen and (max-width: 600px) {
   .bingo-pool-container {

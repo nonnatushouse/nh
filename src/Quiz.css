@@ -108,16 +108,20 @@
 
 .quiz-reset-button, .quiz-start-button {
     text-align: center;
-    font-size: 1.4rem;
-    height: 2.2rem;
+    font-size: 1.2rem;
+    margin: 1rem;
     box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
     background-color: #F7C66A; 
     cursor: pointer;
-    max-width: 18rem;
-    width: 90vw;
-    height: 3rem;
+    max-width: 90vw;
+    padding: .4rem;
+    min-width: 10rem;
     border: none;
-    margin-bottom: 2rem;
+}
+
+.quiz-category-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .quiz-progress-bar {
@@ -198,4 +202,8 @@
         min-height: 0;
     }
 
+    .quiz-category-buttons{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
