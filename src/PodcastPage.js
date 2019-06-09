@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PodcastPage() {
   return (
-    <div className="youtube-page-container">
+    <div className="podcast-page-container">
       <div className="info-big-title">Podcasts</div>
       <div className="info-text youtube-text">
         The intention was to list all podcasts about Call the Midwife on this

@@ -1,7 +1,13 @@
 .youtube-page-container{
     display: flex;
     flex-direction: column;
-    max-width: 40vw;
+    max-width: 560px;
+}
+
+.podcast-page-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
 }
 
 .video-frame{

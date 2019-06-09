@@ -93,6 +93,7 @@ export function getFrequentlyOccurringEvents() {
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Father attends birth", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Phyllis is annoyed at people being late", tags:_PHYLLIS},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Mother Mildred unknowningly offends someone", tags:_MO_M},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Tim plays an instrument", tags:_TIM},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Labouring mother says \"I can't do it!\"", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"\"I am a member of the Institute of Advanced Motorists\"", tags:_PHYLLIS},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is gardening", tags:ALL},

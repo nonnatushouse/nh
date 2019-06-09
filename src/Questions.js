@@ -272,6 +272,34 @@ export default function getQuestions(set) {
         },
       };
 
+      case MEDICAL:
+        return {
+          "medical-toxaemia-question": {
+            id: "default-toxaemia-question",
+            question: "'Toxaemia' is another word for...?",
+            answers: [
+              { id: "a", answer: "Pre-Eclampsia", isCorrect: true },
+              { id: "b", answer: "Tokophobia", isCorrect: false },
+              { id: "c", answer: "Cancer", isCorrect: false },
+              { id: "d", answer: "Spina Bifida", isCorrect: false }
+            ]
+          },
+
+          "medical-toxaemia-symptom-question": {
+            id: "medical-toxaemia-symptom-question",
+            question: "Which of the following is a symptom of Toxaemia/Pre-Eclampsia?",
+            answers: [
+              { id: "a", answer: "Swollen ancles", isCorrect: true },
+              { id: "b", answer: "High blood pressure", isCorrect: true },
+              { id: "c", answer: "Protein in urine", isCorrect: true },
+              { id: "d", answer: "Headaches", isCorrect: true }
+            ]
+          },
+
+
+
+        };
+
     default:
       return {};
   }
