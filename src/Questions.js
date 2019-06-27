@@ -56,6 +56,16 @@ export default function getQuestions(set) {
             { id: "d", answer: "The West End", isCorrect: false }
           ]
         },
+        "14-vegetarian": {
+          id: "14-vegetarian",
+          question: "Which of the following characters is a self-confessed vegetarian?",
+          answers: [
+            { id: "a", answer: "Sister Evangelina", isCorrect: false },
+            { id: "b", answer: "Phyllis", isCorrect: true },
+            { id: "c", answer: "Jenny", isCorrect: false },
+            { id: "d", answer: "Trixie", isCorrect: false }
+          ]
+        },
         "default-sister-monica-joan-name": {
           id: "default-sister-monica-joan-name",
           question:
@@ -105,17 +115,6 @@ export default function getQuestions(set) {
             { id: "b", answer: "1957", isCorrect: true },
             { id: "c", answer: "1958", isCorrect: false },
             { id: "d", answer: "1959", isCorrect: false }
-          ]
-        },
-        "default-sister-evangelina-name": {
-          id: "default-sister-evangelina-name",
-          question:
-            "What was Sister Evangelina's name before she joined the order of St Raymond Nonnatus?",
-          answers: [
-            { id: "a", answer: "Louise", isCorrect: false },
-            { id: "b", answer: "Enid", isCorrect: true },
-            { id: "c", answer: "Antonia", isCorrect: false },
-            { id: "d", answer: "Mary", isCorrect: false }
           ]
         },
         "default-nonnatus-house-address": {
@@ -252,7 +251,20 @@ export default function getQuestions(set) {
       };
 
     case S1_S4:
-      return {};
+      return {
+        "14-vegetarian": {
+          id: "14-vegetarian",
+          question: "Which of the following characters is a self-confessed vegetarian?",
+          answers: [
+            { id: "a", answer: "Sister Evangelina", isCorrect: false },
+            { id: "b", answer: "Phyllis", isCorrect: true },
+            { id: "c", answer: "Jenny", isCorrect: false },
+            { id: "d", answer: "Trixie", isCorrect: false }
+          ]
+        },
+
+
+      };
 
     case S5_S8:
       return {};
