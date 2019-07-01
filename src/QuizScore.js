@@ -52,6 +52,8 @@ export default function QuizScore({ questions, givenAnswers }) {
       </path>
 
       <text x="175" y="175" textAnchor="middle" fontSize="70px" dy="25px" dx="10px">
+
+
         {perCentage}%
       </text>
     </svg>

@@ -1,48 +1,18 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.page-header {
-  display: flex;
-  background-color: #F7C66A;
-  left: 0;
-  right: 0;
-  top: 0;
-  min-height: 3rem;
-  box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.2rem;
-}
 
 .page-container {
   display: flex;
-  width: 100%;
   justify-content: center;
-  padding-top: 1rem;
+  padding-top: 4.5rem;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 3rem;
 }
+
+
+html {
+  height: 100%;
+}
+
 
 .nav-container {
   display: flex;
@@ -76,9 +46,29 @@
   display: none;
 }
 
-.page-container {
-  padding-top: 1.5rem;
+
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F7C66A;
+  position: absolute;
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  margin-top: 3rem;
+  background-color: #F7C66A;
+  height: 2rem;
 }
+
+.page-footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 @media screen and (max-width: 600px) {
     .sidebar-hamburger-button{
@@ -97,4 +87,7 @@
     
   }
 
+  .page-container {
+    padding-top: 3rem;
+  }
 }

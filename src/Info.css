@@ -37,6 +37,10 @@
     
 }
 
+.info-page {
+    max-width: 40rem;
+}
+
 .nav-link-in-text:link {
     color: black;
   }
