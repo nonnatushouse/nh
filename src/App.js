@@ -11,6 +11,7 @@ import Bingo from "./Bingo";
 import VideoPage from "./VideoPage";
 import PodcastPage from "./PodcastPage";
 import CookiesPage from "./CookiesPage";
+import MusicPage from "./MusicPage";
 
 class App extends Component {
   state = { menuIsExpanded: false };
@@ -46,6 +47,7 @@ class App extends Component {
           <Route path="/videos" component={VideoPage} />
           <Route path="/podcasts" component={PodcastPage} />
           <Route path="/cookies" component={CookiesPage} />
+          <Route path="/music" component={MusicPage} />
 
         </div>
 

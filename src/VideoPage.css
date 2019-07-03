@@ -31,6 +31,13 @@
     margin-top: 1rem;
 }
 
+.music-container {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    max-width: 40rem;
+}
+
 
 @media screen and (max-width: 600px) {
     .youtube-page-container{

@@ -91,7 +91,7 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
           </MenuItem>
 
           {/* Videos */}
-          <MenuItem key="episode-randomizer" className="mymenuitem mainmenu">
+          <MenuItem key="videos" className="mymenuitem mainmenu">
             <NavLink
               to="/videos"
               className="menu-link"
@@ -103,7 +103,7 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
           </MenuItem>
 
           {/* Podcasts */}
-          <MenuItem key="bingo" className="mymenuitem mainmenu">
+          <MenuItem key="podcast" className="mymenuitem mainmenu">
             <NavLink
               to="/podcasts"
               className="menu-link"
@@ -111,6 +111,18 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
               onClick={toggleMenu}
             >
               Podcasts
+            </NavLink>
+          </MenuItem>
+
+          {/* Music */}
+          <MenuItem key="music" className="mymenuitem mainmenu">
+            <NavLink
+              to="/music"
+              className="menu-link"
+              activeClassName="selected"
+              onClick={toggleMenu}
+            >
+              Music
             </NavLink>
           </MenuItem>
 
