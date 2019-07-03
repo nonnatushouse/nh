@@ -74,7 +74,7 @@ export default function RcMenu({ toggleMenu, menuIsExpanded }) {
 
         <SubMenu
           key="misc"
-          title={"Misc" + expandIcon}
+          title={"More" + expandIcon}
           className="mysubmenu mainmenu"
         >
 

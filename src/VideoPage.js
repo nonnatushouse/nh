@@ -3,7 +3,7 @@ import "./VideoPage.css";
 
 export default function VideoPage() {
   return (
-    <div className="youtube-page-container">
+    <div className="video-page-container">
       <div className="info-big-title">Videos</div>
       <div className="info-text youtube-text">
         Here is a collection of some of my favourite videos featuring the cast
@@ -14,7 +14,7 @@ export default function VideoPage() {
         The fantastic Red Nose Day video from 2013. Features most of the main
         cast from Series 1.
       </div>
-      <iframe
+      <iframe 
         title="charity-playlist"
         className="video-frame"
         src="https://www.youtube.com/embed/playlist?list=PLUe7aTsP6T8JOZLwzAH3mA4vLxPcsjHqK"

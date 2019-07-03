@@ -112,7 +112,7 @@ export default function Bingo() {
 
   return (
     <>
-      <div className="bingo-play-container">
+      <div className="bingo-container">
         <div className="info-big-title">Bingo </div>
         <button
           type="button"
@@ -132,7 +132,7 @@ export default function Bingo() {
               onItemClick={onPlayClick}
             />
         ) : (
-          <BingoEdit
+          <BingoEdit className="bingo-edit-container"
             FOElist={state.FOElist.map(item => item)}
             boardSize={state.boardSize}
             onDragOver={onDragOver}

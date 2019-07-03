@@ -19,7 +19,7 @@ export default function Contact() {
         Youtube Channel:{" "}
         <a href="https://www.youtube.com/channel/UC1DTIko3OEfn7GljJy-a1cw" target="_blank" rel="noopener noreferrer">Nonnatus House</a>{" "}
       </div>      
-      <div className="info-text">Email: nonnatushouse@gmail.com </div>
+      {/* <div className="info-text">Email: nonnatushouse@gmail.com </div> */}
     </div>
   );
 }
