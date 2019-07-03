@@ -22,6 +22,12 @@ class App extends Component {
   render() {
     return (
       <>
+
+
+        <RcMenu
+          toggleMenu={this.toggleSidebarMenu.bind(this)}
+          menuIsExpanded={this.state.menuIsExpanded}
+        />
         <button
           className="sidebar-hamburger-button"
           type="button"
@@ -29,11 +35,6 @@ class App extends Component {
         >
           ☰
         </button>
-
-        <RcMenu
-          toggleMenu={this.toggleSidebarMenu.bind(this)}
-          menuIsExpanded={this.state.menuIsExpanded}
-        />
 
         <div className="page-container">
           <Route path="/timer" component={Timer} />
