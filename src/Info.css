@@ -1,7 +1,7 @@
 
 .info-container{
     width: 95vw;
-    max-width: 50rem;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,5 +51,15 @@
 
 .drinking-game-item {
     text-align: center;
-    margin-top: .7rem;
+    margin-top: .7rem;    
+}
+
+.clear-local-storage-button {
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: #F7C66A; 
+    cursor: pointer;
+    max-width: 90vw;
+    padding: .4rem;
+    box-shadow: .2rem .2rem .4rem rgba(22, 22, 22, .5);
 }

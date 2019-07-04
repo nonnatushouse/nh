@@ -4,26 +4,35 @@ import "./Info.css";
 import { NavLink} from "react-router-dom";
 
 export default function CookiesPage() {
+  function clearLocalStorage() {
+    window.localStorage.clear()
+  };
+
   return (
-    <div className="info-page">
+    <div className="info-container">
       <div className="info-big-title">Cookie Information</div>
-      <div className='info-text'>This site does not use cookies. It does however make use of your browser's localStorage. The purpose of this is to remember
-        your settings between uses (such as your <NavLink 
-              to="/bingo"
-              className="nav-link-in-text"
-              activeClassName="selected"
-            >
-              Bingo
-            </NavLink> tile and your selected episodes in the <NavLink 
+      <div className='info-text'>This website does not use cookies. It does however make use of your browser's localStorage. The purpose of this is to remember
+      the information you have entered between visits. The only infomration that is being stored is what episodes you last selected for the <NavLink 
               to="/randomizer"
               className="nav-link-in-text"
               activeClassName="selected"
             >
               Randomizer
-            </NavLink> 
+            </NavLink>, and the tiles you have created in the<NavLink 
+              to="/bingo"
+              className="nav-link-in-text"
+              activeClassName="selected"
+            >
+              Bingo
+            </NavLink> game. </div>
+
+            <div className='info-text'>The information is stored locally in your browser between sessions. 
+            It is not sent to any server, and is not shared with any third parties. </div>
+
             
-            
-            )</div>
+            <div className='info-text'>You can clear your localStorage at any time in your browser's settings, or by pressing the button below.</div>
+            <button className='clear-local-storage-button' onClick={clearLocalStorage}>Clear localStorage</button>
+
     </div>
   );
 }
