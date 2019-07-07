@@ -23,8 +23,8 @@
 
 .youtube-text{
     text-align: left;
-    margin-bottom: .5rem;
-    margin-top: .0rem;
+    margin-bottom: .2rem;
+    margin-top: .7rem;
 }
 
 .podcast-title{
@@ -34,10 +34,20 @@
 .music-container {
     display: flex;
     flex-direction: column;
-    width: 95vw;
+    width: 90vw;
     max-width: 40rem;
 }
 
+.music-title {
+    margin-top: 1.7rem;
+    margin-bottom: .5rem;
+}
+
+.info-text-bold {
+    font-weight: bold;
+    margin-top: 1.4rem;
+    margin-bottom: 0;
+}
 
 @media screen and (max-width: 600px) {
     .youtube-page-container{

@@ -25,3 +25,8 @@ code {
   color: rgb(41, 59, 52);
   background-color: rgb(250, 225, 0);
 }
+
+a {
+  color: black;
+  /* background-color: #F7C66A; */
+}
