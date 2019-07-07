@@ -13,21 +13,21 @@ export default function getQuestions(set) {
   switch (set) {
     case GENERAL:
       return {
-        "default-sister-julienne-name": {
-          id: "default-sister-julienne-name",
+        "default-sister-monica-joan-name": {
+          id: "default-sister-monica-joan-name",
           question:
-            "What was Sister Julienne's name before she joined the order of St Raymond Nonnatus?",
+            "What was Sister Monica Joan's name before she joined the order of St Raymond Nonnatus?",
           answers: [
-            { id: "a", answer: "Louise", isCorrect: true },
+            { id: "a", answer: "Louise", isCorrect: false },
             { id: "b", answer: "Enid", isCorrect: false },
-            { id: "c", answer: "Antonia", isCorrect: false },
+            { id: "c", answer: "Antonia", isCorrect: true },
             { id: "d", answer: "Mary", isCorrect: false }
           ]
         },
         "default-last-to-join": {
           id: "default-last-to-join",
           question:
-            "Which of the following people was the last to join Nonnatus House?",
+            "Who of the following joined Nonnatus House last?",
           answers: [
             { id: "a", answer: "Chummy", isCorrect: false },
             { id: "b", answer: "Barbara", isCorrect: false },
@@ -58,7 +58,7 @@ export default function getQuestions(set) {
         },
         "14-vegetarian": {
           id: "14-vegetarian",
-          question: "Which of the following characters is a self-confessed vegetarian?",
+          question: "Who is a self-confessed vegetarian?",
           answers: [
             { id: "a", answer: "Sister Evangelina", isCorrect: false },
             { id: "b", answer: "Phyllis", isCorrect: true },
@@ -66,17 +66,7 @@ export default function getQuestions(set) {
             { id: "d", answer: "Trixie", isCorrect: false }
           ]
         },
-        "default-sister-monica-joan-name": {
-          id: "default-sister-monica-joan-name",
-          question:
-            "What was Sister Monica Joan's name before she joined the order of St Raymond Nonnatus?",
-          answers: [
-            { id: "a", answer: "Louise", isCorrect: false },
-            { id: "b", answer: "Enid", isCorrect: false },
-            { id: "c", answer: "Antonia", isCorrect: true },
-            { id: "d", answer: "Mary", isCorrect: false }
-          ]
-        },
+
         "default-dr-turner-car-color": {
           id: "default-dr-turner-car-color",
           question: "What color is Dr Turner's car (series 1-7)?",
@@ -107,6 +97,19 @@ export default function getQuestions(set) {
             { id: "d", answer: "Spina Bifida", isCorrect: false }
           ]
         },
+
+        "np_angela_middle_name": {
+          id: "np_angela_middle_name",
+          question:
+            "What is Angela Turner's middle name?",
+          answers: [
+            { id: "a", answer: "Bernadette", isCorrect: false },
+            { id: "b", answer: "Julienne", isCorrect: true },
+            { id: "c", answer: "Joan", isCorrect: false },
+            { id: "d", answer: "Shelagh", isCorrect: false }
+          ]
+        },
+
         "default-what-year-does-series-1-take-place": {
           id: "default-what-year-does-series-1-take-place",
           question: "During what year does the first series take place?",
@@ -128,6 +131,18 @@ export default function getQuestions(set) {
             { id: "d", answer: "Barley Street", isCorrect: false }
           ]
         },
+        "default-sister-julienne-name": {
+          id: "default-sister-julienne-name",
+          question:
+            "What was Sister Julienne's name before she joined the order of St Raymond Nonnatus?",
+          answers: [
+            { id: "a", answer: "Louise", isCorrect: true },
+            { id: "b", answer: "Enid", isCorrect: false },
+            { id: "c", answer: "Antonia", isCorrect: false },
+            { id: "d", answer: "Mary", isCorrect: false }
+          ]
+        },
+
         "default-real-order-based-on": {
           id: "default-real-order-based-on",
           question:

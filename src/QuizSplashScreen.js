@@ -22,15 +22,16 @@ export default function QuizSplashScreen({ onQuizRequest }) {
         your 'Call the Midwife' knowledge, with questions from the previous 8
         series! Choose a quiz below and click it to get started.
       </div>
-      <div className="info-title">Quiz Categories</div>
+      {/* <div className="info-title">Quiz Categories</div> */}
       <button
         type="button"
         className="quiz-start-button"
         onClick={() => onQuizRequest(GENERAL)}
       >
-        General Quiz
+        Start Quiz
+        {/* General Quiz */}
       </button>
-      
+{/*       
       <div className="quiz-category-buttons">
       <button
         type="button"
@@ -74,8 +75,8 @@ export default function QuizSplashScreen({ onQuizRequest }) {
         onClick={() => onQuizRequest(MEDICAL)}
       >
         Medical
-      </button>
-      </div>
+      </button> 
+      </div>*/}
 
     </div>
   );
