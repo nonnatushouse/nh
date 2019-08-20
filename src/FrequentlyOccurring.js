@@ -110,7 +110,7 @@ export function getFrequentlyOccurringEvents() {
         {id:uuidv4(), isChecked:false,placement:"pool", title:"The autoclave is being filled or emptied", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Patsy is cleaning something", tags:_PATSY},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Winifred prepares/mentions preparing food for someone", tags:_SR_W},
-        {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is offered a barley sugar", tags:_ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is offered a barley sugar", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Jenny is disgusted by something", tags:_JENNY},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan says she’s useless", tags:_SR_MJ},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"A blessing is said", tags:ALL},
