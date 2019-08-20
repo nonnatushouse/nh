@@ -8,6 +8,8 @@ const S6 = "Series 6";
 const S7 = "Series 7";
 const S8 = "Series 8";
 const S9 = "Series 9";
+const S10 = "Series 10";
+const S11 = "Series 11";
 const ALL = [S1, S2, S3, S4, S5, S6, S7, S8, S9];
 
 
@@ -20,16 +22,18 @@ const SR_E = "Sister Evangelina";
 const _SR_E = [SR_E, S1, S2, S3, S4, S5];
 const SR_MJ = "Sister Monica Joan";
 const _SR_MJ = [SR_MJ, S1, S2, S3, S4, S5, S6, S7, S8, S9];
+const SR_B = "Sister Bernadette"
+const _SR_B = [SR_B, S1, S2]
 const JENNY = "Jenny";
-const PETER = "Peter";
-// const _PETER = [PETER, S1, S2, S3, S4, S5, S6];
 const _JENNY = [JENNY, S1, S2, S3];
+const PETER = "Peter";
+const _PETER = [PETER, S1, S2, S3, S4, S5, S6];
 const CYNTHIA = "Cynthia"
 // const _CYNTHIA = [CYNTHIA, S1, S2, S3, S4, S5, S6]
 const TRIXIE = "Trixie"
-// const _TRIXIE = [TRIXIE, S1, S2, S3, S4, S5, S6, S7, S8, S9]
+const _TRIXIE = [TRIXIE, S1, S2, S3, S4, S5, S6, S7, S8, S9]
 const CHUMMY = "Chummy"
-// const _CHUMMY = [CHUMMY, S1, S2, S3, S4, S5]
+const _CHUMMY = [CHUMMY, S1, S2, S3, S4, S5]
 const DR_T = "Dr Turner"
 const _DR_T = [DR_T, S1, S2, S3, S4, S5, S6, S7, S8, S9]
 const TIM = "Tim"
@@ -37,7 +41,7 @@ const _TIM = [TIM, S2, S3, S4, S5, S6, S7, S8, S9]
 const PATSY = "Patsy"
 const _PATSY = [PATSY, S2, S3, S4, S5, S6]
 const SHELAGH = "Shelagh"
-// const _SHELAGH = [SHELAGH, S1, S2, S3, S4, S5, S6, S7, S8, S9]
+const _SHELAGH = [SHELAGH, S3, S4, S5, S6, S7, S8, S9]
 const SR_W = "Sister Winifred";
 const _SR_W = [SR_W, S3, S4, S5, S6, S7, S8];
 const TOM = "Tom"
@@ -45,9 +49,9 @@ const TOM = "Tom"
 const PHYLLIS = "Phyllis";
 const _PHYLLIS = [PHYLLIS, S4, S5, S6, S7, S8, S9];
 const BARBARA = "Barbara"
-// const _BARBARA = [BARBARA, S4, S5, S6, S7]
+const _BARBARA = [BARBARA, S4, S5, S6, S7]
 const VI = "Violet"
-// const _VI = [VI, S4, S5, S6, S7, S8, S9]
+const _VI = [VI, S4, S5, S6, S7, S8, S9]
 const DELIA = "Delia";
 const _DELIA = [DELIA, S4, S5, S6];
 const VAL = "Valerie";
@@ -55,7 +59,7 @@ const _VAL = [VAL, S6, S7, S8, S9];
 const REGGIE = "Reggie"
 const _REGGIE = [REGGIE, S6, S7, S8, S9]
 const LUCILLE = "Lucille"
-// const _LUCILLE = [LUCILLE, S7, S8, S9]
+const _LUCILLE = [LUCILLE, S7, S8, S9]
 const SR_H = "Sister Hilda";
 const _SR_H = [SR_H, S8, S9];
 const SR_F = "Sister Frances"
@@ -75,7 +79,7 @@ export {
 export function getFrequentlyOccurringEvents() {
     
     return [
-        {id:uuidv4(), isChecked:false, placement:"pool", title:"The Commercial Road is mentioned", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"The Commercial Road is mentioned", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is offered a cup of well sugared tea", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Fred mentions El Alemain", tags:_FRED},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan eats cake/sweets", tags:_SR_MJ},
@@ -87,7 +91,7 @@ export function getFrequentlyOccurringEvents() {
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Urine sample is provided in a jam jar", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is referred to as being \"in the family way\"", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Hilda talks about before she became a nun", tags:_SR_H},
-        {id:uuidv4(), isChecked:false,placement:"pool", title:"\"Oh, Patrick\"", tags:[SHELAGH, S3, S4, S5, S6, S7, S8, S9]},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"\"Oh, Patrick\"", tags:_SHELAGH},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan mentions astronomy or astrology", tags:_SR_MJ},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Twins or triplets are born", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Father attends birth", tags:ALL},
@@ -99,20 +103,21 @@ export function getFrequentlyOccurringEvents() {
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is gardening", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Pregnant woman smokes", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Brand of soap is mentioned", tags:ALL},
-        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan quotes the bible/Keats etc", tags:_SR_MJ},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan quotes the bible/Keats/Shakespeare etc", tags:_SR_MJ},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Tim acts over his age", tags:_TIM},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Undiagnosed twins", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Dr Turner corrects someone", tags:_DR_T},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"The autoclave is being filled or emptied", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Patsy is cleaning something", tags:_PATSY},
-        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Winifred mentions preparing food for someone", tags:_SR_W},
-        {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is offered a barley sugar", tags:_PHYLLIS},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Winifred prepares/mentions preparing food for someone", tags:_SR_W},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone is offered a barley sugar", tags:_ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Jenny is disgusted by something", tags:_JENNY},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan says she’s useless", tags:_SR_MJ},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"A blessing is said", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Evangelina disapproves", tags:_SR_E},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Patsy and Delia are almost caught", tags:_DELIA.concat([PATSY])},
-        {id:uuidv4(), isChecked:false,placement:"pool", title:"The nuns sing", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone in the cast sings", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"More than 8 people gathered at the dining table", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Song is played on the radio", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"There's a montage", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Other word for \"toilet\" is used (lav, privy, khazi etc)", tags:ALL},
@@ -120,6 +125,33 @@ export function getFrequentlyOccurringEvents() {
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone gives birth", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Episode made me cry", tags:ALL},
         {id:uuidv4(), isChecked:false,placement:"pool", title:"Heard of a new disease for the first time in this episode", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan watches television", tags:_SR_MJ},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Euphemism such as \"down stairs\"/\"down below\" is used", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Julienne is in the clinical room", tags:_SR_J},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"The Motherhouse is mentioned", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Trixie calls someone \"Sweetie\"", tags:_TRIXIE},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Val calls someone \"Chick\"", tags:_VAL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Phyllis calls someone \"Lass\"", tags:_PHYLLIS},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Lucille calls someone \"Precious\"", tags:_LUCILLE},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Violet is working in her haberdashery", tags:_VI},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Fred has a money making scheme", tags:_FRED},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Monica Joan refuses medical intervention", tags:_SR_MJ},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Phyllis reassures someone", tags:_PHYLLIS},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Dr Turner attends a birth", tags:_DR_T},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Fred is repairing something", tags:_FRED},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Julienne hosts meeting in her office", tags:_SR_J},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Evangelina proclaims that \"Breast is best!\"", tags:_SR_E},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Character who is no longer on the show is mentioned", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Someone says \"tickety-boo\"", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"There is a closeup of hands", tags:ALL},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Peter Noakes is at Nonnatus on official business", tags:_PETER},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Bernadette interacts with Dr Turner", tags:_SR_B.concat(DR_T)},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Phyllis and Barbara attend birth together", tags:_BARBARA.concat(PHYLLIS)},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Sister Evangelina and Sister Monica Joan bicker", tags:_SR_E.concat(SR_MJ)},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Chummy destroys something", tags:_CHUMMY},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"Chummy mentions her mother or father", tags:_CHUMMY},
+        {id:uuidv4(), isChecked:false,placement:"pool", title:"There is a cub scout meeting", tags:ALL},
+
 
         // {id:uuidv4(), isChecked:false,placement:"pool", title:"", tags:[]},
     ]
