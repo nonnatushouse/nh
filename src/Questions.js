@@ -177,17 +177,57 @@ export default function getQuestions(set) {
             { id: "d", answer: "Chess", isCorrect: true }
           ]
         },
+        "np_vals_aunts_pub": {
+          id: "np_vals_aunts_pub",
+          question:
+            "What is the name of Valerie’s aunt’s pub?",
+          answers: [
+            { id: "a", answer: "The Hand and Sheers", isCorrect: false },
+            { id: "c", answer: "The Master's Arms", isCorrect: false },
+            { id: "b", answer: "The Black Sail", isCorrect: true },
+            { id: "d", answer: "The Horse and Hound", isCorrect: false }
+          ]
+        },
+        "np_where_is_the_motherhouse": {
+          id: "np_where_is_the_motherhouse",
+          question:
+            "Where is the Motherhouse located?",
+          answers: [
+            { id: "a", answer: "Poplar", isCorrect: false },
+            { id: "c", answer: "Surrey", isCorrect: false },
+            { id: "b", answer: "Chatham", isCorrect: false },
+            { id: "d", answer: "Chichester", isCorrect: true }
+          ]
+        },
+        "np_akela": {
+          id: "np_akela",
+          question:
+            "Who of the following have NOT been akela for the cubs?",
+          answers: [
+            { id: "a", answer: "Phyllis", isCorrect: false },
+            { id: "c", answer: "Chummy", isCorrect: false },
+            { id: "b", answer: "Patsy", isCorrect: false },
+            { id: "d", answer: "Cynthia", isCorrect: true }
+          ]
+        },
+
+
         "bts-author": {
           id: "bts-author",
           question: "Whose memoirs was the show originally based on?",
           answers: [
             { id: "a", answer: "Terri Coates", isCorrect: false },
-            { id: "b", answer: "Pippa Harris", isCorrect: false },
             { id: "c", answer: "Jennifer Worth", isCorrect: true },
+            { id: "b", answer: "Pippa Harris", isCorrect: false },
             { id: "d", answer: "Heidi Thomas", isCorrect: false }
           ]
         }
       };
+
+
+
+
+
     case QUOTES:
       return {};
     case NAMES_PLACES:
@@ -261,7 +301,28 @@ export default function getQuestions(set) {
             { id: "d", answer: "Shelagh", isCorrect: false }
           ]
         },
-
+        "np_vals_aunts_pub": {
+          id: "np_vals_aunts_pub",
+          question:
+            "What is the name of Valerie’s aunt’s pub?",
+          answers: [
+            { id: "a", answer: "The Hand and Sheers", isCorrect: false },
+            { id: "c", answer: "The Master's Arms", isCorrect: false },
+            { id: "b", answer: "The Black Sail", isCorrect: true },
+            { id: "d", answer: "The Horse and Hound", isCorrect: false }
+          ]
+        },
+        "np_where_is_the_motherhouse": {
+          id: "np_where_is_the_motherhouse",
+          question:
+            "Where is the Motherhouse located?",
+          answers: [
+            { id: "a", answer: "Poplar", isCorrect: false },
+            { id: "c", answer: "Surrey", isCorrect: false },
+            { id: "b", answer: "Chatham", isCorrect: false },
+            { id: "d", answer: "Chichester", isCorrect: true }
+          ]
+        },
         
       };
 

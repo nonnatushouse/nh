@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect, useCallback } from "react";
+import { NavLink } from "react-router-dom";
 import "./Bingo.css";
 import BingoPlay from "./BingoPlay";
 import BingoEdit from "./BingoEdit";
@@ -40,7 +41,19 @@ export default function Bingo() {
   const [state, dispatch] = useReducer(sneakyReducer, initialState);
 
   const handler = useCallback(() => {
+    console.log()
+
     try {
+      const bingo_url = window.location.pathname
+      console.log(bingo_url)
+      console.log(bingo_url !== '/bingo')
+      if (bingo_url !== '/bingo') {
+        const preset = atob(JSON.parse(bingo_url))  // atob()
+        console.log(preset)
+        
+
+      }
+
       const savedState = window.localStorage.getItem(STATE_KEY);
       if (!savedState) {
         return;
@@ -109,6 +122,7 @@ export default function Bingo() {
   function dummy(e, id) {}
 
   const buttonText = state.gameState === GAME_STATE_EDIT ? "Play" : "Edit";
+  const URL_Text = "/bingo/" + btoa(JSON.stringify("{'1':11, '2':12, '3':13, '1':11, '2':12, '3':13, '1':11, '2':12, '3':13}"))
 
   return (
     <>
@@ -121,6 +135,17 @@ export default function Bingo() {
         >
           {buttonText}
         </button>
+
+        <NavLink
+              className="bingo-container"
+              to={URL_Text}
+              className="menu-link"
+              activeClassName="selected"
+              onClick={toggleGameState}
+            >
+              {buttonText}
+            </NavLink>
+
 
         {state.gameState === GAME_STATE_PLAY ? (
             <BingoPlay className="bingo-play-container"
