@@ -13,9 +13,9 @@ export default function EpisodeSelector({
         "selected": s === selectedSeason
     }) 
     return (
-      <div className={cls} onClick={() => onClick(s, 1)}>
+      <button className={cls} onClick={() => onClick(s, 1)}>
         {s}
-      </div>
+      </button>
     );
   });
 
@@ -29,9 +29,9 @@ export default function EpisodeSelector({
         "selected": e === selectedEpisode
     }) 
     return (
-      <div className={cls} onClick={() => onClick(selectedSeason, e)}>
+      <button className={cls} onClick={() => onClick(selectedSeason, e)}>
         {ep}
-      </div>
+      </button>
     );
   });
 

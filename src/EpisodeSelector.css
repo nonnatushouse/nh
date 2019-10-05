@@ -5,6 +5,10 @@
     height: 1.4rem;
     margin-right: .3rem;
     cursor: pointer;
+    box-shadow: .1rem .1rem .2rem rgba(99, 83, 83, 0.5);
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .sub-season-episode-container {
@@ -13,16 +17,11 @@
 }
 
 .episode-selector-container {
-    margin-top: 0.5rem;
-    display: flex;
-    width: 95vw;
-    max-width: 20rem;
-}
-
-.episode-selector-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    max-width: 95vw;
 }
 
 .selected {

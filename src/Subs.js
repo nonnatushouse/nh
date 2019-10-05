@@ -41,13 +41,10 @@ export default function Subs() {
         selectedSeason: season,
         selectedEpisode: episode,
         subs: prevState.result.filter(
-          chunk =>
-            chunk.season === state.selectedSeason &&
-            chunk.episode === state.selectedEpisode
+          chunk => chunk.season === season && chunk.episode === episode
         )
       };
     });
-
   }
 
   return (
@@ -63,7 +60,7 @@ export default function Subs() {
         <>
           <p className="starttime">{formatTimecode(chunk.starttime)}</p>
           <p
-            style={{ whiteSpace: "pre" }}
+            className="sub-text"
             dangerouslySetInnerHTML={{ __html: chunk.text }}
           ></p>
         </>
@@ -89,17 +86,15 @@ function formatTimecode(timecode) {
 }
 
 function getSeasonsAndEpisodes(result) {
-  console.log(result[0].season);
   const seasons = new Map();
 
   for (const chunk of result) {
-    const season = chunk.season;
-    const episode = chunk.episode;
+    const { season, episode } = chunk;
+
     if (!seasons.has(season)) {
       seasons.set(season, new Set());
     }
     seasons.get(season).add(episode);
   }
-  console.log(seasons);
   return seasons;
 }
