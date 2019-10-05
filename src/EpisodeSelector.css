@@ -1,0 +1,30 @@
+.subs-season, .subs-episode {
+    background: #ffd68a;
+    flex-grow: 1;
+    text-align: center;
+    height: 1.4rem;
+    margin-right: .3rem;
+    cursor: pointer;
+}
+
+.sub-season-episode-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.episode-selector-container {
+    margin-top: 0.5rem;
+    display: flex;
+    width: 95vw;
+    max-width: 20rem;
+}
+
+.episode-selector-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.selected {
+    background: #F7C66A;
+}

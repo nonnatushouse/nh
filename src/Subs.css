@@ -15,3 +15,7 @@ user-select: none; /* Standard */
 .starttime + p {
     margin-top: 0;
 }
+
+.subs-container {
+    margin-left: .5rem;
+}

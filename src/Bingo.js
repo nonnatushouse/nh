@@ -128,18 +128,17 @@ export default function Bingo() {
     <>
       <div className="bingo-container">
         <div className="info-big-title">Bingo </div>
-        <button
+        {/* <button
           type="button"
           className="bingo-play-edit-toggle-button"
           onClick={toggleGameState}
         >
           {buttonText}
-        </button>
+        </button> */}
 
         <NavLink
-              className="bingo-container"
+              className="bingo-play-edit-toggle-button"
               to={URL_Text}
-              className="menu-link"
               activeClassName="selected"
               onClick={toggleGameState}
             >
