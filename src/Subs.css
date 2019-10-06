@@ -23,3 +23,12 @@ user-select: none; /* Standard */
 .sub-text {
     white-space: pre-wrap;
 }
+
+.episode-title{
+    font-size: 2rem;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    flex-grow: 1;
+    background: wheat;
+}
