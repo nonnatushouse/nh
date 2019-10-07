@@ -14,14 +14,24 @@ user-select: none; /* Standard */
 }
 
 .subs-container {
-    margin-left: .5rem;
+    margin-left: .3rem;
     width: 25rem;
     max-width: 95vw;
+    flex-direction: column;
+    display: flex;
     /* border: 1px dashed black; */
 }
 
-.sub-text {
+.subs-text {
     white-space: pre-wrap;
+}
+
+.subs-form {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    margin-right: .3rem;
+
 }
 
 .episode-title{
@@ -31,4 +41,29 @@ user-select: none; /* Standard */
     top: 0;
     flex-grow: 1;
     background: wheat;
+    font-weight: normal;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
+.subs-search-textinput{
+    flex-grow: 1;
+}
+
+.subs-search-button {
+    background: #ffd68a;
+    text-align: center;
+    height: 1.4rem;
+    cursor: pointer;
+    box-shadow: .1rem .1rem .2rem rgba(99, 83, 83, 0.5);
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0 1rem;
+    margin-left: 1rem;
+}
+
+.subs-container em {
+    background: #F7C66A;
+    font-style: normal;
 }

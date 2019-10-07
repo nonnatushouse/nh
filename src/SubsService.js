@@ -8,7 +8,7 @@ export function fetchSubs() {
 }
 
 async function actualFetching() {
-  const response = await fetch(process.env.PUBLIC_URL + "subs.json");
+  const response = await fetch(process.env.PUBLIC_URL + "/subs.json");
   const subs = await response.json();
   return subs;
 }

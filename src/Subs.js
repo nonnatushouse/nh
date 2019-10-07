@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Subs.css";
 import { fetchSubs } from "./SubsService";
+import SubsSearch from "./SubsSearch";
 import EpisodeSelector from "./EpisodeSelector";
+import SubsDisplay from "./SubsDisplay";
 
 const initialState = {
   result: [],
@@ -12,8 +14,12 @@ const initialState = {
   selectedEpisode: 1
 };
 
-export default function Subs() {
+export default function Subs({ history, location }) {
   const [state, setState] = useState(initialState);
+  const [currTextValue, setCurrTextValue] = useState("");
+  const [query, setQuery] = useState("");
+
+  console.log(process.env.PUBLIC_URL);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,6 +39,12 @@ export default function Subs() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    setCurrTextValue(params.get("query") || "");
+    setQuery(params.get("query") || "")
+  }, [location.search]);
+
   function updateSeasonAndEpisode(season, episode) {
     if (state.selectedSeason !== season) {
       episode = 1;
@@ -47,6 +59,11 @@ export default function Subs() {
         )
       };
     });
+  }
+
+  function searchSubs(event) {
+    event.preventDefault();
+    history.push({ search: "?query=" + currTextValue });
   }
 
   function getEpisodeTitle() {
@@ -67,34 +84,25 @@ export default function Subs() {
         onClick={updateSeasonAndEpisode}
       ></EpisodeSelector>
 
-      <div className="episode-title">{getEpisodeTitle()}</div>
+      <form className="subs-form" onSubmit={searchSubs}>
+        <input
+          onChange={event => setCurrTextValue(event.target.value)}
+          type="search"
+          className="subs-search-textinput"
+          value={currTextValue}
+        ></input>
+        <button type="submit" className="subs-search-button">
+          &#x1f50e;
+        </button>
+      </form>
+      
 
-      {state.subs.map(chunk => (
-        <>
-          <p className="starttime">{formatTimecode(chunk.starttime)}</p>
-          <p
-            className="sub-text"
-            dangerouslySetInnerHTML={{ __html: chunk.text }}
-          ></p>
-        </>
-      ))}
+      {query ? (
+        <SubsSearch result={state.result} query={query} />
+      ) : (
+        <SubsDisplay subs={state.subs} query="" />
+      )}
     </div>
-  );
-}
-
-function formatTimecode(timecode) {
-  const sec = String(Math.floor((timecode % (1000 * 60)) / 1000));
-  const min = String(Math.floor((timecode % (1000 * 60 * 60)) / (1000 * 60)));
-  const hour = String(
-    Math.floor((timecode % (1000 * 60 * 60 * 60)) / (1000 * 60 * 60))
-  );
-
-  return (
-    hour.padStart(2, "0") +
-    ":" +
-    min.padStart(2, "0") +
-    ":" +
-    sec.padStart(2, "0")
   );
 }
 
@@ -102,7 +110,7 @@ function getSeasonsAndEpisodes(result) {
   const seasons = new Map();
 
   for (const chunk of result) {
-    const { season, episode, display_name } = chunk;
+    const { season, episode } = chunk;
 
     if (!seasons.has(season)) {
       seasons.set(season, new Set());

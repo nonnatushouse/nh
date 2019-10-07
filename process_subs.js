@@ -14,7 +14,7 @@ async function do_it() {
   const files = await readdir("./subs");
   for (const fileName of files) {
     const content = await readFile("./subs/" + fileName, { encoding: "UTF-8" });
-    const split_content = content.trim().split(/(?:\r?\n){2,}/);
+    const split_content = content.trim().split(/(?:\r?\n\s*)+(?:\r?\n)/);
 
     const match = fileName.match(/^(S(\d+)E(\d+))(?:\s+(.+))?\.txt$/);
 
