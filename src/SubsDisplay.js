@@ -32,14 +32,14 @@ export default function SubsDisplay({
     <div>
       {query ? (
         <h3 className="episode-title" style={{ position: "static" }}>
-          {subs.length} matches found in {groupedChunks.size} episodes.
+          {subs.length} hit{subs.length !== 1 ? "s" : ""} in {groupedChunks.size} episode{groupedChunks.size !== 1 ? "s" : ""}
         </h3>
       ) : null}
       {Array.from(groupedChunks.values()).map(group => (
         <div>
           <h3 className="episode-title">
             {group[0].display_name}{" "}
-            {query ? <small>({group.length} hits)</small> : null}
+            {query ? <small>({group.length} hit{group.length !== 1 ? "s" : ""})</small> : null}
           </h3>
           {group.map(chunk => {
             const text = chunk.text.replace(re, `<em>$&</em>`);
