@@ -4,9 +4,6 @@ import "./Info.css";
 import { NavLink} from "react-router-dom";
 
 export default function CookiesPage() {
-  function clearLocalStorage() {
-    window.localStorage.clear()
-  };
 
   return (
     <div className="info-container">
@@ -31,7 +28,7 @@ export default function CookiesPage() {
 
             
             {/* <div className='info-text'>You can clear your localStorage at any time in your browser's settings, or by pressing the button below.</div>
-            <button className='clear-local-storage-button' onClick={clearLocalStorage}>Clear localStorage</button> */}
+            <button className='clear-local-storage-button' onClick={() => window.localStorage.clear()}>Clear localStorage</button> */}
 
     </div>
   );

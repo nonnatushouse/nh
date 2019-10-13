@@ -1,16 +1,12 @@
 import React from "react";
 import SubsDisplay from "./SubsDisplay";
 
-export default function SubsSearch({ result, query }) {
+export default function SubsSearch({ result, query, onClick }) {
   const lowerQuery = query.toLowerCase();
 
-  const searchSplit = query.split(/(?:\s)/);
-  // console.log(searchSplit)
   const chunkMatches = result.filter(chunk =>
     chunk.text.toLowerCase().includes(lowerQuery)
   );
-  // console.log(chunkMatches.length)
-  // console.log(chunkMatches)
 
-  return <SubsDisplay subs={chunkMatches || []} query={query} />;
+  return <SubsDisplay subs={chunkMatches || []} query={query} onClick={onClick}/>;
 }

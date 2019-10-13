@@ -9,7 +9,6 @@ const initialState = {
   result: [],
   subs: [],
   seasons: new Map(),
-  titles: new Map(),
   selectedSeason: 1,
   selectedEpisode: 1
 };
@@ -18,8 +17,7 @@ export default function Subs({ history, location }) {
   const [state, setState] = useState(initialState);
   const [currTextValue, setCurrTextValue] = useState("");
   const [query, setQuery] = useState("");
-
-  console.log(process.env.PUBLIC_URL);
+  const [highlight, setHighlight] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +26,6 @@ export default function Subs({ history, location }) {
         ...state,
         result,
         seasons: getSeasonsAndEpisodes(result),
-        titles: getTitles(result),
         subs: result.filter(
           chunk =>
             chunk.season === state.selectedSeason &&
@@ -45,10 +42,14 @@ export default function Subs({ history, location }) {
     setQuery(params.get("query") || "")
   }, [location.search]);
 
-  function updateSeasonAndEpisode(season, episode) {
-    if (state.selectedSeason !== season) {
+  function updateSeasonAndEpisode(season, episode, starttime=null) {
+    if (episode < 0) episode = 0;
+    if (season === 1 && episode < 1) {
       episode = 1;
+    } else if (season === 1 && episode > 6) {
+      episode = 6
     }
+    setHighlight(starttime && [season, episode, starttime])
     setState(prevState => {
       return {
         ...prevState,
@@ -59,21 +60,25 @@ export default function Subs({ history, location }) {
         )
       };
     });
+    if (query !== "") {
+      history.push({ search: ""});
+
+    }
+    
   }
 
   function searchSubs(event) {
     event.preventDefault();
     history.push({ search: "?query=" + currTextValue });
+    setState(prevState => {
+      return {
+        ...prevState,
+        selectedSeason: -1,
+        selectedEpisode: -1,
+      };
+    });
   }
 
-  function getEpisodeTitle() {
-    const key = String(state.selectedSeason) + String(state.selectedEpisode);
-    let episodeTitle = "";
-    if (state.titles.has(key)) {
-      episodeTitle = state.titles.get(key);
-    }
-    return episodeTitle;
-  }
 
   return (
     <div className="subs-container">
@@ -92,15 +97,15 @@ export default function Subs({ history, location }) {
           value={currTextValue}
         ></input>
         <button type="submit" className="subs-search-button">
-          &#x1f50e;
+         <span role="img" aria-label="search"> &#x1f50e; </span>
         </button>
       </form>
       
 
       {query ? (
-        <SubsSearch result={state.result} query={query} />
+        <SubsSearch result={state.result} query={query} onClick={updateSeasonAndEpisode} />
       ) : (
-        <SubsDisplay subs={state.subs} query="" />
+        <SubsDisplay subs={state.subs} query="" highlight={highlight}/>
       )}
     </div>
   );
@@ -118,17 +123,4 @@ function getSeasonsAndEpisodes(result) {
     seasons.get(season).add(episode);
   }
   return seasons;
-}
-
-function getTitles(result) {
-  const titles = new Map();
-
-  for (const chunk of result) {
-    const { season, episode, display_name } = chunk;
-    const key = String(season) + String(episode);
-    if (!titles.has(key)) {
-      titles.set(key, display_name);
-    }
-  }
-  return titles;
 }

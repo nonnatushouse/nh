@@ -13,7 +13,7 @@ export default function EpisodeSelector({
         "selected": s === selectedSeason
     }) 
     return (
-      <button className={cls} onClick={() => onClick(s, 1)}>
+      <button className={cls} onClick={() => onClick(s, selectedEpisode)}>
         {s}
       </button>
     );
@@ -36,7 +36,11 @@ export default function EpisodeSelector({
   });
 
   return (
-    <div className="episode-selector-container">
+    season_buttons.length === 0 ? (
+      <div className="episode-selector-container">Loading...</div>
+    )
+
+    : (    <div className="episode-selector-container">
       <div className="sub-se-container">
         <div>Season</div>
         <div className="sub-season-episode-container">{season_buttons}</div>
@@ -47,5 +51,6 @@ export default function EpisodeSelector({
         <div className="sub-season-episode-container">{episode_buttons}</div>
       </div>
     </div>
+    )
   );
 }

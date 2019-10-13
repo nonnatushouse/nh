@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
-export default function SubsDisplay({ subs, query }) {
+export default function SubsDisplay({
+  subs,
+  query,
+  onClick,
+  highlight = null
+}) {
+  const highlightRef = useRef(null);
+  useEffect(() => {
+    if (highlight && highlightRef.current) {
+      highlightRef.current.scrollIntoView({block: "center"});
+    }
+
+  }, [highlight])
+
   const q = query.replace(/[\\^$.*+?()[\]{}|]/g, "\\$&");
   // TODO: Display chunks. May get query, which should be highlighted if exists
   const re = new RegExp(q, "gi");
@@ -18,7 +31,7 @@ export default function SubsDisplay({ subs, query }) {
   return (
     <div>
       {query ? (
-        <h3 className="episode-title" style={{position:"static"}}>
+        <h3 className="episode-title" style={{ position: "static" }}>
           {subs.length} matches found in {groupedChunks.size} episodes.
         </h3>
       ) : null}
@@ -31,12 +44,24 @@ export default function SubsDisplay({ subs, query }) {
           {group.map(chunk => {
             const text = chunk.text.replace(re, `<em>$&</em>`);
 
+            const isHighlighted =
+              highlight &&
+              highlight[0] === chunk.season &&
+              highlight[1] === chunk.episode &&
+              highlight[2] === chunk.starttime;
+
             return (
               <>
-                <p className="starttime">{formatTimecode(chunk.starttime)}</p>
+                <p className="starttime" ref={isHighlighted ? highlightRef : null}>
+                  {formatTimecode(chunk.starttime)}
+                </p>
                 <p
                   className="subs-text"
                   dangerouslySetInnerHTML={{ __html: text }}
+                  onClick={() =>
+                    onClick &&
+                    onClick(chunk.season, chunk.episode, chunk.starttime)
+                  }
                 ></p>
               </>
             );

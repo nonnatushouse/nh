@@ -4,12 +4,13 @@ import "./Info.css";
 
 import {
   GENERAL,
-  QUOTES,
-  NAMES_PLACES,
-  S1_S4,
-  S5_S8,
-  CAST_CREW,
-  MEDICAL
+
+  // QUOTES,
+  // NAMES_PLACES,
+  // S1_S4,
+  // S5_S8,
+  // CAST_CREW,
+  // MEDICAL
 } from "./Questions";
 
 export default function QuizSplashScreen({ onQuizRequest }) {
