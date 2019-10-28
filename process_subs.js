@@ -24,13 +24,27 @@ async function do_it() {
 
     for (const chunk of split_content) {
       const rows = chunk.split(/\r?\n/);
+
+
       const time_match = rows[1].match(/^(\d{2}):(\d{2}):(\d{2}),(\d{3})/);
       const starttime =
         time_match[1] * 60 * 60 * 1000 +
         time_match[2] * 60 * 1000 +
         time_match[3] * 1000 +
         time_match[4] * 1;
-      const text = rows.slice(2).join("\n");
+      let text = rows.slice(2);
+      let processed_text = []
+      for (row of text) {
+        row = row.replace("<i>", "")
+        row = row.replace("</i>", "")
+        if (row.substring(0, 2) === "- ") {
+          row = row.substring(2);
+        }
+        processed_text.push(row)
+      }
+      
+      text = processed_text.join("\n")
+      
       results.push({ starttime, text, season, episode, display_name });
     }
   }
