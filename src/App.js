@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { Route, NavLink } from "react-router-dom";
-import "./App.css";
-import Timer from "./Timer";
-import Quiz from "./Quiz";
-import Home from "./Home";
-import Contact from "./Contact";
-import Randomizer from "./Randomizer";
+import "./App.css"; 
+import Timer from "./Timer/Timer";
+import Quiz from "./Quiz/Quiz";
+import Home from "./Misc/Home";
+import Contact from "./Misc/Contact";
+import Randomizer from "./Randomizer/Randomizer";
 import RcMenu from "./RcMenu";
-import Bingo from "./Bingo";
-import VideoPage from "./VideoPage";
-import PodcastPage from "./PodcastPage";
-import CookiesPage from "./CookiesPage";
-import MusicPage from "./MusicPage";
-import Subs from "./Subs";
+import Bingo from "./Bingo/Bingo";
+import VideoPage from "./Misc/VideoPage";
+import PodcastPage from "./Misc/PodcastPage";
+import CookiesPage from "./Misc/CookiesPage";
+import MusicPage from "./Misc/MusicPage";
+import Subs from "./Subs/Subs";
+import QuotesPage from "./Quotes/QuotesPage";
 
 class App extends Component {
   state = { menuIsExpanded: false };
@@ -50,7 +51,7 @@ class App extends Component {
           <Route path="/cookies" component={CookiesPage} />
           <Route path="/music" component={MusicPage} />
           <Route path="/subs" component={Subs} />
-
+          <Route path="/quotes" component={QuotesPage} />
         </div>
 
         <div className="page-footer">

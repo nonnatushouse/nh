@@ -5,7 +5,7 @@ import QuizScore from "./QuizScore";
 import getQuestions from "./Questions";
 import "./Quiz.css";
 import QuizSplashScreen from "./QuizSplashScreen";
-import "./Info.css";
+import "../Info.css";
 
 const initialState = {
   gameState: "splash",

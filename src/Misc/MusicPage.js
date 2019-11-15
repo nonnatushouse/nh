@@ -1,6 +1,6 @@
 import React from "react";
 import "./VideoPage.css";
-import "./Info.css";
+import "../Info.css";
 
 export default function MusicPage() {
   return (

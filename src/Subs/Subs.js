@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Subs.css";
-import { fetchSubs } from "./Subs/SubsService";
+import { fetchSubs } from "./SubsService";
 import SubsSearch from "./SubsSearch";
 import EpisodeSelector from "./EpisodeSelector";
 import SubsDisplay from "./SubsDisplay";

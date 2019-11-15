@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Timer.css";
 import TimerDisplay from "./TimerDisplay";
-import useInterval from "./useInterval";
-import "./Info.css";
+import useInterval from "../useInterval";
+import "../Info.css";
 
 export default function Timer(props) {
   const [date, setDate] = useState(new Date());

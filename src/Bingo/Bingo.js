@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Bingo.css";
 import BingoPlay from "./BingoPlay";
 import BingoEdit from "./BingoEdit";
-import { getFrequentlyOccurringEvents } from "./FrequentlyOccurring";
+import { getFrequentlyOccurringEvents } from "../FrequentlyOccurring";
 
 const BOARD_SIZE = 3;
 

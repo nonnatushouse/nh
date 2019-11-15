@@ -2,7 +2,7 @@ import React from "react";
 import "./Bingo.css";
 import classNames from "classnames";
 import {allFilterCategories
-} from "./FrequentlyOccurring"
+} from "../FrequentlyOccurring"
 
 
 

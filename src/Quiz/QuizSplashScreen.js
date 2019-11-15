@@ -1,6 +1,6 @@
 import React from "react";
 import "./Quiz.css";
-import "./Info.css";
+import "../Info.css";
 
 import {
   GENERAL,

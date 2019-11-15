@@ -3,10 +3,10 @@ import "./Randomizer.css";
 import { getSeasons, getEpisodes} from "./Seasons";
 import Season from "./Season";
 import classNames from "classnames";
-import "./Info.css";
+import "../Info.css";
 import RandomizerSelector from "./RandomizerSelector";
-import {helperVar} from "./helper"
-import {useEventListener} from "./useEventListener";
+import {helperVar} from "./helper";
+import {useEventListener} from "../useEventListener";
 
 
 const initialState = {
