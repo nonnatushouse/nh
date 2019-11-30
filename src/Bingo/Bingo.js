@@ -37,25 +37,18 @@ const initialState = {
   filter: []
 };
 
-export default function Bingo() {
+export default function Bingo({ history, location }) {
   const [state, dispatch] = useReducer(sneakyReducer, initialState);
 
   const handler = useCallback(() => {
-    console.log()
-
     try {
-      const bingo_url = window.location.pathname
-      console.log(bingo_url)
-      console.log(bingo_url !== '/bingo')
-      if (bingo_url !== '/bingo') {
-        const preset = atob(JSON.parse(bingo_url))  // atob()
-        console.log(preset)
-        
-
-      }
-
       const savedState = window.localStorage.getItem(STATE_KEY);
-      if (!savedState) {
+
+      const bingo_url = location.search;
+      console.log(bingo_url);
+      console.log(bingo_url !== "/bingo");
+      if (bingo_url !== "/bingo") {
+      } else if (!savedState) {
         return;
       }
       const state = JSON.parse(savedState);
@@ -77,8 +70,8 @@ export default function Bingo() {
     ev.preventDefault();
     ev.stopPropagation();
     if (state.dragOverPlacement !== placement) {
-    dispatch({type:UPDATE_PLACEMENT, placement})
-  }
+      dispatch({ type: UPDATE_PLACEMENT, placement });
+    }
   }
 
   function onDragStart(ev, id) {
@@ -93,7 +86,8 @@ export default function Bingo() {
     dispatch({ type: PLAY_CLICK, id });
   }
 
-  function toggleGameState() {
+  function toggleGameState(board) {
+    history.push({search: "?b=" + board });
     dispatch({ type: TOGGLE_GAME_STATE });
   }
 
@@ -117,46 +111,70 @@ export default function Bingo() {
   }
 
   function updateFilter(filterItem) {
-    dispatch({ type: UPDATE_FILTER, filterItem})
+    dispatch({ type: UPDATE_FILTER, filterItem });
   }
   function dummy(e, id) {}
 
   const buttonText = state.gameState === GAME_STATE_EDIT ? "Play" : "Edit";
-  const URL_Text = "/bingo/" + btoa(JSON.stringify("{'1':11, '2':12, '3':13, '1':11, '2':12, '3':13, '1':11, '2':12, '3':13}"))
+
+  // + btoa(JSON.stringify(state.filter))
+  let URL_Saved = "";
+
+  if (
+    state.FOElist.filter(item => {
+      return item.placement !== "pool";
+    }).length !== 0
+  ) {
+
+    URL_Saved += String(state.boardSize);
+    let h, w;
+    for (h = 0; h < state.boardSize; h++) {
+      for (w = 0; w < state.boardSize; w++) {
+        const p = `${w},${h}`;
+        const item = state.FOElist.find(it => it.placement === p);
+        if (item) {
+          URL_Saved += item.id;
+        } else {
+          URL_Saved += "~";
+        }
+      }
+    }
+  }
 
   return (
     <>
       <div className="bingo-container">
         <div className="info-big-title">Bingo </div>
-        {/* <button
+        <button
           type="button"
           className="bingo-play-edit-toggle-button"
-          onClick={toggleGameState}
+          onClick={() => toggleGameState(URL_Saved)}
         >
           {buttonText}
-        </button> */}
+        </button>
 
-        <NavLink
-              className="bingo-play-edit-toggle-button"
-              to={URL_Text}
-              activeClassName="selected"
-              onClick={toggleGameState}
-            >
-              {buttonText}
-            </NavLink>
-
+        {/* <NavLink
+          className="bingo-play-edit-toggle-button"
+          to={URL_Text}
+          activeClassName="selected"
+          onClick={() => toggleGameState(URL_Saved)}
+        >
+          {buttonText}
+        </NavLink> */}
 
         {state.gameState === GAME_STATE_PLAY ? (
-            <BingoPlay className="bingo-play-container"
-              boardSize={state.boardSize}
-              onDragOver={onDragOver}
-              onDrop={onDrop}
-              onDragStart={(e, id) => dummy(e, id)}
-              FOElist={state.FOElist.filter(item => item.placement !== "pool")}
-              onItemClick={onPlayClick}
-            />
+          <BingoPlay
+            className="bingo-play-container"
+            boardSize={state.boardSize}
+            onDragOver={onDragOver}
+            onDrop={onDrop}
+            onDragStart={(e, id) => dummy(e, id)}
+            FOElist={state.FOElist.filter(item => item.placement !== "pool")}
+            onItemClick={onPlayClick}
+          />
         ) : (
-          <BingoEdit className="bingo-edit-container"
+          <BingoEdit
+            className="bingo-edit-container"
             FOElist={state.FOElist.map(item => item)}
             boardSize={state.boardSize}
             onDragOver={onDragOver}
@@ -205,7 +223,7 @@ function reducer(state, action) {
             : { ...item, placement: newPlace };
         });
 
-        return { ...state, FOElist: newFOE, dragOverPlacement:null };
+        return { ...state, FOElist: newFOE, dragOverPlacement: null };
       } catch (error) {}
 
       return { ...state };
@@ -271,7 +289,7 @@ function reducer(state, action) {
       const newFOElist2 = state.FOElist.map(item => {
         return { ...item, placement: "pool", isChecked: false };
       });
-      return { ...state, FOElist: newFOElist2, filter:[] };
+      return { ...state, FOElist: newFOElist2, filter: [] };
 
     case NEW_BINGO_ITEM:
       const newItem = {
@@ -320,16 +338,16 @@ function reducer(state, action) {
       return { ...state, FOElist: newFOElist3 };
 
     case UPDATE_PLACEMENT:
-      return {...state, dragOverPlacement:action.placement}
+      return { ...state, dragOverPlacement: action.placement };
 
     case UPDATE_FILTER:
       let filter = state.filter.map(item => item);
       if (filter.includes(action.filterItem)) {
-        filter = state.filter.filter(item => item !== action.filterItem)
+        filter = state.filter.filter(item => item !== action.filterItem);
       } else {
         filter.push(action.filterItem);
       }
-      return {...state, filter}
+      return { ...state, filter };
     default:
       return { ...state };
   }
