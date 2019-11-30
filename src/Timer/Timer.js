@@ -1,31 +1,26 @@
 import React, { useState } from "react";
-import "./Timer.css";
-import TimerDisplay from "./TimerDisplay";
 import useInterval from "../useInterval";
+import TimerDisplay from "./TimerDisplay";
+import "./Timer.css";
 import "../Info.css";
 
-export default function Timer(props) {
+export default function Timer() {
   const [date, setDate] = useState(new Date());
-  const targetDate = getTargetDate();
 
   useInterval(() => {
     setDate(new Date());
   }, 1000);
 
-  const note = new Date(Date.UTC(2019, 11, 25, 20, 0, 0)) - date > 0 ?  "Note: This is assuming that the episode airs on December 25th, 2019 at 20:00 UTC" : "";
+  const timeLeft = getTargetDate() - date;
 
-  const timeLeft = targetDate - date;
+  const note = timeLeft > 0 ? "Note: This is assuming that the episode airs on December 25th, 2019 at 20:00 UTC" : "";
+
   return (
-    <>
     <div className="timer-container">
-      <div className="info-big-title">
-        Time until Call the Midwife Series 9 airs:
-      </div>
+      <div className="info-big-title">Time until Call the Midwife Series 9 airs:</div>
       <TimerDisplay timeLeft={timeLeft} />
       <div className="timer-note">{note}</div>
-      </div>
-    </>
-    
+    </div>
   );
 }
 
