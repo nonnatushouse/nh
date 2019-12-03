@@ -52,6 +52,7 @@ export default function Bingo({ history, location }) {
         return;
       }
       const state = JSON.parse(savedState);
+      if (!state) return;
       dispatch({ type: LOAD_BOARD, savedState: state });
     } catch (error) {}
   }, [dispatch]);
