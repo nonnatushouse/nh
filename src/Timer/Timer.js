@@ -17,13 +17,13 @@ export default function Timer() {
 
   return (
     <div className="timer-container">
-      <div className="info-big-title">Time until Call the Midwife Series 9 airs:</div>
+      <div className="info-big-title">Time until the Call the Midwife 2019 Christmas Special airs:</div>
       <TimerDisplay timeLeft={timeLeft} />
-      <div className="timer-note">{note}</div>
+      {/* <div className="timer-note">{note}</div> */}
     </div>
   );
 }
 
 function getTargetDate() {
-  return new Date(Date.UTC(2019, 11, 25, 20, 0, 0));
+  return new Date(Date.UTC(2019, 11, 25, 19, 0, 0));
 }
