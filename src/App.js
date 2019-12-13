@@ -40,7 +40,8 @@ class App extends Component {
         </button>
 
         <div className="page-container">
-          <Route path="/timer" component={Timer} />
+          <Route path="/timer" render={() => <Timer targetDate={Date.UTC(2019, 11, 25, 19, 0, 0)} title="Time until the Call the Midwife 2019 Christmas Special airs:" />} />
+          <Route path="/us-timer" render={() => <Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the US):"/>} />
           <Route path="/quiz" component={Quiz} />
           <Route path="/" component={Home} exact />
           <Route path="/contact" component={Contact} />

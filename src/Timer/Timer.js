@@ -4,26 +4,26 @@ import TimerDisplay from "./TimerDisplay";
 import "./Timer.css";
 import "../Info.css";
 
-export default function Timer() {
+export default function Timer({targetDate, title}) {
   const [date, setDate] = useState(new Date());
+
+  console.log("target date = ", targetDate)
 
   useInterval(() => {
     setDate(new Date());
   }, 1000);
 
-  const timeLeft = getTargetDate() - date;
+  const timeLeft = targetDate - date;
 
   const note = timeLeft > 0 ? "Note: This is assuming that the episode airs on December 25th, 2019 at 20:00 UTC" : "";
 
   return (
     <div className="timer-container">
-      <div className="info-big-title">Time until the Call the Midwife 2019 Christmas Special airs:</div>
+      <div className="info-big-title">{title}</div>
       <TimerDisplay timeLeft={timeLeft} />
       {/* <div className="timer-note">{note}</div> */}
     </div>
   );
 }
 
-function getTargetDate() {
-  return new Date(Date.UTC(2019, 11, 25, 19, 0, 0));
-}
+
