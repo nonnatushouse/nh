@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import uuidv4 from 'uuid/v4';
 import "./Bingo.css";
 const MAX_LENGTH = 100;
+const MIN_LENGTH = 3;
 
 export default function BingoNewItem({createNewBingoItem}) {
     const [title, setTitle] = useState('');
@@ -21,6 +22,7 @@ export default function BingoNewItem({createNewBingoItem}) {
       <form className="new-bingo-item-form" onSubmit={onFormSubmit}>
         <input 
         maxLength={MAX_LENGTH}
+        minLength={MIN_LENGTH}
           className="new-bingo-item-text-input"
           type="text"
           placeholder="Create your own Bingo tile"

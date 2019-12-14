@@ -38,6 +38,7 @@
   border-color: black;
   border-style: solid;
   resize: none;
+
 }
 
 .checked::before {
@@ -296,5 +297,9 @@
   .bingo-remove-button {
     color: rgb(163, 37, 37);
     opacity: 1;
+  }
+
+  .on-board{
+    font-size: .5rem;
   }
 }

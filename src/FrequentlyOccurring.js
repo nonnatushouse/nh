@@ -62,16 +62,18 @@ const _LUCILLE = [LUCILLE, S7, S8, S9]
 const SR_H = "Sister Hilda";
 const _SR_H = [SR_H, S8, S9];
 const SR_F = "Sister Frances"
-// const _SR_F = [SR_F, S8, S9]
+const _SR_F = [SR_F, S8, S9]
 const MO_M = "Mother Mildred"
 const _MO_M = [MO_M, S8, S9]
+const MS_H = "Miss Higgins"
+const _MS_H = [MS_H, S8, S9]
 
 const allFilterCategories = [S1,S2,S3,S4,S5,S6,S7,S8,S9,FRED,SR_J,SR_E,SR_MJ,JENNY,CYNTHIA,TRIXIE,PETER,CHUMMY,DR_T,
-  TIM,PATSY,SHELAGH,SR_W,TOM,PHYLLIS,BARBARA,VI,DELIA,VAL,REGGIE,LUCILLE,SR_H,SR_F,MO_M]
+  TIM,PATSY,SHELAGH,SR_W,TOM,PHYLLIS,BARBARA,VI,DELIA,VAL,REGGIE,LUCILLE,SR_H,SR_F,MO_M,MS_H]
 
 export {
   S1,S2,S3,S4,S5,S6,S7,S8,S9,FRED,SR_J,SR_E,SR_MJ,JENNY,CYNTHIA,TRIXIE,PETER,CHUMMY,DR_T,TIM,
-  PATSY,SHELAGH,SR_W,TOM,PHYLLIS,BARBARA,VI,DELIA,VAL,REGGIE,LUCILLE,SR_H,SR_F,MO_M, allFilterCategories
+  PATSY,SHELAGH,SR_W,TOM,PHYLLIS,BARBARA,VI,DELIA,VAL,REGGIE,LUCILLE,SR_H,SR_F,MO_M,MS_H, allFilterCategories
 };
 
 
@@ -82,6 +84,7 @@ export function getFrequentlyOccurringEvents() {
         {id:"a2", isChecked:false,placement:"pool", title:"Someone is offered a cup of (well-sugared) tea", tags:ALL},
         {id:"a3", isChecked:false,placement:"pool", title:"Fred mentions El Alemain", tags:_FRED},
         {id:"a4", isChecked:false,placement:"pool", title:"Sister Monica Joan eats cake or sweets", tags:_SR_MJ},
+        {id:"b5", isChecked:false,placement:"pool", title:"Turnadette moment", tags:_DR_T.concat(SHELAGH).concat(SR_B)},
         {id:"a5", isChecked:false,placement:"pool", title:"Sister Julienne is asked for help or advice", tags:_SR_J},
         {id:"a6", isChecked:false,placement:"pool", title:"\"Nonnatus House, midwife speaking!\"", tags:ALL},
         {id:"a7", isChecked:false,placement:"pool", title:"Val mentions a family member", tags:_VAL},
@@ -102,7 +105,7 @@ export function getFrequentlyOccurringEvents() {
         {id:"al", isChecked:false,placement:"pool", title:"Someone is gardening", tags:ALL},
         {id:"am", isChecked:false,placement:"pool", title:"Pregnant woman smokes", tags:ALL},
         {id:"an", isChecked:false,placement:"pool", title:"Brand of soap is mentioned", tags:ALL},
-        {id:"ao", isChecked:false,placement:"pool", title:"Sister Monica Joan quotes the Bible, Keats or Shakespeare", tags:_SR_MJ},
+        {id:"ao", isChecked:false,placement:"pool", title:"Sister Monica Joan quotes the Bible, Keats, Shakespeare, etc", tags:_SR_MJ},
         {id:"ap", isChecked:false,placement:"pool", title:"Tim acts over his age", tags:_TIM},
         {id:"aq", isChecked:false,placement:"pool", title:"Undiagnosed multiplet", tags:ALL},
         {id:"ar", isChecked:false,placement:"pool", title:"Dr Turner corrects someone", tags:_DR_T},
@@ -151,8 +154,40 @@ export function getFrequentlyOccurringEvents() {
         {id:"cj", isChecked:false,placement:"pool", title:"Chummy destroys something", tags:_CHUMMY},
         {id:"ck", isChecked:false,placement:"pool", title:"Chummy mentions her mother or father", tags:_CHUMMY},
         {id:"cl", isChecked:false,placement:"pool", title:"Cub scout meeting", tags:ALL},
+        {id:"cm", isChecked:false,placement:"pool", title:"Sister Frances reveals details about her pre-nun life", tags:_SR_F},
+        {id:"cn", isChecked:false,placement:"pool", title:"Nonnatun is bicycling", tags:ALL},
+        {id:"co", isChecked:false,placement:"pool", title:"Nuns and midwives disagree", tags:ALL},
+        {id:"cp", isChecked:false,placement:"pool", title:"Soundtrack \"In the Mirror\" is playing", tags:ALL},
+        {id:"cq", isChecked:false,placement:"pool", title:"Soundtrack \"Biking\" is playing", tags:ALL},
+        {id:"cr", isChecked:false,placement:"pool", title:"Soundtrack \"The Adventure of Life\" is playing", tags:ALL},
+        {id:"cs", isChecked:false,placement:"pool", title:"Soundtrack \"The Miracle\" is playing", tags:ALL},
+        {id:"ct", isChecked:false,placement:"pool", title:"Soundtrack \"The Wedding\" is playing", tags:ALL},
+        {id:"cu", isChecked:false,placement:"pool", title:"Soundtrack \"We Will Be Memories\" is playing", tags:ALL},
+        {id:"cv", isChecked:false,placement:"pool", title:"Soundtrack \"Where Rose Lies\" is playing", tags:ALL},
+        {id:"cw", isChecked:false,placement:"pool", title:"Soundtrack \"Christmas\" is playing", tags:ALL},
+        {id:"cx", isChecked:false,placement:"pool", title:"Character sings along with song on radio", tags:ALL},
+        
+        {id:"b0", isChecked:false,placement:"pool", title:"Fred is scared of Mother Mildred", tags:_MO_M.concat(FRED)},
+        {id:"b1", isChecked:false,placement:"pool", title:"Miss Higgins suggest improvement to routines", tags:_MS_H},
+        {id:"b2", isChecked:false,placement:"pool", title:"Shelagh CANNOT BELIEVE what Miss Higgins just said/did", tags:_MS_H.concat(SHELAGH)},
+        {id:"b3", isChecked:false,placement:"pool", title:"Reggie helps someone", tags:_REGGIE},
+        {id:"b4", isChecked:false,placement:"pool", title:"Female friendship on display", tags:ALL},
 
+        {id:"b6", isChecked:false,placement:"pool", title:"Shulienne moment", tags:_SR_J.concat(SHELAGH).concat(SR_B)},
+        {id:"b7", isChecked:false,placement:"pool", title:"Nonnatun(s) travel beyond Poplar", tags:ALL},
+        {id:"b8", isChecked:false,placement:"pool", title:"Nonnatun(s) watch television", tags:ALL},
+        {id:"b9", isChecked:false,placement:"pool", title:"Keep Fit class (or mentioned)", tags:ALL},
+        {id:"c0", isChecked:false,placement:"pool", title:"Lucille goes on date", tags:_LUCILLE},
+        {id:"c1", isChecked:false,placement:"pool", title:"Compline is mentioned", tags:ALL},
+        {id:"c2", isChecked:false,placement:"pool", title:"The Great Silence is mentioned", tags:ALL},
+        {id:"c3", isChecked:false,placement:"pool", title:"Mrs B is mentioned", tags:ALL},
+        {id:"c4", isChecked:false,placement:"pool", title:"Someone is cooking", tags:ALL},
+        {id:"c5", isChecked:false,placement:"pool", title:"Dr Turner is summoned", tags:_DR_T},
+        {id:"c6", isChecked:false,placement:"pool", title:"Phyllis drives her car", tags:_PHYLLIS},
 
-        // {id:, isChecked:false,placement:"pool", title:"", tags:[]},
+        {id:"c7", isChecked:false,placement:"pool", title:"Sister Monica Joan goes missing", tags:_SR_MJ},
+        {id:"c8", isChecked:false,placement:"pool", title:"Sister Monica Joan spouts wisdom", tags:_SR_MJ},
+
+        // {id:"", isChecked:false,placement:"pool", title:"", tags:[]},
     ]
 }

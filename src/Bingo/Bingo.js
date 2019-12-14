@@ -40,14 +40,22 @@ const initialState = {
 export default function Bingo({ history, location }) {
   const [state, dispatch] = useReducer(sneakyReducer, initialState);
 
+
+  // Underscore encoding = %5f  (get it back by running string through decode URI component  encodeURIComponent)
+  // Underscore as separator, SPLIT!(TM), then do the magic dance
   const handler = useCallback(() => {
     try {
       const savedState = window.localStorage.getItem(STATE_KEY);
 
-      const bingo_url = location.search;
-      console.log(bingo_url);
-      console.log(bingo_url !== "/bingo");
-      if (bingo_url !== "/bingo") {
+      const board_size = location.search.substring(3, 4);
+      const board = location.search.substring(4);
+      console.log(board_size);
+      console.log(board);
+      console.log(board_size !== "/bingo");
+      if (board_size) {
+
+
+
       } else if (!savedState) {
         return;
       }
