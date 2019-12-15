@@ -39,6 +39,7 @@ export default function BoardGenerator({
           where={cl1}
           onDrop={e => onDrop(e, id)}
           onDragOver={(ev) => onDragOver(ev, id)}
+          boardSize={boardWidth}
         />
       ) : null;
 

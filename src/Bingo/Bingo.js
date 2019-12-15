@@ -142,11 +142,20 @@ export default function Bingo({ history, location }) {
         const p = `${w},${h}`;
         const item = state.FOElist.find(it => it.placement === p);
         if (item) {
-          URL_Saved += item.id;
+          if (item.id.length === 2) {
+            URL_Saved += item.id;
+          } else {
+            const URL_text = item.title.replace(/_/g, "%5f");
+            URL_Saved += URL_text;
+          }
+
+          
         } else {
           URL_Saved += "~";
         }
+        URL_Saved += "_"
       }
+      
     }
   }
 

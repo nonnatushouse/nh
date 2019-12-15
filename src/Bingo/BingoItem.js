@@ -8,10 +8,17 @@ export default function BingoItem({
   onDragOver,
   onDrop,
   onItemClick,
-  removeBingoItem
+  removeBingoItem,
+  boardSize
 }) {
   const isCheckedName = item.isChecked ? "checked" : "unchecked";
   const className = "item " + where.toString();
+
+  const ww = window.innerWidth
+  console.log("WW:" , ww)
+
+  const fontSize = ww < 600 ? 3/boardSize : 1;
+
   return where === "in-pool" ? (
     <div
       key={item.id}
@@ -37,6 +44,10 @@ export default function BingoItem({
     </div>
   ) : (
     <div
+    style={{
+      fontSize: `${fontSize}rem`
+    }}
+
       key={item.id}
       className={className}
       draggable
