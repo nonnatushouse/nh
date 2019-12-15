@@ -15,7 +15,7 @@ export default function BingoItem({
   const className = "item " + where.toString();
 
   const ww = window.innerWidth
-  console.log("WW:" , ww)
+
 
   const fontSize = ww < 600 ? 3/boardSize : 1;
 
