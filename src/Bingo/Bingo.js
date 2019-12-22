@@ -1,9 +1,11 @@
 import React, { useReducer, useEffect, useCallback } from "react";
 import { NavLink } from "react-router-dom";
+import uuidv4 from "uuid/v4";
 import "./Bingo.css";
 import BingoPlay from "./BingoPlay";
 import BingoEdit from "./BingoEdit";
 import { getFrequentlyOccurringEvents } from "../FrequentlyOccurring";
+import { bingoBoardParsedFromURL } from "./BingoUtils";
 
 const BOARD_SIZE = 3;
 
@@ -16,7 +18,7 @@ const GAME_STATE_PLAY = "GAME_STATE_PLAY";
 const GAME_STATE_EDIT = "GAME_STATE_EDIT";
 
 const STATE_KEY = "STATE_KEY";
-const LOAD_BOARD = "LOAD_BOARD";
+const BOARD_LOADED_FROM_SAVED_STATE = "BOARD_LOADED_FROM_SAVED_STATE";
 const TOGGLE_GAME_STATE = "TOGGLE_GAME_STATE";
 
 const CHANGE_BOARD_SIZE = "CHANGE_BOARD_SIZE";
@@ -28,6 +30,7 @@ const RANDOMIZE_BOARD = "RANDOMIZE_BOARD";
 
 const UPDATE_PLACEMENT = "UPDATE_PLACEMENT";
 const UPDATE_FILTER = "UPDATE_FILTER";
+const BOARD_LOADED_FROM_URL = "BOARD_LOADED_FROM_URL";
 
 const initialState = {
   FOElist: getFrequentlyOccurringEvents(),
@@ -40,28 +43,23 @@ const initialState = {
 export default function Bingo({ history, location }) {
   const [state, dispatch] = useReducer(sneakyReducer, initialState);
 
-
   // Underscore encoding = %5f  (get it back by running string through decode URI component  encodeURIComponent)
   // Underscore as separator, SPLIT!(TM), then do the magic dance
   const handler = useCallback(() => {
     try {
+      const [boardSize, boardArray] = bingoBoardParsedFromURL(location.search);
+      if (boardArray) {
+        dispatch({ type: BOARD_LOADED_FROM_URL, placements: boardArray, boardSize });
+        return;
+      }
       const savedState = window.localStorage.getItem(STATE_KEY);
 
-      const board_size = location.search.substring(3, 4);
-      const board = location.search.substring(4);
-      console.log(board_size);
-      console.log(board);
-      console.log(board_size !== "/bingo");
-      if (board_size) {
-
-
-
-      } else if (!savedState) {
+      if (!savedState) {
         return;
       }
       const state = JSON.parse(savedState);
       if (!state) return;
-      dispatch({ type: LOAD_BOARD, savedState: state });
+      dispatch({ type: BOARD_LOADED_FROM_SAVED_STATE, savedState: state });
     } catch (error) {}
   }, [dispatch]);
   useEffect(() => {
@@ -96,7 +94,7 @@ export default function Bingo({ history, location }) {
   }
 
   function toggleGameState(board) {
-    history.push({search: "?b=" + board });
+    history.push({ search: "?" + board });
     dispatch({ type: TOGGLE_GAME_STATE });
   }
 
@@ -134,8 +132,6 @@ export default function Bingo({ history, location }) {
       return item.placement !== "pool";
     }).length !== 0
   ) {
-
-    URL_Saved += String(state.boardSize);
     let h, w;
     for (h = 0; h < state.boardSize; h++) {
       for (w = 0; w < state.boardSize; w++) {
@@ -145,19 +141,17 @@ export default function Bingo({ history, location }) {
           if (item.id.length === 2) {
             URL_Saved += item.id;
           } else {
-            const URL_text = item.title.replace(/_/g, "%5f");
+            const URL_text = encodeURIComponent(item.title).replace(/_/g, "%5f");
             URL_Saved += URL_text;
           }
-
-          
         } else {
           URL_Saved += "~";
         }
-        URL_Saved += "_"
+        URL_Saved += "_";
       }
-      
     }
   }
+  URL_Saved = URL_Saved.slice(0, -1);
 
   return (
     <>
@@ -274,7 +268,7 @@ function reducer(state, action) {
       }
       return { ...state };
 
-    case LOAD_BOARD:
+    case BOARD_LOADED_FROM_SAVED_STATE:
       return {
         ...state,
         FOElist: action.savedState.FOElist,
@@ -366,6 +360,27 @@ function reducer(state, action) {
         filter.push(action.filterItem);
       }
       return { ...state, filter };
+
+    case BOARD_LOADED_FROM_URL:
+      const localFOE = state.FOElist.slice();
+
+      for (const { placement, identifier } of action.placements) {
+        const FOEIndex = localFOE.findIndex(it => it.id === identifier);
+
+        if (FOEIndex === -1) {
+          localFOE.push({
+            id: uuidv4(),
+            isChecked: false,
+            placement,
+            title: identifier,
+            tags: []
+          });
+        } else {
+          localFOE[FOEIndex] = { ...localFOE[FOEIndex], placement };
+        }
+      }
+      return { ...state, FOElist: localFOE, boardSize:action.boardSize };
+
     default:
       return { ...state };
   }
