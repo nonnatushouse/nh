@@ -82,7 +82,7 @@ export function getFrequentlyOccurringEvents() {
     return [
         {id:"a1", isChecked:false,placement:"pool", title:"The Commercial Road is mentioned", tags:ALL},
         {id:"a2", isChecked:false,placement:"pool", title:"Someone is offered a cup of (well-sugared) tea", tags:ALL},
-        {id:"a3", isChecked:false,placement:"pool", title:"Fred mentions El Alemain", tags:_FRED},
+        {id:"a3", isChecked:false,placement:"pool", title:"Fred mentions El Alamein", tags:_FRED},
         {id:"a4", isChecked:false,placement:"pool", title:"Sister Monica Joan eats cake or sweets", tags:_SR_MJ},
         {id:"b5", isChecked:false,placement:"pool", title:"Turnadette moment", tags:_DR_T.concat(SHELAGH).concat(SR_B)},
         {id:"a5", isChecked:false,placement:"pool", title:"Sister Julienne is asked for help or advice", tags:_SR_J},
