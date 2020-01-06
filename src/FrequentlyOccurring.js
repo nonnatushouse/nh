@@ -136,6 +136,7 @@ export function getFrequentlyOccurringEvents() {
         {id:"br", isChecked:false,placement:"pool", title:"Phyllis calls someone \"lass\"", tags:_PHYLLIS},
         {id:"bs", isChecked:false,placement:"pool", title:"Lucille calls someone \"precious\"", tags:_LUCILLE},
         {id:"bt", isChecked:false,placement:"pool", title:"Sister Julienne calls someone \"my dear\"", tags:_SR_J},
+        {id:"c9", isChecked:false,placement:"pool", title:"Sister Hilda calls someone \"pet\"", tags:_SR_H},
         {id:"bu", isChecked:false,placement:"pool", title:"Violet is working in her shop", tags:_VI},
         {id:"bv", isChecked:false,placement:"pool", title:"Fred has a money making scheme", tags:_FRED},
         {id:"bw", isChecked:false,placement:"pool", title:"Sister Monica Joan refuses medical intervention", tags:_SR_MJ},
@@ -187,7 +188,9 @@ export function getFrequentlyOccurringEvents() {
 
         {id:"c7", isChecked:false,placement:"pool", title:"Sister Monica Joan goes missing", tags:_SR_MJ},
         {id:"c8", isChecked:false,placement:"pool", title:"Sister Monica Joan spouts wisdom", tags:_SR_MJ},
+        
 
+        //c9 taken!
         // {id:"", isChecked:false,placement:"pool", title:"", tags:[]},
     ]
 }
