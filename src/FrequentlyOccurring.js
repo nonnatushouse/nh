@@ -189,7 +189,9 @@ export function getFrequentlyOccurringEvents() {
         {id:"c7", isChecked:false,placement:"pool", title:"Sister Monica Joan goes missing", tags:_SR_MJ},
         {id:"c8", isChecked:false,placement:"pool", title:"Sister Monica Joan spouts wisdom", tags:_SR_MJ},
         
-
+        {id:"ca", isChecked:false,placement:"pool", title:"Nonnatun sits in \"wrong\" chair at dining table", tags:ALL},
+        {id:"cb", isChecked:false,placement:"pool", title:"Someone prepares food", tags:ALL},
+        {id:"cc", isChecked:false,placement:"pool", title:"Someone is eating", tags:ALL},
         //c9 taken!
         // {id:"", isChecked:false,placement:"pool", title:"", tags:[]},
     ]
