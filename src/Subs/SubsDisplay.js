@@ -38,7 +38,7 @@ export default function SubsDisplay({
       {Array.from(groupedChunks.values()).map(group => (
         <div>
           <h3 className="episode-title">
-            {group[0].display_name}{" "}
+            {group[0].episode === 0 ? `${2010 + parseInt(group[0].season)} Christmas Special` : `S${group[0].season}E${group[0].episode}`}{" "}
             {query ? <small>({group.length} hit{group.length !== 1 ? "s" : ""})</small> : null}
           </h3>
           {group.map(chunk => {

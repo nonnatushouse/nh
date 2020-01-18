@@ -20,7 +20,6 @@ async function do_it() {
 
     const season = Number(match[2]);
     const episode = Number(match[3]);
-    const display_name = match[4] || match[1];
 
     for (const chunk of split_content) {
       const rows = chunk.split(/\r?\n/);
@@ -45,7 +44,7 @@ async function do_it() {
       
       text = processed_text.join("\n")
       
-      results.push({ starttime, text, season, episode, display_name });
+      results.push({ starttime, text, season, episode});
     }
   }
   await writeFile("./public/subs.json", JSON.stringify(results, null, "\t"))
