@@ -110,7 +110,22 @@ export function getSeasons() {
         "S8E7",
         "S8E8"
       ]
-    }
+    },
+    {
+      id: "S9",
+      title: "Series 9",
+      episodes: [
+        "S9E0",
+        "S9E1",
+        "S9E2",
+        "S9E3",
+        "S9E4",
+        "S9E5",
+        "S9E6",
+        "S9E7",
+        "S9E8"
+      ]
+    },
   ]
 }
 
@@ -184,7 +199,16 @@ export function getEpisodes() {
     { id: "S8E5", title: "S8E5", isChecked: true },
     { id: "S8E6", title: "S8E6", isChecked: true },
     { id: "S8E7", title: "S8E7", isChecked: true },
-    { id: "S8E8", title: "S8E8", isChecked: true }
+    { id: "S8E8", title: "S8E8", isChecked: true },
+    { id: "S9E0", title: "2019 Christmas Special", isChecked: true },
+    { id: "S9E1", title: "S9E1", isChecked: true },
+    { id: "S9E2", title: "S9E2", isChecked: true },
+    { id: "S9E3", title: "S9E3", isChecked: true },
+    { id: "S9E4", title: "S9E4", isChecked: true },
+    { id: "S9E5", title: "S9E5", isChecked: true },
+    { id: "S9E6", title: "S9E6", isChecked: true },
+    { id: "S9E7", title: "S9E7", isChecked: true },
+    { id: "S9E8", title: "S9E8", isChecked: true }
 ];
 }
 
