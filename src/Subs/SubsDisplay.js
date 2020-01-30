@@ -36,7 +36,7 @@ export default function SubsDisplay({
         </h3>
       ) : null}
       {Array.from(groupedChunks.values()).map(group => (
-        <div>
+        <div key={`${group[0].season}_${group[0].episode}`}>
           <h3 className="episode-title">
             {group[0].episode === 0 ? `${2010 + parseInt(group[0].season)} Christmas Special` : `S${group[0].season}E${group[0].episode}`}{" "}
             {query ? <small>({group.length} hit{group.length !== 1 ? "s" : ""})</small> : null}
@@ -51,7 +51,7 @@ export default function SubsDisplay({
               highlight[2] === chunk.starttime;
 
             return (
-              <>
+              <React.Fragment key={`${chunk.season}_${chunk.episode}_${chunk.starttime}`}>
                 <p className="starttime" ref={isHighlighted ? highlightRef : null}>
                   {formatTimecode(chunk.starttime)}
                 </p>
@@ -63,7 +63,7 @@ export default function SubsDisplay({
                     onClick(chunk.season, chunk.episode, chunk.starttime)
                   }
                 ></p>
-              </>
+              </React.Fragment>
             );
           })}
         </div>
