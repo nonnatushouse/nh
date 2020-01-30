@@ -33,9 +33,10 @@ async function do_it() {
         time_match[4] * 1;
       let text = rows.slice(2);
       let processed_text = []
-      for (row of text) {
-        row = row.replace("<i>", "")
-        row = row.replace("</i>", "")
+      for (let row of text) {
+        // Remove everything that looks like an HTML tag. That means all `<` + `>` pairs and everything between them.
+        row = row.replace(/<[^>]*>/gm, '');
+
         if (row.substring(0, 2) === "- ") {
           row = row.substring(2);
         }
