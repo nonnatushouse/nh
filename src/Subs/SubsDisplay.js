@@ -16,7 +16,7 @@ export default function SubsDisplay({
 
   const q = query.replace(/[\\^$.*+?()[\]{}|]/g, "\\$&");
   // TODO: Display chunks. May get query, which should be highlighted if exists
-  const re = new RegExp(q, "gi");
+  const re = new RegExp(`(${q})`, "gi");
 
   const groupedChunks = new Map();
 
@@ -42,7 +42,10 @@ export default function SubsDisplay({
             {query ? <small>({group.length} hit{group.length !== 1 ? "s" : ""})</small> : null}
           </h3>
           {group.map(chunk => {
-            const text = chunk.text.replace(re, `<em>$&</em>`);
+            const parts = chunk.text.split(re);
+            for (let i = 1; i < parts.length; i += 2) {
+              parts[i] = <em key={i}>{parts[i]}</em>;
+            }
 
             const isHighlighted =
               highlight &&
@@ -57,12 +60,11 @@ export default function SubsDisplay({
                 </p>
                 <p
                   className="subs-text"
-                  dangerouslySetInnerHTML={{ __html: text }}
                   onClick={() =>
                     onClick &&
                     onClick(chunk.season, chunk.episode, chunk.starttime)
                   }
-                ></p>
+                >{parts}</p>
               </React.Fragment>
             );
           })}
