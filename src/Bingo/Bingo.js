@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useCallback } from "react";
-import { NavLink } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import uuidv4 from "uuid/v4";
 import "./Bingo.css";
 import BingoPlay from "./BingoPlay";
@@ -40,7 +40,9 @@ const initialState = {
   filter: []
 };
 
-export default function Bingo({ history, location }) {
+export default function Bingo() {
+  const history = useHistory();
+  const location = useLocation();
   const [state, dispatch] = useReducer(sneakyReducer, initialState);
 
   // Underscore encoding = %5f  (get it back by running string through decode URI component  encodeURIComponent)
