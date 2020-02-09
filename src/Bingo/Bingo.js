@@ -1,5 +1,4 @@
 import React, { useReducer, useEffect, useCallback } from "react";
-import { NavLink } from "react-router-dom";
 import uuidv4 from "uuid/v4";
 import "./Bingo.css";
 import BingoPlay from "./BingoPlay";
