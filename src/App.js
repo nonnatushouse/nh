@@ -25,17 +25,18 @@ class App extends Component {
   getTargetDate(){
     const currDate = new Date()
 
-    const ep1 = Date.UTC(2020, 0, 5, 20, 0, 0)
-    const ep2 = Date.UTC(2020, 0, 12, 20, 0, 0)
-    const ep3 = Date.UTC(2020, 0, 19, 20, 0, 0)
-    const ep4 = Date.UTC(2020, 0, 26, 20, 0, 0)
-    const ep5 = Date.UTC(2020, 1, 2, 20, 0, 0)
-    const ep6 = Date.UTC(2020, 1, 9, 20, 0, 0)
-    const ep7 = Date.UTC(2020, 1, 16, 20, 0, 0)
-    const ep8 = Date.UTC(2020, 1, 23, 20, 0, 0)
+    const ep1 = Date.UTC(2020, 3, 1, 20, 0, 0)
+    const ep2 = Date.UTC(2020, 3, 8, 20, 0, 0)
+    const ep3 = Date.UTC(2020, 3, 25, 20, 0, 0)
+    const ep4 = Date.UTC(2020, 3, 33, 20, 0, 0)
+    const ep5 = Date.UTC(2020, 3, 29, 20, 0, 0)
+    const ep6 = Date.UTC(2020, 4, 6, 20, 0, 0)
+    const ep7 = Date.UTC(2020, 4, 13, 20, 0, 0)
+    const ep8 = Date.UTC(2020, 4, 20, 20, 0, 0)
+    const ep9 = Date.UTC(2020, 4, 27, 20, 0, 0)
     const cs20 = Date.UTC(2020, 11, 25, 19, 0, 0)
 
-    const dateList = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, cs20]
+    const dateList = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, cs20]
     
     for (const ep of dateList) {
       if (currDate < ep) {
@@ -44,7 +45,7 @@ class App extends Component {
     }
   
   }
-
+  //npx run subs
   render() {
     return (
       <>
@@ -63,7 +64,7 @@ class App extends Component {
         </button>
 
         <div className="page-container">
-          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the next episode of Call the Midwife airs:" />} />
+          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the next Call the Midwife watch party:" />} />
           <Route path="/us-timer" render={() => <Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the US):"/>} />
           <Route path="/quiz" component={Quiz} />
           <Route path="/" component={Home} exact />
