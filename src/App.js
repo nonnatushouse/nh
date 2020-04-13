@@ -27,13 +27,13 @@ class App extends Component {
 
     const ep1 = Date.UTC(2020, 3, 1, 20, 0, 0)
     const ep2 = Date.UTC(2020, 3, 8, 20, 0, 0)
-    const ep3 = Date.UTC(2020, 3, 25, 20, 0, 0)
-    const ep4 = Date.UTC(2020, 3, 33, 20, 0, 0)
-    const ep5 = Date.UTC(2020, 3, 29, 20, 0, 0)
-    const ep6 = Date.UTC(2020, 4, 6, 20, 0, 0)
-    const ep7 = Date.UTC(2020, 4, 13, 20, 0, 0)
-    const ep8 = Date.UTC(2020, 4, 20, 20, 0, 0)
-    const ep9 = Date.UTC(2020, 4, 27, 20, 0, 0)
+    const ep3 = Date.UTC(2020, 3, 15, 19, 0, 0)
+    const ep4 = Date.UTC(2020, 3, 22, 19, 0, 0)
+    const ep5 = Date.UTC(2020, 3, 29, 19, 0, 0)
+    const ep6 = Date.UTC(2020, 4, 6, 19, 0, 0)
+    const ep7 = Date.UTC(2020, 4, 13, 19, 0, 0)
+    const ep8 = Date.UTC(2020, 4, 20, 19, 0, 0)
+    const ep9 = Date.UTC(2020, 4, 27, 19, 0, 0)
     const cs20 = Date.UTC(2020, 11, 25, 19, 0, 0)
 
     const dateList = [ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, cs20]
