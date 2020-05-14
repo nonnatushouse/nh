@@ -215,19 +215,19 @@ export function getEpisodes() {
 export function getSelection(selector) {
   switch (selector) {
     case helperVar.CHRISTMAS_SPECIALS:
-      return ["S2E0", "S3E0", "S4E0", "S5E0", "S6E0", "S7E0", "S8E0"]
+      return ["S2E0", "S3E0", "S4E0", "S5E0", "S6E0", "S7E0", "S8E0", "S9E0"]
 
     case helperVar.SERIES_FINALE:
-      return ["S1E6", "S2E8", "S3E8", "S4E8", "S5E8", "S6E8", "S7E8", "S8E8"]
+      return ["S1E6", "S2E8", "S3E8", "S4E8", "S5E8", "S6E8", "S7E8", "S8E8", "S9E8"]
 
     case helperVar.FAVOURITES:
-      return ["S2E5", "S3E0", "S4E2", "S4E6", "S5E0", "S5E6", "S5E7", "S5E8", "S6E0", "S6E8", "S7E6", "S8E1", "S8E8" ]
+      return ["S2E5", "S2E8", "S3E0", "S4E2", "S4E6", "S5E0", "S5E6", "S5E7", "S5E8", "S6E0", "S6E8", "S7E6", "S8E1", "S8E8", "S9E5"]
 
     case helperVar.UPPERS:
-      return ["S1E1", "S1E3", "S1E6", "S3E0", "S5E0", "S5E7", "S6E0", "S6E8", "S7E6", "S8E0"];
+      return ["S1E1", "S1E3", "S1E6", "S2E8", "S3E0", "S5E0", "S5E7", "S6E0", "S6E8", "S7E6", "S8E0", "S9E5"];
 
     case helperVar.DOWNERS:
-      return ["S1E4", "S2E0", "S2E1", "S2E2", "S2E8", "S3E4", "S4E0", "S4E2", "S5E1", "S5E3", "S5E4", "S5E6", "S5E8", "S7E0", "S7E1", "S7E3", "S7E7", "S7E8", "S8E2", "S8E7", "S8E8"];
+      return ["S1E4", "S2E0", "S2E1", "S2E2", "S2E8", "S3E4", "S4E0", "S4E2", "S5E1", "S5E3", "S5E4", "S5E6", "S5E8", "S7E0", "S7E1", "S7E3", "S7E7", "S7E8", "S8E2", "S8E7", "S8E8", "S9E6"];
 
     default:
       return [];
