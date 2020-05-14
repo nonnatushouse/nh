@@ -25,7 +25,7 @@ export default function RandomizerSelector({ selector }) {
         className="randomizer-button randomizer-selector"
         onClick={selector.bind(selector, getSelection(helperVar.FAVOURITES))}
       >
-        <div className="randomizer-button-title">Personal Favourites</div>
+        <div className="randomizer-button-title">NH's Favourites</div>
       </div>
       <div
         className="randomizer-button randomizer-selector"
