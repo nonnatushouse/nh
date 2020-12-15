@@ -16,6 +16,7 @@ import Subs from "./Subs/Subs";
 import QuotesPage from "./Quotes/QuotesPage";
 
 import LevinsonMannion from "./ChristmasCards/LevinsonMannion";
+import FourteenTeacups from "./ChristmasCards/FourteenTeacups";
 
 class App extends Component {
   state = { menuIsExpanded: false };
@@ -81,6 +82,7 @@ class App extends Component {
           <Route path="/quotes" component={QuotesPage} />
 
           <Route path="/levinson-mannion" component={LevinsonMannion} />
+          <Route path="/fourteen-teacups" component={FourteenTeacups} />
         </div>
 
         <div className="page-footer">

@@ -7,7 +7,7 @@ import shelagh from "./Music/ShelaghNonnatunsS5E0.mp3"
 import bagpipes from "./Music/BagpipesS9E0.mp3";
 
 
-export default function LevinsonMannion() {
+export default function FourteenTeacups() {
   return (
     <div className="card-wrapper">
     <div>
@@ -15,7 +15,7 @@ export default function LevinsonMannion() {
     </div>
     <img></img>
     <CrackerJoke text="Hello" punchline="Goodbye"></CrackerJoke>
-    <Player url={shelagh}></Player>
+    <Player url={bagpipes}></Player>
 
     </div>
     
