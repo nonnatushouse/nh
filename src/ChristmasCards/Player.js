@@ -4,7 +4,7 @@ import useDeviceDetect from "./useDeviceDetect";
 
 const useAudio = url => {
   
-  const [audio] = useState(new Audio(url));
+  const [audio] = useState(() => new Audio(url));
   audio.load()
   const [playing, setPlaying] = useState(false);
 
