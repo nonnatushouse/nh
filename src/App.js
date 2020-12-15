@@ -81,8 +81,8 @@ class App extends Component {
           <Route path="/subs" component={Subs} />
           <Route path="/quotes" component={QuotesPage} />
 
-          <Route path="/card-exchange/she-was-a-nun/levinson-mannion" component={LevinsonMannion} />
-          <Route path="/card-exchange/small-and-bright/fourteen-teacups" component={FourteenTeacups} />
+          <Route path="/card-exchange/she-was-a-nun/" component={LevinsonMannion} />
+          <Route path="/card-exchange/small-and-bright/" component={FourteenTeacups} />
         </div>
 
         <div className="page-footer">

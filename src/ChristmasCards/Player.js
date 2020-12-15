@@ -9,7 +9,6 @@ const useAudio = url => {
   const [playing, setPlaying] = useState(false);
 
   const { isMobile } = useDeviceDetect();
-
   
   const toggle = () => setPlaying(!playing);
 
@@ -34,7 +33,7 @@ const useAudio = url => {
       }
     }, 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [isMobile]);
 
   return [playing, toggle];
 };
@@ -42,11 +41,10 @@ const useAudio = url => {
 const Player = ({ url }) => {
   const [playing, toggle] = useAudio(url);
 
-  const { isMobile } = useDeviceDetect();
 
   return (
     <div>
-      <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>
+      <button className="play-pause-button" onClick={toggle}>{playing ? "Pause 🔇" : "Play 🔈"}</button>
     </div>
   );
 };

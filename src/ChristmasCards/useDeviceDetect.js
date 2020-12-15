@@ -13,8 +13,7 @@ export default function useDeviceDetect() {
         /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop|iOS/i
       )
     );
-    const isMob = userAgent == "" ? false : mobile;
-    setMobile(isMob);
+    setMobile(mobile)
   }, []);
 
   return { isMobile };
