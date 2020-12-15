@@ -19,8 +19,8 @@ export default function QuizSplashScreen({ onQuizRequest }) {
       <div className="info-title">Welcome to an unofficial</div>
       <div className="info-big-title">Call the Midwife Quiz!</div>
       <div className="quiz-splash-text">
-        Cannot wait for series 9? To pass some time while you wait, why not test
-        your 'Call the Midwife' knowledge, with questions from the previous 8
+        Cannot wait for series 10? To pass some time while you wait, why not test
+        your 'Call the Midwife' knowledge, with questions from the previous 9
         series!
         
          {/* Choose a quiz below and click it to get started. */}
