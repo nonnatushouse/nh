@@ -1,4 +1,6 @@
 import React, { useReducer} from "react";
+import classNames from "classnames";
+
 
 const initialState = {punchlineReveal: false}
 
@@ -10,27 +12,27 @@ export default function CrackerJoke({
   const [state, dispatch] = useReducer(reducer, initialState);
 
 
-
-
-  let reveal = false;
-
   function revealPunchline() {
     dispatch({ type: "update", new: true });
   }
 
 
-
-
+  const cls = classNames("joke-punchline-text", {
+    "is-revealed": state.punchlineReveal
+  });
 
 
   return (<>
+  <div className="joke-text">In the UK there is a tradition of putting bad jokes in Christmas crackers. Here is your very own CtM-themed joke!</div>
     <div className="joke-text">
       {text}
     </div>
     <div className="joke-punchline" onClick={revealPunchline}>
-        {state.punchlineReveal ? punchline : ""}
+      <div className={cls}>
+           {punchline}
+      </div>
     </div>
-    <div className="joke-info">Click in the box to reveal the answer</div>
+    <div className="joke-info">Click/tap the box to reveal the hilarious punchline</div>
 
     </>
   );
@@ -39,6 +41,6 @@ export default function CrackerJoke({
 function reducer(state, action) {
   switch (action.type) {
     case "update":
-      return { ...state, punchlineReveal: action.new }
+      return { ...state, punchlineReveal: !state.punchlineReveal }
     };
 }
