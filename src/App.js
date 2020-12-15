@@ -37,7 +37,7 @@ class App extends Component {
     //const ep7 = Date.UTC(2020, 4, 13, 19, 0, 0)
     //const ep8 = Date.UTC(2020, 4, 20, 19, 0, 0)
     //const ep9 = Date.UTC(2020, 4, 27, 19, 0, 0)
-    const cs20 = Date.UTC(2020, 11, 25, 19, 0, 0)
+    const cs20 = Date.UTC(2020, 11, 25, 19, 40, 0)
 
     const dateList = [ep1, ep2, ep3, ep4, ep5, ep6, cs20]
     
@@ -67,7 +67,7 @@ class App extends Component {
         </button>
 
         <div className="page-container">
-          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the Call the Midwife 2020 Christmas Special airs (hopefully):" />} />
+          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the Call the Midwife 2020 Christmas Special airs:" />} />
           <Route path="/us-timer" render={() => <Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the US):"/>} />
           <Route path="/quiz" component={Quiz} />
           <Route path="/" component={Home} exact />
@@ -81,8 +81,8 @@ class App extends Component {
           <Route path="/subs" component={Subs} />
           <Route path="/quotes" component={QuotesPage} />
 
-          <Route path="/levinson-mannion" component={LevinsonMannion} />
-          <Route path="/fourteen-teacups" component={FourteenTeacups} />
+          <Route path="/card-exchange/she-was-a-nun/levinson-mannion" component={LevinsonMannion} />
+          <Route path="/card-exchange/small-and-bright/fourteen-teacups" component={FourteenTeacups} />
         </div>
 
         <div className="page-footer">
