@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 
+import useDeviceDetect from "./useDeviceDetect";
+
 const useAudio = url => {
   
   const [audio] = useState(new Audio(url));
   audio.load()
   const [playing, setPlaying] = useState(false);
 
+  const { isMobile } = useDeviceDetect();
+
+  
   const toggle = () => setPlaying(!playing);
 
   useEffect(() => {
@@ -24,19 +29,20 @@ const useAudio = url => {
   useEffect(() => {
     const timer = setTimeout(() => {
       console.log('This will run after 3 seconds!')
-      toggle()
-      audio.play()
+      if (!isMobile) {
+        toggle()
+      }
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
-
-
 
   return [playing, toggle];
 };
 
 const Player = ({ url }) => {
   const [playing, toggle] = useAudio(url);
+
+  const { isMobile } = useDeviceDetect();
 
   return (
     <div>
