@@ -15,6 +15,8 @@ import MusicPage from "./Misc/MusicPage";
 import Subs from "./Subs/Subs";
 import QuotesPage from "./Quotes/QuotesPage";
 
+import LevinsonMannion from "./ChristmasCards/LevinsonMannion";
+
 class App extends Component {
   state = { menuIsExpanded: false };
 
@@ -77,6 +79,8 @@ class App extends Component {
           <Route path="/music" component={MusicPage} />
           <Route path="/subs" component={Subs} />
           <Route path="/quotes" component={QuotesPage} />
+
+          <Route path="/levinson-mannion" component={LevinsonMannion} />
         </div>
 
         <div className="page-footer">

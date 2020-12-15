@@ -192,6 +192,9 @@ export function getFrequentlyOccurringEvents() {
         {id:"ca", isChecked:false,placement:"pool", title:"Nonnatun sits in \"wrong\" chair at dining table", tags:ALL},
         {id:"cb", isChecked:false,placement:"pool", title:"Someone prepares food", tags:ALL},
         {id:"cc", isChecked:false,placement:"pool", title:"Someone is eating", tags:ALL},
+        
+        
+        {id:"cd", isChecked:false,placement:"pool", title:"Episode results in new fandom ship pairing", tags:ALL},
         //c9 taken!
         // {id:"", isChecked:false,placement:"pool", title:"", tags:[]},
     ]
