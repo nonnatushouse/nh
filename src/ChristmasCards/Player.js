@@ -4,8 +4,12 @@ import useDeviceDetect from "./useDeviceDetect";
 
 const useAudio = url => {
   
-  const [audio] = useState(() => new Audio(url));
-  audio.load()
+  const [audio] = useState(() => {
+    const tmp_audio = new Audio(url);
+    tmp_audio.load()
+    return tmp_audio
+  });
+
   const [playing, setPlaying] = useState(false);
 
   const { isMobile } = useDeviceDetect();
@@ -19,9 +23,10 @@ const useAudio = url => {
   );
 
   useEffect(() => {
-    audio.addEventListener('ended', () => setPlaying(false));
+    const listener = () => setPlaying(false)
+    audio.addEventListener('ended', listener);
     return () => {
-      audio.removeEventListener('ended', () => setPlaying(false));
+      audio.removeEventListener('ended', listener);
     };
   }, []);
 
