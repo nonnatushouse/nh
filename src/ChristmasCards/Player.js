@@ -23,9 +23,9 @@ const useAudio = url => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log('This will run after 3 seconds!')
+      console.log('This will run after 10 seconds!')
       toggle()
-    }, 3000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
