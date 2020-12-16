@@ -17,6 +17,14 @@ import QuotesPage from "./Quotes/QuotesPage";
 
 import LevinsonMannion from "./ChristmasCards/LevinsonMannion";
 import FourteenTeacups from "./ChristmasCards/FourteenTeacups";
+
+import AndreaTlyss from "./ChristmasCards/AndreaTlyss";
+import Kam from "./ChristmasCards/Kam";
+import MaddieGrace from "./ChristmasCards/MaddieGrace";
+import Rhianoscott from "./ChristmasCards/Rhianoscott";
+import Weshallc from "./ChristmasCards/Weshallc";
+import YellowBird from "./ChristmasCards/YellowBird";
+
 import Jokes from "./ChristmasJokes/Jokes";
 
 class App extends Component {
@@ -85,7 +93,16 @@ class App extends Component {
 
           <Route path="/card-exchange/she-was-a-nun/" component={LevinsonMannion} />
           <Route path="/card-exchange/small-and-bright/" component={FourteenTeacups} />
+
+          <Route path="/card-exchange/mushy-stuff/" component={AndreaTlyss} />
+          <Route path="/card-exchange/oh-gee-whiz/" component={Kam} />
+          <Route path="/card-exchange/the-outer-hebrides/" component={MaddieGrace} />
+          <Route path="/card-exchange/shelagh-turnova/" component={Rhianoscott} />
+          <Route path="/card-exchange/wall-of-wimples/" component={Weshallc} />
+          <Route path="/card-exchange/the-ulcer-clinic/" component={YellowBird} />
         </div>
+
+
 
         <div className="page-footer">
           <div className="page-footer-content">

@@ -5,15 +5,15 @@ import CrackerJoke from "./CrackerJoke.js";
 import shelagh from "./Music/ShelaghNonnatunsS5E0.mp3"
 
 
-import pic from "./Images/levman.png"
+import pic from "./Images/madgra.png"
 import { Link } from "react-router-dom";
 
 
-export default function LevinsonMannion() {
+export default function MaddieGrace() {
   return (
     <div className="card-wrapper">
     <img className="img" src={pic}></img>
-    <CrackerJoke text="Why did Sister Bernadette quit being a nun?" punchline="She got out of the habit"></CrackerJoke>
+    <CrackerJoke text="How many Nonnatuns does it take to change a lightbulb?" punchline="Nun! (Fred does it)"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">
      <source src={shelagh} type="audio/mpeg"/>

@@ -5,15 +5,15 @@ import CrackerJoke from "./CrackerJoke.js";
 import shelagh from "./Music/ShelaghNonnatunsS5E0.mp3"
 
 
-import pic from "./Images/levman.png"
+import pic from "./Images/rhiblo.png"
 import { Link } from "react-router-dom";
 
 
-export default function LevinsonMannion() {
+export default function Rhianoscott() {
   return (
     <div className="card-wrapper">
     <img className="img" src={pic}></img>
-    <CrackerJoke text="Why did Sister Bernadette quit being a nun?" punchline="She got out of the habit"></CrackerJoke>
+    <CrackerJoke text="Which is the most up-lifting CtM character?" punchline="Phyllis CRANE"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">
      <source src={shelagh} type="audio/mpeg"/>
