@@ -3,7 +3,7 @@
     background-color: transparent;
     width: 16.5rem;
     height: 4.5rem;
-    margin: .3rem;
+    margin: .5rem;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     cursor: pointer;
 
@@ -62,4 +62,16 @@
     flex-flow: wrap;
     justify-content: center;
     max-width: 70rem;
+}
+
+.jokes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+
 }
