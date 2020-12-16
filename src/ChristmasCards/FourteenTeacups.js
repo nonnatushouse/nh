@@ -10,11 +10,9 @@ import bagpipes from "./Music/BagpipesS9E0.mp3";
 export default function FourteenTeacups() {
   return (
     <div className="card-wrapper">
-    <div>
-        levinson-mannion
-    </div>
+
     <img></img>
-    <CrackerJoke text="Hello" punchline="Goodbye"></CrackerJoke>
+    <CrackerJoke text="What is Sister Monica Joan's head full of?" punchline="Nun-sense!"></CrackerJoke>
     <Player url={bagpipes}></Player>
 
     </div>
