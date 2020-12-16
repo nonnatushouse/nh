@@ -23,7 +23,7 @@ export default function CrackerJoke({
 
 
   return (<>
-  <div className="joke-text">In the UK there is a tradition of putting bad jokes in Christmas crackers. Here is your very own CtM-themed joke!</div>
+  <div className="joke-text">To honour the tradition of making a bad joke/pun at Christmas, here is your very own CtM themed one! </div>
     <div className="joke-text">
       {text}
     </div>

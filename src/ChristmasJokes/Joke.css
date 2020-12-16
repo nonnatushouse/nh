@@ -1,10 +1,19 @@
 
 .flip-card{
     background-color: transparent;
-    width: 16rem;
+    width: 16.5rem;
     height: 4.5rem;
     margin: .3rem;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    cursor: pointer;
+
+
+
+ -webkit-user-select: none; /* Safari */        
+ -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+   user-select: none; /*Standard */
+
 }
 
 .flip-card-inner {
@@ -14,6 +23,7 @@
     text-align: center;
     transition: transform 0.4s ease-in-out;
     transform-style: preserve-3d;
+    
 }
 
 .flip-card.is-revealed .flip-card-inner {
@@ -21,6 +31,7 @@
 }
 
 .flip-card-question, .flip-card-punchline {
+    box-shadow: 0.1rem 0.1rem .4rem rgba(22, 22, 22, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,14 +40,19 @@
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
+
+    border: #756A56; /* #756A56;rgb(235, 199, 0) */
+    border-width: 2px;
+    border-style: solid;    
 }
 
 .flip-card-question {
-    background-color: #F7C66A;
+    background-color:#ffd68a;
+    
 }
 
 .flip-card-punchline {
-    background-color: #F7C66A;
+    background-color:  #F7C66A;
     transform: rotateX(180deg);
 }
 
