@@ -7,6 +7,7 @@ import shelagh from "./Music/ShelaghNonnatunsS5E0.mp3"
 import bagpipes from "./Music/BagpipesS9E0.mp3";
 
 import pic from "./Images/levman.png"
+import { Link } from "react-router-dom";
 
 
 export default function LevinsonMannion() {
@@ -14,9 +15,16 @@ export default function LevinsonMannion() {
     <div className="card-wrapper">
     <img className="img" src={pic}></img>
     <CrackerJoke text="Why did Sister Bernadette quit being a nun?" punchline="She got out of the habit"></CrackerJoke>
-    <Player url={shelagh}></Player>
 
+    <audio controls autoPlay className="audio-elem">
+     <source src={shelagh} type="audio/mpeg"/>
+     Your browser does not support the audio element.
+    </audio> 
+
+    {/* <Player url={shelagh}></Player> */}
+    <Link to="/nun-puns">For more excellent jokes, click here!</Link>
     </div>
+
     
   );
 }
