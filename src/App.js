@@ -17,6 +17,7 @@ import QuotesPage from "./Quotes/QuotesPage";
 
 import LevinsonMannion from "./ChristmasCards/LevinsonMannion";
 import FourteenTeacups from "./ChristmasCards/FourteenTeacups";
+import Jokes from "./ChristmasJokes/Jokes";
 
 class App extends Component {
   state = { menuIsExpanded: false };
@@ -80,6 +81,7 @@ class App extends Component {
           <Route path="/music" component={MusicPage} />
           <Route path="/subs" component={Subs} />
           <Route path="/quotes" component={QuotesPage} />
+          <Route path="/nun-puns" component={Jokes} />
 
           <Route path="/card-exchange/she-was-a-nun/" component={LevinsonMannion} />
           <Route path="/card-exchange/small-and-bright/" component={FourteenTeacups} />

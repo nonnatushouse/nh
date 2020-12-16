@@ -1,0 +1,49 @@
+
+.flip-card{
+    background-color: transparent;
+    width: 16rem;
+    height: 4.5rem;
+    margin: .3rem;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.flip-card.is-revealed .flip-card-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-card-question, .flip-card-punchline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-question {
+    background-color: #F7C66A;
+}
+
+.flip-card-punchline {
+    background-color: #F7C66A;
+    transform: rotateX(180deg);
+}
+
+
+.joke-list {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    max-width: 70rem;
+}
