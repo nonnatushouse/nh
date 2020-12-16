@@ -15,7 +15,7 @@ export default function Kam() {
   return (
     <div className="card-wrapper">
     <img className="img" src={pic}></img>
-    <CrackerJoke text="Why did Mother Jesu-Emanuel forbid the Sister from wearing perfume at the Motherhouse?" punchline="She would not tolerate such nun-scents"></CrackerJoke>
+    <CrackerJoke text="Why did Mother Jesu-Emanuel forbid the Sisters from wearing perfume at the Motherhouse?" punchline="She would not tolerate such nun-scents"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">
      <source src={shelagh} type="audio/mpeg"/>
