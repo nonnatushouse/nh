@@ -6,6 +6,7 @@ import Quiz from "./Quiz/Quiz";
 import Home from "./Misc/Home";
 import Contact from "./Misc/Contact";
 import Randomizer from "./Randomizer/Randomizer";
+import LegacyRandomizer from "./Randomizer/LegacyRandomizer";
 import RcMenu from "./RcMenu";
 import Bingo from "./Bingo/Bingo";
 import VideoPage from "./Misc/VideoPage";
@@ -82,6 +83,7 @@ class App extends Component {
           <Route path="/quiz" component={Quiz} />
           <Route path="/" component={Home} exact />
           <Route path="/contact" component={Contact} />
+          <Route path="/randomizer" component={LegacyRandomizer} />
           <Route path="/episode-randomizer" component={Randomizer} />
           <Route path="/bingo" component={Bingo} />
           <Route path="/videos" component={VideoPage} />
