@@ -10,7 +10,7 @@ export default function CookiesPage() {
       <div className="info-big-title">Cookie Information</div>
       <div className='info-text'>This website does not use cookies. It does however make use of your browser's localStorage. The purpose of this is to remember
       the information you have entered between visits. The only infomration that is being stored is what episodes you last selected for the <NavLink 
-              to="/randomizer"
+              to="/episode-randomizer"
               className="nav-link-in-text"
               activeClassName="selected"
             >
