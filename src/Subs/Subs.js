@@ -4,6 +4,7 @@ import { fetchSubs } from "./SubsService";
 import SubsSearch from "./SubsSearch";
 import EpisodeSelector from "./EpisodeSelector";
 import SubsDisplay from "./SubsDisplay";
+import { useHistory, useLocation } from "react-router-dom";
 
 const initialState = {
   result: [],
@@ -13,7 +14,9 @@ const initialState = {
   selectedEpisode: 1
 };
 
-export default function Subs({ history, location }) {
+export default function Subs() {
+  const history = useHistory();
+  const location = useLocation();
   const [state, setState] = useState(initialState);
   const [currTextValue, setCurrTextValue] = useState("");
   const [query, setQuery] = useState("");

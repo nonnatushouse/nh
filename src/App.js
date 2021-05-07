@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink, Switch } from "react-router-dom";
 import "./App.css"; 
 import Timer from "./Timer/Timer";
 import Quiz from "./Quiz/Quiz";
@@ -77,31 +77,33 @@ class App extends Component {
         </button>
 
         <div className="page-container">
-          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the Call the Midwife 2020 Christmas Special airs:" />} />
-          <Route path="/us-timer" render={() => <Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the US):"/>} />
-          <Route path="/quiz" component={Quiz} />
-          <Route path="/" component={Home} exact />
-          <Route path="/contact" component={Contact} />
-          <Route path="/episode-randomizer" component={Randomizer} />
-          <Route path="/bingo" component={Bingo} />
-          <Route path="/videos" component={VideoPage} />
-          <Route path="/podcasts" component={PodcastPage} />
-          <Route path="/cookies" component={CookiesPage} />
-          <Route path="/music" component={MusicPage} />
-          <Route path="/subs" component={Subs} />
-          <Route path="/quotes" component={QuotesPage} />
-          <Route path="/nun-puns" component={Jokes} />
+          <Switch>
+            <Route path="/timer"><Timer targetDate={this.getTargetDate()} title="Time until the Call the Midwife 2020 Christmas Special airs:" /></Route>
+            <Route path="/us-timer"><Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the US):"/></Route>
+            <Route path="/quiz"><Quiz /></Route>
+            <Route path="/" exact><Home /></Route>
+            <Route path="/contact"><Contact /></Route>
+            <Route path="/episode-randomizer"><Randomizer /></Route>
+            <Route path="/bingo"><Bingo /></Route>
+            <Route path="/videos"><VideoPage /></Route>
+            <Route path="/podcasts"><PodcastPage /></Route>
+            <Route path="/cookies"><CookiesPage /></Route>
+            <Route path="/music"><MusicPage /></Route>
+            <Route path="/subs"><Subs /></Route>
+            <Route path="/quotes"><QuotesPage /></Route>
+            <Route path="/nun-puns"><Jokes /></Route>
 
-          <Route path="/card-exchange/she-was-a-nun/" component={LevinsonMannion} />
-          <Route path="/card-exchange/small-and-bright/" component={FourteenTeacups} />
+            <Route path="/card-exchange/she-was-a-nun/"><LevinsonMannion /></Route>
+            <Route path="/card-exchange/small-and-bright/"><FourteenTeacups /></Route>
 
-          <Route path="/card-exchange/mushy-stuff/" component={AndreaTlyss} />
-          <Route path="/card-exchange/oh-gee-whiz/" component={Kam} />
-          <Route path="/card-exchange/the-outer-hebrides/" component={MaddieGrace} />
-          <Route path="/card-exchange/shelagh-turnova/" component={Rhianoscott} />
-          <Route path="/card-exchange/wall-of-wimples/" component={Weshallc} />
-          <Route path="/card-exchange/the-ulcer-clinic/" component={YellowBird} />
-          <Route path="/card-exchange/im-hardly-maria-von-trapp/" component={Hanne} />
+            <Route path="/card-exchange/mushy-stuff/"><AndreaTlyss /></Route>
+            <Route path="/card-exchange/oh-gee-whiz/"><Kam /></Route>
+            <Route path="/card-exchange/the-outer-hebrides/"><MaddieGrace /></Route>
+            <Route path="/card-exchange/shelagh-turnova/"><Rhianoscott /></Route>
+            <Route path="/card-exchange/wall-of-wimples/"><Weshallc /></Route>
+            <Route path="/card-exchange/the-ulcer-clinic/"><YellowBird /></Route>
+            <Route path="/card-exchange/im-hardly-maria-von-trapp/"><Hanne /></Route>
+          </Switch>
         </div>
 
 
