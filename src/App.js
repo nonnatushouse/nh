@@ -38,18 +38,18 @@ class App extends Component {
   getTargetDate(){
     const currDate = new Date()
 
-    const ep1 = Date.UTC(2020, 3, 1, 20, 0, 0)
-    const ep2 = Date.UTC(2020, 3, 8, 20, 0, 0)
-    const ep3 = Date.UTC(2020, 3, 15, 19, 0, 0)
-    const ep4 = Date.UTC(2020, 3, 22, 19, 0, 0)
-    const ep5 = Date.UTC(2020, 3, 29, 19, 0, 0)
-    const ep6 = Date.UTC(2020, 4, 6, 19, 0, 0)
-    //const ep7 = Date.UTC(2020, 4, 13, 19, 0, 0)
-    //const ep8 = Date.UTC(2020, 4, 20, 19, 0, 0)
-    //const ep9 = Date.UTC(2020, 4, 27, 19, 0, 0)
-    const cs20 = Date.UTC(2020, 11, 25, 19, 40, 0)
+    const ep1 = Date.UTC(2020, 1, 2, 20, 0, 0)
+    const ep2 = Date.UTC(2022, 1, 9, 20, 0, 0)
+    const ep3 = Date.UTC(2022, 1, 16, 20, 0, 0)
+    const ep4 = Date.UTC(2022, 1, 23, 20, 0, 0)
+    const ep5 = Date.UTC(2022, 1, 30, 20, 0, 0)
+    const ep6 = Date.UTC(2022, 2, 6, 20, 0, 0)
+    const ep7 = Date.UTC(2022, 2, 13, 20, 0, 0)
+    const ep8 = Date.UTC(2022, 2, 20, 20, 0, 0)
+    const ep9 = Date.UTC(2022, 2, 27, 20, 0, 0)
+    const cs22 = Date.UTC(2022, 11, 25, 19, 0, 0)
 
-    const dateList = [ep1, ep2, ep3, ep4, ep5, ep6, cs20]
+    const dateList = [ep1, ep2, ep3, ep4, ep5, ep6, cs22]
     
     for (const ep of dateList) {
       if (currDate < ep) {
@@ -77,8 +77,8 @@ class App extends Component {
         </button>
 
         <div className="page-container">
-          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the Call the Midwife 2020 Christmas Special airs:" />} />
-          <Route path="/us-timer" render={() => <Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the US):"/>} />
+          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the Call the Midwife 2022 Christmas Special airs:" />} />
+          <Route path="/us-timer" render={() => <Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the UK):"/>} />
           <Route path="/quiz" component={Quiz} />
           <Route path="/" component={Home} exact />
           <Route path="/contact" component={Contact} />
