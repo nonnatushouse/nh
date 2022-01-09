@@ -126,6 +126,35 @@ export function getSeasons() {
         "S9E8"
       ]
     },
+    {
+      id: "S10",
+      title: "Series 10",
+      episodes: [
+        "S10E0",
+        "S10E1",
+        "S10E2",
+        "S10E3",
+        "S10E4",
+        "S10E5",
+        "S10E6",
+        "S10E7"
+      ]
+    }, 
+    {
+      id: "S11",
+      title: "Series 11",
+      episodes: [
+        "S11E0",
+        "S11E1",
+        "S11E2",
+        "S11E3",
+        "S11E4",
+        "S11E5",
+        "S11E7",
+        "S11E6",
+        "S11E8"
+      ]
+    },       
   ]
 }
 
@@ -208,17 +237,34 @@ export function getEpisodes() {
     { id: "S9E5", title: "S9E5", isChecked: true },
     { id: "S9E6", title: "S9E6", isChecked: true },
     { id: "S9E7", title: "S9E7", isChecked: true },
-    { id: "S9E8", title: "S9E8", isChecked: true }
+    { id: "S9E8", title: "S9E8", isChecked: true },
+    { id: "S10E0", title: "2020 Christmas Special", isChecked: true },
+    { id: "S10E1", title: "S10E1", isChecked: true },
+    { id: "S10E2", title: "S10E2", isChecked: true },
+    { id: "S10E3", title: "S10E3", isChecked: true },
+    { id: "S10E4", title: "S10E4", isChecked: true },
+    { id: "S10E5", title: "S10E5", isChecked: true },
+    { id: "S10E6", title: "S10E6", isChecked: true },
+    { id: "S10E7", title: "S10E7", isChecked: true },
+    { id: "S11E0", title: "2021 Christmas Special", isChecked: true },
+    { id: "S11E1", title: "S11E1", isChecked: true },
+    { id: "S11E2", title: "S11E2", isChecked: true },
+    { id: "S11E3", title: "S11E3", isChecked: true },
+    { id: "S11E4", title: "S11E4", isChecked: true },
+    { id: "S11E5", title: "S11E5", isChecked: true },
+    { id: "S11E6", title: "S11E6", isChecked: true },
+    { id: "S11E7", title: "S11E7", isChecked: true },
+    { id: "S11E8", title: "S11E8", isChecked: true },
 ];
 }
 
 export function getSelection(selector) {
   switch (selector) {
     case helperVar.CHRISTMAS_SPECIALS:
-      return ["S2E0", "S3E0", "S4E0", "S5E0", "S6E0", "S7E0", "S8E0", "S9E0"]
+      return ["S2E0", "S3E0", "S4E0", "S5E0", "S6E0", "S7E0", "S8E0", "S9E0", "S10E0", "S11E0"]
 
     case helperVar.SERIES_FINALE:
-      return ["S1E6", "S2E8", "S3E8", "S4E8", "S5E8", "S6E8", "S7E8", "S8E8", "S9E8"]
+      return ["S1E6", "S2E8", "S3E8", "S4E8", "S5E8", "S6E8", "S7E8", "S8E8", "S9E8", "S10E7", "S11E8"]
 
     case helperVar.FAVOURITES:
       return ["S2E5", "S2E8", "S3E0", "S4E2", "S4E6", "S5E0", "S5E6", "S5E7", "S5E8", "S6E0", "S6E8", "S7E6", "S8E1", "S8E8", "S9E5"]
