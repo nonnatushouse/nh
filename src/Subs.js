@@ -124,6 +124,5 @@ function getSeasonsAndEpisodes(result) {
     }
     seasons.get(season).add(episode);
   } 
-  const sortedSeasons = new Map([...seasons].sort((a, b) => parseInt(a) > parseInt(b)));
-  return sortedSeasons;
+  return seasons;
 }
