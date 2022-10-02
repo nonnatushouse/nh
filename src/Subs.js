@@ -47,9 +47,9 @@ export default function Subs({ history, location }) {
     if (season === 1 && episode < 1) {
       episode = 1;
     } else if (season === 1 && episode > 6) {
-      episode = 6
+      episode = 6;
     } else if (season === 10 && episode > 7) {
-      episode = 7
+      episode = 7;
     }
     setHighlight(starttime && [season, episode, starttime])
     setState(prevState => {
@@ -123,7 +123,7 @@ function getSeasonsAndEpisodes(result) {
       seasons.set(season, new Set());
     }
     seasons.get(season).add(episode);
-  }
-  const sortedSeasons = new Map([...seasons].sort());
+  } 
+  const sortedSeasons = new Map([...seasons].sort((a, b) => parseInt(a) > parseInt(b)));
   return sortedSeasons;
 }
