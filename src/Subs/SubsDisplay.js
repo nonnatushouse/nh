@@ -42,7 +42,8 @@ export default function SubsDisplay({
             {query ? <small>({group.length} hit{group.length !== 1 ? "s" : ""})</small> : null}
           </h3>
           {group.map(chunk => {
-            const parts = chunk.text.split(re);
+            let parts = [chunk.text];
+            if (query) parts = chunk.text.split(re);
             for (let i = 1; i < parts.length; i += 2) {
               parts[i] = <em key={i}>{parts[i]}</em>;
             }

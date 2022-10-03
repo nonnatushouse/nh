@@ -48,7 +48,7 @@ export default function Subs({ history, location }) {
       episode = 1;
     } else if (season === 1 && episode > 6) {
       episode = 6;
-    } else if (season === 10 && episode > 7) {
+    } else if (parseInt(season) === 10 && episode > 7) {
       episode = 7;
     }
     setHighlight(starttime && [season, episode, starttime])

@@ -12,6 +12,9 @@ async function do_it() {
 
   const start = performance.now();
   const files = await readdir("./subs");
+  const collator = new Intl.Collator('en', {numeric: true});
+  files.sort(collator.compare);
+  console.log(files);
   for (const fileName of files) {
     const content = await readFile("./subs/" + fileName, { encoding: "UTF-8" });
     const split_content = content.trim().split(/(?:\r?\n\s*)+(?:\r?\n)/);

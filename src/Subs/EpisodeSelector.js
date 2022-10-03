@@ -8,7 +8,7 @@ export default function EpisodeSelector({
   selectedEpisode,
   onClick
 }) {
-  const season_buttons = Array.from([...seasons.keys()].sort((a, b) => parseInt(a) > parseInt(b))).map(s => {
+  const season_buttons = Array.from(seasons.keys()).map(s => {
     const cls = classNames("subs-season", {
         "selected": s === selectedSeason
     }) 
