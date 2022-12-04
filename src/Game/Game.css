@@ -64,7 +64,7 @@
 
 .producer-img.is-dimmed {
     border: 1px rgb(145, 145, 145) solid;
-    opacity: 50%;
+    opacity: 0.5;
     transition-property: opacity, border;
     transition-duration: 250ms;
     transition-timing-function: ease-in;
@@ -73,7 +73,7 @@
 
 .producer-img.is-fullcolor {
     border: 1px black solid;
-    opacity: 100%;
+    opacity: 1;
     transition-property: opacity, border;
     transition-duration: 250ms;
     transition-timing-function: ease-in;
