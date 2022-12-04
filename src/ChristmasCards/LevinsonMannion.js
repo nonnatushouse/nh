@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default function LevinsonMannion() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="Why did Sister Bernadette quit being a nun?" punchline="She got out of the habit"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">

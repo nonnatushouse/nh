@@ -40,18 +40,19 @@ class App extends Component {
   getTargetDate(){
     const currDate = new Date()
 
-    const ep1 = Date.UTC(2020, 0, 2, 20, 0, 0)
-    const ep2 = Date.UTC(2022, 0, 9, 20, 0, 0)
-    const ep3 = Date.UTC(2022, 0, 16, 20, 0, 0)
-    const ep4 = Date.UTC(2022, 0, 23, 20, 0, 0)
-    const ep5 = Date.UTC(2022, 0, 30, 20, 0, 0)
-    const ep6 = Date.UTC(2022, 1, 6, 20, 0, 0)
-    const ep7 = Date.UTC(2022, 1, 13, 20, 0, 0)
-    const ep8 = Date.UTC(2022, 1, 20, 20, 0, 0)
-    const ep9 = Date.UTC(2022, 1, 27, 20, 0, 0)
     const cs22 = Date.UTC(2022, 11, 25, 19, 0, 0)
+    const ep1 = Date.UTC(2020, 0, 8, 20, 0, 0)
+    const ep2 = Date.UTC(2022, 0, 15, 20, 0, 0)
+    const ep3 = Date.UTC(2022, 0, 22, 20, 0, 0)
+    const ep4 = Date.UTC(2022, 0, 29, 20, 0, 0)
+    const ep5 = Date.UTC(2022, 0, 30, 20, 0, 0)
+    const ep6 = Date.UTC(2022, 1, 5, 20, 0, 0)
+    const ep7 = Date.UTC(2022, 1, 12, 20, 0, 0)
+    const ep8 = Date.UTC(2022, 1, 19, 20, 0, 0)
+    const ep9 = Date.UTC(2022, 1, 26, 20, 0, 0)
+    const cs23 = Date.UTC(2023, 11, 25, 19, 0, 0)
 
-    const dateList = [ep1, ep2, ep3, ep4, ep5, ep6, cs22]
+    const dateList = [cs22, ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, cs23]
     
     for (const ep of dateList) {
       if (currDate < ep) {

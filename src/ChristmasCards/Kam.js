@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 export default function Kam() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="Why did Mother Jesu-Emanuel forbid the Sisters from wearing perfume at the Motherhouse?" punchline="She would not tolerate such nun-scents"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">

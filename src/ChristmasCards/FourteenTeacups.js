@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 export default function FourteenTeacups() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="What is Sister Monica Joan's head full of?" punchline="Nun-sense!"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">

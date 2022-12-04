@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default function AndreaTlyss() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="Who handles the biggest Nonnatus deliveries?" punchline="Nurse Crane"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">

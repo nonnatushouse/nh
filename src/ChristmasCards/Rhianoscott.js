@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default function Rhianoscott() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="Which is the most up-lifting CtM character?" punchline="Phyllis CRANE"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default function TextStrip({}) {
+export default function TextStrip() {
     
     let text = "";
 

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default function YellowBird() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="What did Sister Julienne say when Trixie asked for an opinion on her new hairstyle?" punchline="'Franklin my dear, I don't give a damn'"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">

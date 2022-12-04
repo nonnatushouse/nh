@@ -23,13 +23,13 @@ export default function Producer({count, onProducerClick, producer }) {
           onClick={() => onProducerClick(producer)}
         >
           <div className="producer-container">
-            <img src={producer.img} className={cls2}></img>
+            <img src={producer.img} className={cls2} alt="Producer icon"></img>
             <div className="producer-name">{producer.name}</div>
             <div className="producer-info">
                 <div>cost: {producer.cost.toLocaleString('en')}</div>
                 <div>bps: {producer.bps.toLocaleString('en')}</div>
             </div>
-              <div className="producer-howmany">{producer.howManyBought == 0 ? "" : producer.howManyBought }</div>
+              <div className="producer-howmany">{producer.howManyBought === 0 ? "" : producer.howManyBought }</div>
           </div>
         </li>
       );

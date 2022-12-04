@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 export default function Hanne() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="If Laura lived in the US, what state would she live in?" punchline="Main(e)"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">

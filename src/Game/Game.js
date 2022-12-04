@@ -170,6 +170,9 @@ function reducer(state, action) {
 
         case "DiscardWin":
           return {...state, showWinBox: false}
+
+        default:
+          return {...state}
             
     }    
 }

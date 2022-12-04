@@ -15,13 +15,11 @@ export default function Timer({targetDate, title}) {
 
   const timeLeft = targetDate - date;
 
-  const note = timeLeft > 0 ? "Note: This is assuming that the episode airs on December 25th, 2019 at 20:00 UTC" : "";
 
   return (
     <div className="timer-container">
       <div className="info-big-title">{title}</div>
       <TimerDisplay timeLeft={timeLeft} />
-      {/* <div className="timer-note">{note}</div> */}
     </div>
   );
 }

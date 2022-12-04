@@ -42,5 +42,8 @@ function reducer(state, action) {
   switch (action.type) {
     case "update":
       return { ...state, punchlineReveal: !state.punchlineReveal }
+    
+    default:
+      return {...state}
     };
 }

@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default function MaddieGrace() {
   return (
     <div className="card-wrapper">
-    <img className="img" src={pic}></img>
+    <img className="img" src={pic} alt="Call the Midwife inspired holiday card"></img>
     <CrackerJoke text="How many Nonnatuns does it take to change a lightbulb?" punchline="Nun! (Fred does it)"></CrackerJoke>
 
     <audio controls autoPlay className="audio-elem">
