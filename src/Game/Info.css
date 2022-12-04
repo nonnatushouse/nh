@@ -1,0 +1,80 @@
+
+.info-background {
+    background-color: rgba(146, 146, 146, 0.342);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    
+}
+.reset {
+    cursor: pointer;
+    text-align: center;
+    background-color: #F7C66A;
+    border: 1px black solid;
+    position: inherit;
+    bottom: 0;
+    right: 0;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+    padding: .2rem;
+    border-radius: 10px;
+    
+}
+.info-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5deb3;
+    position: absolute;
+    padding: 0rem 1rem;
+    
+    min-width: 28rem;
+
+    width: fit-content;
+    max-width: 40rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    border-radius: 10px;
+    border: 1px black solid;
+
+}
+
+.info-title {
+    text-align: center;
+}
+
+.info-exit {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+}
+
+.reset, .info-exit {
+    /* Make text unselectable */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.timer-slots-container {
+
+    align-self: center;
+    width: fit-content;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.timer-slot {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.4rem;
+}
+
+.timer-slot-text {
+    font-size: 1.1rem;
+}
+

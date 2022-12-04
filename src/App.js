@@ -26,6 +26,8 @@ import Weshallc from "./ChristmasCards/Weshallc";
 import YellowBird from "./ChristmasCards/YellowBird";
 import Hanne from "./ChristmasCards/Hanne";
 
+import Game from "./Game/Game";
+
 import Jokes from "./ChristmasJokes/Jokes";
 
 class App extends Component {
@@ -102,6 +104,9 @@ class App extends Component {
           <Route path="/card-exchange/wall-of-wimples/" component={Weshallc} />
           <Route path="/card-exchange/the-ulcer-clinic/" component={YellowBird} />
           <Route path="/card-exchange/im-hardly-maria-von-trapp/" component={Hanne} />
+
+
+          <Route path="/game" component={Game} />
         </div>
 
 
