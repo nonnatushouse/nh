@@ -17,7 +17,7 @@ import uk from "./assets/uk.png"
 import europe from "./assets/europe.png"
 import world from "./assets/world.png"
 
-
+import classNames from "classnames";
 
 import InfoBox from "./InfoBox";
 import WinScreen from "./WinScreen";
@@ -26,7 +26,7 @@ import TextStrip from "./TextStrip";
 
 const DELAY = 100;
                   
-const WIN_COUNT = 1000000000;  // 117000000000    
+const WIN_COUNT = 1000000000;  // 1000000000    
 
 const BUY_MULTIPLYER = 1.1;
 
@@ -67,13 +67,16 @@ export default function Game() {
       dispatch({type: "ShowInfoBox", show: show})
     }
 
+    const gameContainerCls = classNames("game-container", {
+      "overlay-active": state.showInfoBox || state.showWinBox
+    });
 
     return (
         
       <>
       <div className="info-icon" onClick={() => updateShowInfoBox(true)}>i</div>
       
-      <div className="game-container">
+      <div className={gameContainerCls}>
                <CountDisplay
           count={state.count}
           manualClicks={state.manualClicks}

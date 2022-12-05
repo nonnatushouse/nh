@@ -26,7 +26,12 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 
+}
+
+.overlay-active {
+    position:absolute;
 }
 
 .game-count {
