@@ -46,10 +46,7 @@
     list-style-type: none;
     max-width: 28rem;
     min-width: 28rem;
-    width: 95vw;
-
-
-    
+        
     /* background-color: green; */
 }
 
@@ -192,4 +189,48 @@
     color: rgb(94, 94, 94);
     
    
+}
+
+@media screen and (max-width: 600px) {
+    .producer-list{
+        margin-left: -5rem;
+        min-width: 0rem;
+        width: 95vw;
+    }
+
+    .producer-name {
+        position: absolute;
+        text-align: justify;
+        width: max-content;
+        top: .2rem;
+        left: 3.2rem;
+    
+    }
+    
+    .producer-info {
+        position: absolute;
+        font-size: .75rem;
+        text-align: justify;
+        width: max-content;
+        top: 3px;
+        left: 235px;    
+    }
+    
+    .producer-howmany {
+        position: absolute;
+        width: max-content;
+        text-align: right;
+        top: .2rem;
+        right: -20.5rem;
+    }
+
+    .producer.is-displayed {
+
+        margin-right: -2rem;
+        margin-top: .5rem;
+        min-height: 3rem;
+        padding: 0.2rem;
+    }
+    
+
 }
