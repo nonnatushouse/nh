@@ -46,6 +46,7 @@
     list-style-type: none;
     max-width: 28rem;
     min-width: 28rem;
+    margin-top: 0rem;
         
     /* background-color: green; */
 }
@@ -173,23 +174,7 @@
     user-select: none; /* Standard */
 }
 
-.text-strip {
-    width: 98vw;
-    max-width: 25rem;
-    
-    display: flex;
-    flex-direction: column;
-    margin-top: .5rem;
 
-}
-
-.text-strip-text {
-    font-size: .8rem;
-    font-style: italic;
-    color: rgb(94, 94, 94);
-    
-   
-}
 
 @media screen and (max-width: 600px) {
     .producer-list{

@@ -78,6 +78,54 @@
     font-size: 1.1rem;
 }
 
+/* ---- TextStrip ---- */
+.text-strip {
+    font-size: .8rem;
+    text-align: center;
+    flex-wrap: wrap;
+
+}
+
+.text-strip-text {
+    font-style: normal;
+    color: rgb(0, 0, 0);  
+    
+}
+
+.text-strip-tidbit {
+    font-style: italic;
+    color: rgb(94, 94, 94);
+}
+
+.swap1{
+    animation: fadeIn 1s;
+}
+.swap2 {
+    animation: fadeIn1 1s;
+} 
+
+@keyframes fadeIn {
+    0% { opacity: 0}
+    100% {opacity: 1}
+}
+@keyframes fadeIn1 {
+    0% { opacity: 0}
+    100% {opacity: 1}
+}
+
+
+.text-strip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98vw;
+    max-width: 25rem;
+    margin-top: .5rem;
+    min-height: 2.4rem;
+}
+
+
+
 @media screen and (max-width: 600px) {
     .info-box{
         min-width: 0rem;

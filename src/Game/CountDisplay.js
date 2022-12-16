@@ -1,7 +1,7 @@
 import React from "react";
 import "./Game.css";
 
-export default function CountDisplay({count, manualClicks, allProducers }) {
+export default function CountDisplay({totalCount, count, manualClicks, allProducers }) {
 
     let bps = manualClicks.reduce((a, b) => a+b, 0);
 
@@ -14,6 +14,7 @@ export default function CountDisplay({count, manualClicks, allProducers }) {
         <div>Babies delivered:</div>
         <div className="count">{count.toLocaleString('en') }</div>
         <div className="bps">bps: {bps.toLocaleString('en')}</div>
+        {/* <div className="bps">total: {totalCount.toLocaleString('en')}</div> */}
         
         </>
       );

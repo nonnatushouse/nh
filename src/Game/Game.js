@@ -36,6 +36,7 @@ const IMAGES = {doctor, nun, midwife, maternity, nh, poplar, london, uk, europe,
 const initialState = {
   gameLoop: 0,
   count: 0,
+  totalCount: 0,
   producerStates: buildProducerStates(getProducers(IMAGES)),
   producerQueue: buildProducerStates(getProducers(IMAGES)),
   manualClicks: [0,0,0,0,0,0,0,0,0,0],
@@ -79,6 +80,7 @@ export default function Game() {
       <div className={gameContainerCls}>
                <CountDisplay
           count={state.count}
+          totalCount={state.totalCount}
           manualClicks={state.manualClicks}
           allProducers={allProducers}
           />
@@ -87,7 +89,11 @@ export default function Game() {
         Deliver a baby
       </div>
 
-      <TextStrip/>
+      <TextStrip
+      totalCount={state.totalCount} 
+      allProducers={allProducers}
+      startTime={state.startTime}
+      />
 
       <ProducerList
         count={state.count} 
@@ -121,19 +127,21 @@ function reducer(state, action) {
         case "AddCount":
           let manualClicks = state.manualClicks;
           manualClicks[(state.gameLoop + 10) % 10] += 1
-          return { ...state, count: state.count+1, manualClicks };
+          return { ...state, count: state.count+1, totalCount: state.totalCount+1, manualClicks };
 
         case "Reset":
             allProducers = getProducers(IMAGES);
-            return {   gameLoop: 0, count: 0, producerStates: buildProducerStates(getProducers(IMAGES)),
+            return {   gameLoop: 0, count: 0, totalCount: 0, producerStates: buildProducerStates(getProducers(IMAGES)),
               producerQueue: buildProducerStates(getProducers(IMAGES)), manualClicks:[0,0,0,0,0,0,0,0,0,0], 
               showInfoBox: false, hasWon: false, startTime: new Date(), endTime: new Date()};      
     
         case "GameTick":
           let cpy = state.producerStates.map((s) => s)
           let newCount = state.count;
+          let newTotalCount = state.totalCount
           for (let i = 0; i < allProducers.length; i++) {
             newCount += cpy[state.gameLoop][i] * allProducers[i].bps;
+            newTotalCount += cpy[state.gameLoop][i] * allProducers[i].bps;
             cpy[state.gameLoop][i] += state.producerQueue[state.gameLoop][i];
             if (state.count >= allProducers[i].cost / 2) {
               allProducers[i].unlocked = true;
@@ -153,7 +161,7 @@ function reducer(state, action) {
           }
 
           return { ...state, manualClicks:mc, gameLoop: gameLoop, producerStates: cpy, 
-            producerQueue: buildProducerStates(getProducers(IMAGES)), count: newCount, 
+            producerQueue: buildProducerStates(getProducers(IMAGES)), count: newCount, totalCount: newTotalCount,
             hasWon: won, showWinBox: showWon, endTime:endTime }; 
             
         case "AddProducer":
