@@ -2,7 +2,7 @@ import React from "react";
 import "./Info.css"
 import TotalTime from "./TotalTime";
 
-export default function InfoBox({totalTime, showInfoBox, onClickExit, onClickReset}) {
+export default function InfoBox({totalCount , totalTime, showInfoBox, onClickExit, onClickReset}) {
 
     if (!showInfoBox) {
         return null;
@@ -28,7 +28,9 @@ export default function InfoBox({totalTime, showInfoBox, onClickExit, onClickRes
 
             <TotalTime
             text={text}
-            totalTime={totalTime}/>           
+            totalTime={totalTime}/>    
+
+            <p>You have delivered a total of {totalCount.toLocaleString('en')} babies so far.</p>       
 
 
             <p>Note: Resetting is irreversible</p>

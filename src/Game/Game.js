@@ -91,6 +91,7 @@ export default function Game() {
 
       <TextStrip
       totalCount={state.totalCount} 
+      count={state.count}
       allProducers={allProducers}
       startTime={state.startTime}
       />
@@ -105,6 +106,7 @@ export default function Game() {
       </div>
 
       <InfoBox 
+        totalCount={state.totalCount}
         showInfoBox={state.showInfoBox}
         totalTime={state.endTime - state.startTime}
         onClickReset={() => dispatch({type: "Reset"})}

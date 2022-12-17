@@ -7,12 +7,12 @@ const initialState = {
     swap: false,
 }
 
-export default function TextStrip({totalCount, allProducers, startTime}) {
+export default function TextStrip({totalCount, count, allProducers, startTime}) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
 
     const totalTime = new Date() - startTime;
-    const [newText, isTidbit] = getStringToShow(totalCount, allProducers, totalTime);
+    const [newText, isTidbit] = getStringToShow(totalCount, count, allProducers, totalTime);
 
     if (newText !== state.text) {
         dispatch({type: "UpdateText", newText})
