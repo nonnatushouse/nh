@@ -52,7 +52,7 @@
 }
 
 .producer-container {
-    position: absolute;   
+    position: absolute;
 
 }
 
@@ -86,35 +86,41 @@
     position: absolute;
     text-align: justify;
     width: max-content;
-    top: .2rem;
-    left: 3.2rem;
+    margin-top: -.1rem;
+    left: 50px;
+    font-size: 1.1rem;
+    
 
 }
 
 .producer-info {
+    display: flex;
     position: absolute;
     font-size: .75rem;
     text-align: justify;
     width: max-content;
-    top: 3px;
-    left: 235px;
+    margin-top: 1.3rem;
+    left: 51px;
 
 
 }
 
+.producer-info-item {
+    margin-right: .5rem;
+}
+
 .producer-howmany {
-    position: absolute;
-    width: max-content;
-    text-align: right;
+    position: relative;
     top: .2rem;
-    right: -22.1rem;
+    text-align: right;
+    font-size: 1.4rem;
+    margin-right: .5rem;
 }
 
 .producer{
     text-align: center;
     align-items: center;
-    font-size: 1.4rem;
-
+    
     box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
     border-radius: 10px;
     /* rgba(248, 232, 202, 0.712);; */
@@ -182,7 +188,7 @@
         min-width: 0rem;
         width: 95vw;
     }
-
+/* 
     .producer-name {
         position: absolute;
         text-align: justify;
@@ -208,14 +214,14 @@
         top: .2rem;
         right: -20.5rem;
     }
-
+*/
     .producer.is-displayed {
 
         margin-right: -2rem;
         margin-top: .5rem;
         min-height: 3rem;
         padding: 0.2rem;
-    }
+    } 
     
 
 }
