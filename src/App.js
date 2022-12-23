@@ -40,7 +40,7 @@ class App extends Component {
   getTargetDate(){
     const currDate = new Date()
 
-    const cs22 = Date.UTC(2022, 11, 25, 18, 55, 0)
+    const cs22 = Date.UTC(2022, 11, 25, 19, 55, 0)
     const ep1 = Date.UTC(2022, 0, 1, 20, 0, 0)
     const ep2 = Date.UTC(2022, 0, 8, 20, 0, 0)
     const ep3 = Date.UTC(2022, 0, 15, 20, 0, 0)
