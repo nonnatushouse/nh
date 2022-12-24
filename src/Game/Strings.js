@@ -16,7 +16,7 @@ const COUNT_NINE = 9
 const CHANGE_TIDBIT_SEC = 60 * 1000
 
 
-export function getStringToShow(totalCount, count, allProducers, totalTime) {
+export function getStringToShow(totalCount, count, allProducers, allPowerups, totalTime) {
     if (totalCount === COUNT_ZERO) return [INFO[COUNT_ZERO], false];
     if (totalCount === COUNT_ONE) return [INFO[COUNT_ONE], false];
     if (totalCount === COUNT_TWO) return [INFO[COUNT_TWO], false];
@@ -28,6 +28,9 @@ export function getStringToShow(totalCount, count, allProducers, totalTime) {
     if (totalCount === COUNT_EIGHT) return [INFO[COUNT_EIGHT], false];
     if (totalCount === COUNT_NINE) return [INFO[COUNT_NINE], false];
 
+    if (totalCount >= allPowerups[0].cost && totalCount <= allPowerups[0].cost*1.5 && !allPowerups[0].bought ) {
+        return ["You can now buy your first powerup! Powerups multiply a producer's bps", false]
+    }
 
     for (let i = 1; i < 10000000; i = i*10) {
         if (totalCount > 1000*i && totalCount < 1200*i) return ["Achievement get: You delivered " + String((1000*i).toLocaleString('en'))  + " babies in total!", false]

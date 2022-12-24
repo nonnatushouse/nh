@@ -22,6 +22,8 @@ import classNames from "classnames";
 import InfoBox from "./InfoBox";
 import WinScreen from "./WinScreen";
 import TextStrip from "./TextStrip";
+import PowerupList from "./PowerupList";
+import getPowerups from "./Powerups";
 
 
 const DELAY = 100;
@@ -49,6 +51,7 @@ const initialState = {
 };
 
 let allProducers = getProducers(IMAGES);
+let allPowerups = getPowerups(IMAGES);
 
 export default function Game() {
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -60,6 +63,9 @@ export default function Game() {
 
     )
 
+    function onPowerupClick(powerup) {
+      dispatch({type: "BuyPowerup", powerup: powerup})
+    }
     function onProducerClick(producer) {
       dispatch({type: "AddProducer", producer: producer.id})
     }
@@ -93,14 +99,19 @@ export default function Game() {
       totalCount={state.totalCount} 
       count={state.count}
       allProducers={allProducers}
+      allPowerups={allPowerups}
       startTime={state.startTime}
+      />
+      <PowerupList
+        count={state.count} 
+        onPowerupClick={(powerup) => onPowerupClick(powerup)}
+        powerups = {allPowerups} // allProducers.filter((producer) => producer.unlocked )
       />
 
       <ProducerList
         count={state.count} 
         onProducerClick={(producer) => onProducerClick(producer)}
         producers = {allProducers} // allProducers.filter((producer) => producer.unlocked )
-      
       />  
 
       </div>
@@ -149,6 +160,12 @@ function reducer(state, action) {
               allProducers[i].unlocked = true;
             }
           } 
+          for (let i = 0; i < allPowerups.length; i++) {
+            if (state.count >= allPowerups[i].cost) {
+              allPowerups[i].unlocked = true;
+            }
+          }
+
           let mc = state.manualClicks 
           let gameLoop = (state.gameLoop + 1) % 10;
           mc[gameLoop] = 0
@@ -183,6 +200,12 @@ function reducer(state, action) {
 
         case "DiscardWin":
           return {...state, showWinBox: false}
+
+        case "BuyPowerup":
+          allPowerups[action.powerup.id].bought = true;
+          allProducers[action.powerup.producer].bps *= action.powerup.bps;
+
+          return {...state}
 
         default:
           return {...state}

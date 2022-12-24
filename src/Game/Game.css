@@ -160,6 +160,8 @@
     
 }
 
+
+
 .deliverButton {
     cursor: pointer;
     text-align: center;
@@ -172,7 +174,7 @@
 }
 
 
-.producer, .deliverButton, .info-icon{
+.producer, .deliverButton, .info-icon, .powerup{
     /* Make text unselectable */
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -182,9 +184,118 @@
 
 
 
+
+
+
+/* Powerups */
+.powerup-list{
+    display: flex;
+    border: 1px black solid;
+    list-style-type: none;
+    max-width: 23rem;
+    min-width: 23rem;
+    min-height: 3.5rem;
+    padding-left: 0rem;
+    overflow-x: scroll;
+    align-items: center;
+    border-radius: 10px; 
+    margin-bottom: 0;
+}
+
+
+.powerup {
+    cursor: pointer;
+    min-width: 48px;
+    height: 48px;
+    margin-left: .3rem;
+    box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
+    border-radius: 10px;
+    /* rgba(248, 232, 202, 0.712);; */
+    
+    transform: scaleX(0);
+
+    touch-action: manipulation;
+}
+.powerup-dialog {
+    position: absolute;
+    background-color: #F7C66A;
+    min-width: 46px;
+    min-height: 2rem;
+    opacity: .5;
+    bottom: 1px;
+    left: 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.powerup-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    text-align: center;
+}
+.powerup-multiplyer{    
+    z-index: 2;
+    top: 13px;
+    left: 5px;
+    font-size: .8rem;
+    text-shadow: .0rem .0rem .15rem white;
+}
+
+.powerup-cost {
+    z-index: 2;
+    font-size: .7rem;
+    bottom: .1rem;
+    left: .1rem;
+    text-shadow: .0rem .0rem .15rem white;
+}
+
+.powerup-img {
+    position: absolute;
+    height: 3rem;
+    border-radius: 10px;  
+    border: 1px black solid; 
+    /* opacity: .7; */
+}
+
+.powerup.visible {
+    margin-right: .1rem;
+}
+
+.powerup.visible {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+}
+
+.powerup.bought{
+    transform: scaleX(0);
+    min-width: 0;
+    max-width: 0;
+    transform-origin: left;
+    margin: 0;
+    transition-property: transform, min-width, max-width, margin;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+}
+
+.powerup-title {
+    color: gray;
+    position: relative;
+    margin-top: 1.2rem;
+    margin-bottom: -3.3rem;
+}
+
+
 @media screen and (max-width: 600px) {
     .producer-list{
         margin-left: -5rem;
+        min-width: 0rem;
+        width: 95vw;
+    }
+    .powerup-list {
         min-width: 0rem;
         width: 95vw;
     }
