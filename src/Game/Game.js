@@ -37,7 +37,7 @@ const IMAGES = {doctor, nun, midwife, maternity, nh, poplar, london, uk, europe,
 
 const initialState = {
   gameLoop: 0,
-  count: 5000000000,
+  count: 0,
   totalCount: 0,
   producerStates: buildProducerStates(getProducers(IMAGES)),
   producerQueue: buildProducerStates(getProducers(IMAGES)),
