@@ -21,7 +21,7 @@ export default function Powerup({count, onPowerupClick, powerup }) {
             <img src={powerup.img} className={cls2} alt="Powerup icon"></img>
             <div className="powerup-dialog"></div>
             <div className="powerup-container">
-            <div className="powerup-multiplyer"> bps x{powerup.bps}</div>
+            <div className="powerup-multiplyer">{powerup.sign}{powerup.bps}</div>
             <div className="powerup-cost">{getCostString(powerup.cost)}</div>
             </div>
 
@@ -34,7 +34,7 @@ const ENDS = ["k", "M", "B", "T"]
 function getCostString(cost) {
   for (let i = ENDS.length; i >= 1; i--) {
     if(cost >= Math.pow(1000, i)) {
-      return (cost/1000).toString() + ENDS[i-1];
+      return (cost/Math.pow(1000, i)).toString() + ENDS[i-1];
     }
   }
 

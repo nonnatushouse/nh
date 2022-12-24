@@ -28,8 +28,9 @@ export function getStringToShow(totalCount, count, allProducers, allPowerups, to
     if (totalCount === COUNT_EIGHT) return [INFO[COUNT_EIGHT], false];
     if (totalCount === COUNT_NINE) return [INFO[COUNT_NINE], false];
 
-    if (totalCount >= allPowerups[0].cost && totalCount <= allPowerups[0].cost*1.5 && !allPowerups[0].bought ) {
-        return ["You can now buy your first powerup! Powerups multiply a producer's bps", false]
+    if (count >= allPowerups[0].cost && count <= allPowerups[0].cost*1.5 && !allPowerups[0].bought 
+        && allPowerups[0].unlocked &&  !allPowerups[0].bought) {
+        return ["You can now buy your first powerup! Powerups increase a producer's bps", false]
     }
 
     for (let i = 1; i < 10000000; i = i*10) {

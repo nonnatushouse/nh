@@ -205,14 +205,11 @@
 
 .powerup {
     cursor: pointer;
-    min-width: 48px;
-    height: 48px;
-    margin-left: .3rem;
-    box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
-    border-radius: 10px;
     /* rgba(248, 232, 202, 0.712);; */
     
     transform: scaleX(0);
+    min-width: 0;
+    max-width: 0;
 
     touch-action: manipulation;
 }
@@ -220,6 +217,7 @@
     position: absolute;
     background-color: #F7C66A;
     min-width: 46px;
+    max-width: 46px;
     min-height: 2rem;
     opacity: .5;
     bottom: 1px;
@@ -231,14 +229,13 @@
 .powerup-container {
     display: flex;
     flex-direction: column;
-    margin-top: 14px;
+    margin-top: 12px;
     text-align: center;
 }
 .powerup-multiplyer{    
     z-index: 2;
-    top: 13px;
     left: 5px;
-    font-size: .8rem;
+    font-size: .9rem;
     text-shadow: .0rem .0rem .15rem white;
 }
 
@@ -260,6 +257,11 @@
 
 .powerup.visible {
     margin-right: .1rem;
+    min-width: 48px;
+    height: 48px;
+    margin-left: .3rem;
+    box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
+    border-radius: 10px;    
 }
 
 .powerup.visible {
@@ -271,9 +273,11 @@
 }
 
 .powerup.bought{
+    overflow: hidden;
     transform: scaleX(0);
     min-width: 0;
     max-width: 0;
+    max-height: 48px;
     transform-origin: left;
     margin: 0;
     transition-property: transform, min-width, max-width, margin;

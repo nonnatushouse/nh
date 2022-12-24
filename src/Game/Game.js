@@ -37,7 +37,7 @@ const IMAGES = {doctor, nun, midwife, maternity, nh, poplar, london, uk, europe,
 
 const initialState = {
   gameLoop: 0,
-  count: 0,
+  count: 5000000000,
   totalCount: 0,
   producerStates: buildProducerStates(getProducers(IMAGES)),
   producerQueue: buildProducerStates(getProducers(IMAGES)),
@@ -202,10 +202,15 @@ function reducer(state, action) {
           return {...state, showWinBox: false}
 
         case "BuyPowerup":
+          let nc = state.count;
+          if (allPowerups[action.powerup.id].cost <= state.count) {
           allPowerups[action.powerup.id].bought = true;
-          allProducers[action.powerup.producer].bps *= action.powerup.bps;
-
-          return {...state}
+          if (action.powerup.sign == "+")  allProducers[action.powerup.producer].bps += action.powerup.bps;
+          if (action.powerup.sign == "x")  allProducers[action.powerup.producer].bps *= action.powerup.bps;
+          nc -= allPowerups[action.powerup.id].cost;
+        }
+          
+          return {...state, count: nc}
 
         default:
           return {...state}
