@@ -188,6 +188,53 @@
 
 
 /* Powerups */
+
+
+/* Is dimmed */
+.powerup.is-dimmed {
+    color: gray;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;     
+}
+
+.powerup-img.is-dimmed {
+    opacity: .5;
+    border-color: gray;
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;    
+}
+
+.powerup-dialog.is-dimmed {
+    background-color: #f1ddbb;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;
+}
+
+/* Is fullcolor */
+.powerup.is-fullcolor {
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;     
+}
+
+.powerup-img.is-fullcolor {
+    opacity: .9;
+    border-color: black;
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;    
+}
+
+.powerup-dialog.is-fullcolor {
+    background-color: #F7C66A;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;
+}
+
 .powerup-list{
     display: flex;
     border: 1px black solid;
@@ -212,14 +259,17 @@
     max-width: 0;
 
     touch-action: manipulation;
+
+
+
 }
+
 .powerup-dialog {
     position: absolute;
-    background-color: #F7C66A;
     min-width: 46px;
     max-width: 46px;
     min-height: 2rem;
-    opacity: .5;
+    opacity: .85;
     bottom: 1px;
     left: 1px;
     border-bottom-left-radius: 10px;
@@ -236,7 +286,7 @@
     z-index: 2;
     left: 5px;
     font-size: .9rem;
-    text-shadow: .0rem .0rem .15rem white;
+    /* text-shadow: .0rem .0rem .15rem white; */
 }
 
 .powerup-cost {
@@ -244,7 +294,7 @@
     font-size: .7rem;
     bottom: .1rem;
     left: .1rem;
-    text-shadow: .0rem .0rem .15rem white;
+    /* text-shadow: .0rem .0rem .15rem white; */
 }
 
 .powerup-img {
@@ -252,7 +302,6 @@
     height: 3rem;
     border-radius: 10px;  
     border: 1px black solid; 
-    /* opacity: .7; */
 }
 
 .powerup.visible {
@@ -262,6 +311,7 @@
     margin-left: .3rem;
     box-shadow: .3rem .3rem .6rem rgba(22, 22, 22, .5);
     border-radius: 10px;    
+    background-color: #F7C66A;
 }
 
 .powerup.visible {
@@ -291,6 +341,10 @@
     margin-top: 1.2rem;
     margin-bottom: -3.3rem;
 }
+
+
+
+
 
 
 @media screen and (max-width: 600px) {

@@ -7,10 +7,31 @@ export default function Powerup({count, onPowerupClick, powerup }) {
 
     const cls = classNames("powerup", {
         "visible": powerup.unlocked && !powerup.bought,
-        "bought": powerup.bought
+        "bought": powerup.bought,
+        "is-dimmed": count < powerup.cost, 
+        "is-fullcolor": count >= powerup.cost, 
+      });
+      
+      const cls2 = classNames("powerup-img", {
+        "is-dimmed": count < powerup.cost, 
+        "is-fullcolor": count >= powerup.cost, 
+      });   
+
+      const cls3 = classNames("powerup-multiplyer", {
+        "is-dimmed": count < powerup.cost, 
+        "is-fullcolor": count >= powerup.cost, 
       });
 
-      const cls2 = classNames("powerup-img");
+      const cls4 = classNames("powerup-cost", {
+        "is-dimmed": count < powerup.cost, 
+        "is-fullcolor": count >= powerup.cost, 
+      });
+
+      const cls5 = classNames("powerup-dialog", {
+        "is-dimmed": count < powerup.cost, 
+        "is-fullcolor": count >= powerup.cost, 
+      });
+
 
     return (
         <li
@@ -19,10 +40,10 @@ export default function Powerup({count, onPowerupClick, powerup }) {
           onClick={() => onPowerupClick(powerup)}
         >
             <img src={powerup.img} className={cls2} alt="Powerup icon"></img>
-            <div className="powerup-dialog"></div>
+            <div className={cls5}></div>
             <div className="powerup-container">
-            <div className="powerup-multiplyer">{powerup.sign}{powerup.bps}</div>
-            <div className="powerup-cost">{getCostString(powerup.cost)}</div>
+            <div className={cls3} >{powerup.sign}{powerup.bps}</div>
+            <div className={cls4} >{getCostString(powerup.cost)}</div>
             </div>
 
         </li>
