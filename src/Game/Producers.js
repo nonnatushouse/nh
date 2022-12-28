@@ -7,8 +7,8 @@ export default function getProducers(images) {
         {id: 1, cost: 500, bps: 50, unlocked: false, howManyBought: 0, img: images.nun, name: "Nun"},
         {id: 2, cost: 10000, bps: 1000, unlocked: false, howManyBought: 0, img: images.midwife, name: "Midwife"},
         {id: 3, cost: 125000, bps: 12500, unlocked: false, howManyBought: 0, img: images.maternity, name: "Maternity Home"},
-        {id: 4, cost: 10000000, bps: 1000000, unlocked: false, howManyBought: 0, img: images.nh, name: "Nonnatus House"},
-
+        {id: 4, cost: 100000000, bps: 10000000, unlocked: false, howManyBought: 0, img: images.nh, name: "Nonnatus House"},
+                      
 
 
 
