@@ -205,8 +205,8 @@ function reducer(state, action) {
           let nc = state.count;
           if (allPowerups[action.powerup.id].cost <= state.count) {
           allPowerups[action.powerup.id].bought = true;
-          if (action.powerup.sign == "+")  allProducers[action.powerup.producer].bps += action.powerup.bps;
-          if (action.powerup.sign == "x")  allProducers[action.powerup.producer].bps *= action.powerup.bps;
+          if (action.powerup.sign === "+")  allProducers[action.powerup.producer].bps += action.powerup.bps;
+          if (action.powerup.sign === "x")  allProducers[action.powerup.producer].bps *= action.powerup.bps;
           nc -= allPowerups[action.powerup.id].cost;
         }
           
