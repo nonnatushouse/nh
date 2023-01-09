@@ -41,19 +41,20 @@ class App extends Component {
     const currDate = new Date()
 
     const cs22 = Date.UTC(2022, 11, 25, 19, 55, 0)
-    const ep1 = Date.UTC(2022, 0, 1, 20, 0, 0)
-    const ep2 = Date.UTC(2022, 0, 8, 20, 0, 0)
-    const ep3 = Date.UTC(2022, 0, 15, 20, 0, 0)
-    const ep4 = Date.UTC(2022, 0, 22, 20, 0, 0)
-    const ep5 = Date.UTC(2022, 0, 29, 20, 0, 0)
-    const ep6 = Date.UTC(2022, 1, 5, 20, 0, 0)
-    const ep7 = Date.UTC(2022, 1, 12, 20, 0, 0)
-    const ep8 = Date.UTC(2022, 1, 19, 20, 0, 0)
+    const ep1 = Date.UTC(2023, 0, 1, 20, 0, 0)
+    const ep2 = Date.UTC(2023, 0, 8, 20, 0, 0)
+    const ep3 = Date.UTC(2023, 0, 15, 20, 0, 0)
+    const ep4 = Date.UTC(2023, 0, 22, 20, 0, 0)
+    const ep5 = Date.UTC(2023, 0, 29, 20, 0, 0)
+    const ep6 = Date.UTC(2023, 1, 5, 20, 0, 0)
+    const ep7 = Date.UTC(2023, 1, 12, 20, 0, 0)
+    const ep8 = Date.UTC(2023, 1, 19, 20, 0, 0)
     const cs23 = Date.UTC(2023, 11, 25, 19, 0, 0)
 
     const dateList = [cs22, ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, cs23]
     
     for (const ep of dateList) {
+      console.log(ep)
       if (currDate < ep) {
         return ep;
       }
@@ -79,7 +80,7 @@ class App extends Component {
         </button>
 
         <div className="page-container">
-          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the Call the Midwife 2022 Christmas Special airs:" />} />
+          <Route path="/timer" render={() => <Timer targetDate={this.getTargetDate()} title="Time until the next episode of Call the Midwife airs:" />} />
           <Route path="/us-timer" render={() => <Timer targetDate={Date.UTC(2020, 2, 30, 3, 0, 0)} title="Time until Call the Midwife season 9 airs (in the UK):"/>} />
           <Route path="/quiz" component={Quiz} />
           <Route path="/" component={Home} exact />
