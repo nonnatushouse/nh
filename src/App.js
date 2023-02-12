@@ -48,7 +48,7 @@ class App extends Component {
     const ep5 = Date.UTC(2023, 0, 29, 20, 0, 0)
     const ep6 = Date.UTC(2023, 1, 5, 20, 0, 0)
     const ep7 = Date.UTC(2023, 1, 12, 20, 0, 0)
-    const ep8 = Date.UTC(2023, 1, 19, 20, 0, 0)
+    const ep8 = Date.UTC(2023, 1, 26, 20, 0, 0)
     const cs23 = Date.UTC(2023, 11, 25, 19, 0, 0)
 
     const dateList = [cs22, ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, cs23]
