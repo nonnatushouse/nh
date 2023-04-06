@@ -1,9 +1,4 @@
-﻿1
-00:00:06,000 --> 00:00:12,074
-Advertise your product or brand here
-contact www.OpenSubtitles.org today
-
-2
+﻿2
 00:00:31,620 --> 00:00:36,460
 {\an8}<font color="#ffffffff">MATURE JENNIFER: Human beings thrive</font>
 <font color="#ffffffff">on the known, and the predictable.</font>
@@ -4829,8 +4824,3 @@ contact www.OpenSubtitles.org today
 1080
 00:58:28,820 --> 00:58:30,980
 <font color="#ffffffff">..and we will drown.</font>
-
-1080
-00:58:31,305 --> 00:59:31,812
-Advertise your product or brand here
-contact www.OpenSubtitles.org today

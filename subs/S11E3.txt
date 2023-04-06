@@ -1,8 +1,4 @@
-﻿1
-00:00:06,000 --> 00:00:12,074
--== [ www.OpenSubtitles.org ] ==-
-
-2
+﻿2
 00:00:27,415 --> 00:00:32,053
 <font color="#ffffffff">Everyone knows that birds migrate...</font>
 
@@ -4491,8 +4487,3 @@
 00:58:48,015 --> 00:58:52,855
 <font color="#ffff00ff">I prayed for the intervention of</font>
 <font color="#ffff00ff">angels and I have been answered.</font>
-
-997
-00:58:53,305 --> 00:59:53,447
-Please rate this subtitle at www.osdb.link/9h9ub
-Help other users to choose the best subtitles

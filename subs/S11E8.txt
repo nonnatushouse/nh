@@ -1,9 +1,4 @@
-﻿1
-00:00:06,000 --> 00:00:12,074
-Advertise your product or brand here
-contact www.OpenSubtitles.org today
-
-2
+﻿2
 00:00:34,370 --> 00:00:36,730
 {\an8}<font color="#00ffffff">Don't stand here! Move back!</font>
 
@@ -4109,8 +4104,3 @@ contact www.OpenSubtitles.org today
 926
 00:58:42,210 --> 00:58:43,250
 <font color="#ffffffff">SHUTTER CLICKS</font>
-
-926
-00:58:44,305 --> 00:59:44,560
-Please rate this subtitle at www.osdb.link/9mrba
-Help other users to choose the best subtitles

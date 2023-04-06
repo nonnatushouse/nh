@@ -1,9 +1,4 @@
-﻿1
-00:00:06,000 --> 00:00:12,074
-Advertise your product or brand here
-contact www.OpenSubtitles.org today
-
-2
+﻿2
 00:00:29,405 --> 00:00:34,683
 {\an8}<font color="#ffffffff">JENNIFER: Each new morning commences</font>
 <font color="#ffffffff">with a still point,</font>
@@ -4822,7 +4817,3 @@ contact www.OpenSubtitles.org today
 00:58:19,085 --> 00:58:21,645
 <font color="#ffff00ff">If I can just keep it a secret</font>
 <font color="#ffff00ff">for a bit longer...</font>
-
-1073
-00:58:22,305 --> 00:59:22,388
--== [ www.OpenSubtitles.org ] ==-

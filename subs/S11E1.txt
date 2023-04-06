@@ -1,9 +1,4 @@
-﻿1
-00:00:06,000 --> 00:00:12,074
-Advertise your product or brand here
-contact www.OpenSubtitles.org today
-
-2
+﻿2
 00:00:27,731 --> 00:00:31,169
 <font color="#ffffffff">MATURE JENNIFER: At Easter,</font>
 <font color="#ffffffff">we celebrate the opening</font>
@@ -3957,8 +3952,3 @@ contact www.OpenSubtitles.org today
 872
 00:58:57,197 --> 00:58:58,997
 <font color="#00ff00ff">Toodle-pip.</font>
-
-872
-00:58:59,305 --> 00:59:59,581
-Support us and become VIP member 
-to remove all ads from www.OpenSubtitles.org
