@@ -28,13 +28,13 @@ export function getStringToShow(totalCount, count, allProducers, allPowerups, to
     if (totalCount === COUNT_EIGHT) return [INFO[COUNT_EIGHT], false];
     if (totalCount === COUNT_NINE) return [INFO[COUNT_NINE], false];
 
-    if (count >= allPowerups[0].cost && count <= allPowerups[0].cost*1.5 && !allPowerups[0].bought 
+    if (count >= allPowerups[0].cost && count <= allPowerups[0].cost*2 && !allPowerups[0].bought 
         && allPowerups[0].unlocked &&  !allPowerups[0].bought) {
         return ["You can now buy your first powerup! Powerups increase a producer's bps", false]
     }
 
     for (let i = 1; i < 10000000; i = i*10) {
-        if (totalCount > 1000*i && totalCount < 1200*i) return ["Achievement get: You delivered " + String((1000*i).toLocaleString('en'))  + " babies in total!", false]
+        if (totalCount > 1000*i && totalCount < 1400*i) return ["Achievement get: You delivered " + String((1000*i).toLocaleString('en'))  + " babies in total!", false]
     }
 
     for (let i = allProducers.length - 1; i > 0; i--) {

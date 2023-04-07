@@ -103,7 +103,8 @@ export default function Game() {
       startTime={state.startTime}
       />
       <PowerupList
-        count={state.count} 
+        count={state.count}
+        totalCount={state.totalCount} 
         onPowerupClick={(powerup) => onPowerupClick(powerup)}
         powerups = {allPowerups} // allProducers.filter((producer) => producer.unlocked )
       />

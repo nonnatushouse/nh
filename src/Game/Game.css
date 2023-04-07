@@ -174,7 +174,7 @@
 }
 
 
-.producer, .deliverButton, .info-icon, .powerup{
+.producer, .deliverButton, .info-icon, .powerup .powerup-title {
     /* Make text unselectable */
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -235,20 +235,36 @@
     transition-timing-function: ease-in;
 }
 
-.powerup-list{
+.powerup-list {   
+    transform: scaleY(0);
+    min-width: 0;
+    max-width: 0;
     display: flex;
-    border: 1px black solid;
-    list-style-type: none;
+    margin-bottom: -3.5rem;
+
+}
+
+.powerup-list.powerups-visible{
+    overflow-x: scroll;
+    align-items: center;
+    border-radius: 10px; 
+    margin-bottom: 0;   
     max-width: 23rem;
     min-width: 23rem;
     min-height: 3.5rem;
     padding-left: 0rem;
-    overflow-x: scroll;
-    align-items: center;
-    border-radius: 10px; 
-    margin-bottom: 0;
+    border: 1px black solid;
+    list-style-type: none;
+
 }
 
+.powerup-list.powerups-visible {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition-property: transform;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+}
 
 .powerup {
     cursor: pointer;
@@ -335,13 +351,22 @@
     transition-timing-function: ease-in;
 }
 
+
+
 .powerup-title {
-    color: gray;
+    color: rgba(128, 128, 128, 0);
     position: relative;
     margin-top: 1.2rem;
     margin-bottom: -3.3rem;
 }
 
+.powerup-title.powerups-visible {
+    color: gray;
+    transition-property: color;
+    transition-delay: 500ms;
+    transition-duration: 500ms;
+    transition-timing-function: ease-in;
+}
 
 
 
