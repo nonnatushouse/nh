@@ -150,11 +150,26 @@ export function getSeasons() {
         "S11E3",
         "S11E4",
         "S11E5",
+        "S11E6",        
         "S11E7",
-        "S11E6",
         "S11E8"
       ]
-    },       
+    },
+    {
+      id: "S12",
+      title: "Series 12",
+      episodes: [
+        "S12E0",
+        "S12E1",
+        "S12E2",
+        "S12E3",
+        "S12E4",
+        "S12E5",
+        "S12E6",        
+        "S12E7",
+        "S12E8"
+      ]
+    },         
   ]
 }
 
@@ -255,6 +270,15 @@ export function getEpisodes() {
     { id: "S11E6", title: "S11E6", isChecked: true },
     { id: "S11E7", title: "S11E7", isChecked: true },
     { id: "S11E8", title: "S11E8", isChecked: true },
+    { id: "S12E0", title: "2022 Christmas Special", isChecked: true },
+    { id: "S12E1", title: "S12E1", isChecked: true },
+    { id: "S12E2", title: "S12E2", isChecked: true },
+    { id: "S12E3", title: "S12E3", isChecked: true },
+    { id: "S12E4", title: "S12E4", isChecked: true },
+    { id: "S12E5", title: "S12E5", isChecked: true },
+    { id: "S12E6", title: "S12E6", isChecked: true },
+    { id: "S12E7", title: "S12E7", isChecked: true },
+    { id: "S12E8", title: "S12E8", isChecked: true },    
 ];
 }
 
