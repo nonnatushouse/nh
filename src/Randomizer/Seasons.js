@@ -169,7 +169,22 @@ export function getSeasons() {
         "S12E7",
         "S12E8"
       ]
-    },         
+    },   
+    {
+      id: "S13",
+      title: "Series 13",
+      episodes: [
+        "S13E0",
+        "S13E1",
+        "S13E2",
+        "S13E3",
+        "S13E4",
+        "S13E5",
+        "S13E6",        
+        "S13E7",
+        "S13E8"
+      ]
+    },             
   ]
 }
 
@@ -278,7 +293,16 @@ export function getEpisodes() {
     { id: "S12E5", title: "S12E5", isChecked: true },
     { id: "S12E6", title: "S12E6", isChecked: true },
     { id: "S12E7", title: "S12E7", isChecked: true },
-    { id: "S12E8", title: "S12E8", isChecked: true },    
+    { id: "S12E8", title: "S12E8", isChecked: true },
+    { id: "S13E0", title: "2023 Christmas Special", isChecked: true },
+    { id: "S13E1", title: "S13E1", isChecked: true },
+    { id: "S13E2", title: "S13E2", isChecked: true },
+    { id: "S13E3", title: "S13E3", isChecked: true },
+    { id: "S13E4", title: "S13E4", isChecked: true },
+    { id: "S13E5", title: "S13E5", isChecked: true },
+    { id: "S13E6", title: "S13E6", isChecked: true },
+    { id: "S13E7", title: "S13E7", isChecked: true },
+    { id: "S13E8", title: "S13E8", isChecked: true },      
 ];
 }
 
