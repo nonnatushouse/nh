@@ -29,6 +29,7 @@ import Hanne from "./ChristmasCards/Hanne";
 import Game from "./Game/Game";
 
 import Jokes from "./ChristmasJokes/Jokes";
+import SickficMain from "./Sickfic/SickficMain";
 
 class App extends Component {
   state = { menuIsExpanded: false };
@@ -94,6 +95,7 @@ class App extends Component {
           <Route path="/subs" component={Subs} />
           <Route path="/quotes" component={QuotesPage} />
           <Route path="/nun-puns" component={Jokes} />
+          <Route path="/sickfic" component={SickficMain} />
 
           <Route path="/card-exchange/she-was-a-nun/" component={LevinsonMannion} />
           <Route path="/card-exchange/small-and-bright/" component={FourteenTeacups} />
